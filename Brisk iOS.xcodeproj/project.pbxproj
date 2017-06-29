@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		177A32E01F05C6CE0044D836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A32DF1F05C6CE0044D836 /* AppDelegate.swift */; };
+		177A32E21F05C6CE0044D836 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A32E11F05C6CE0044D836 /* ViewController.swift */; };
+		177A32E51F05C6CE0044D836 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177A32E31F05C6CE0044D836 /* Main.storyboard */; };
+		177A32E71F05C6CE0044D836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177A32E61F05C6CE0044D836 /* Assets.xcassets */; };
+		177A32EA1F05C6CE0044D836 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177A32E81F05C6CE0044D836 /* LaunchScreen.storyboard */; };
+		177A32F51F05C6CE0044D836 /* Brisk_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A32F41F05C6CE0044D836 /* Brisk_iOSTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		177A32F11F05C6CE0044D836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 177A32D41F05C6CD0044D836 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 177A32DB1F05C6CD0044D836;
+			remoteInfo = "Brisk iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		177A32DC1F05C6CD0044D836 /* Brisk iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brisk iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		177A32DF1F05C6CE0044D836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		177A32E11F05C6CE0044D836 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		177A32E41F05C6CE0044D836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		177A32E61F05C6CE0044D836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		177A32E91F05C6CE0044D836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		177A32EB1F05C6CE0044D836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		177A32F01F05C6CE0044D836 /* Brisk iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brisk iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		177A32F41F05C6CE0044D836 /* Brisk_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brisk_iOSTests.swift; sourceTree = "<group>"; };
+		177A32F61F05C6CE0044D836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		177A32D91F05C6CD0044D836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		177A32ED1F05C6CE0044D836 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		177A32D31F05C6CD0044D836 = {
+			isa = PBXGroup;
+			children = (
+				177A32DE1F05C6CD0044D836 /* Brisk iOS */,
+				177A32F31F05C6CE0044D836 /* Brisk iOSTests */,
+				177A32DD1F05C6CD0044D836 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		177A32DD1F05C6CD0044D836 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				177A32DC1F05C6CD0044D836 /* Brisk iOS.app */,
+				177A32F01F05C6CE0044D836 /* Brisk iOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		177A32DE1F05C6CD0044D836 /* Brisk iOS */ = {
+			isa = PBXGroup;
+			children = (
+				177A32DF1F05C6CE0044D836 /* AppDelegate.swift */,
+				177A32E11F05C6CE0044D836 /* ViewController.swift */,
+				177A32E31F05C6CE0044D836 /* Main.storyboard */,
+				177A32E61F05C6CE0044D836 /* Assets.xcassets */,
+				177A32E81F05C6CE0044D836 /* LaunchScreen.storyboard */,
+				177A32EB1F05C6CE0044D836 /* Info.plist */,
+			);
+			path = "Brisk iOS";
+			sourceTree = "<group>";
+		};
+		177A32F31F05C6CE0044D836 /* Brisk iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				177A32F41F05C6CE0044D836 /* Brisk_iOSTests.swift */,
+				177A32F61F05C6CE0044D836 /* Info.plist */,
+			);
+			path = "Brisk iOSTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		177A32DB1F05C6CD0044D836 /* Brisk iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 177A32F91F05C6CE0044D836 /* Build configuration list for PBXNativeTarget "Brisk iOS" */;
+			buildPhases = (
+				177A32D81F05C6CD0044D836 /* Sources */,
+				177A32D91F05C6CD0044D836 /* Frameworks */,
+				177A32DA1F05C6CD0044D836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Brisk iOS";
+			productName = "Brisk iOS";
+			productReference = 177A32DC1F05C6CD0044D836 /* Brisk iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		177A32EF1F05C6CE0044D836 /* Brisk iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 177A32FC1F05C6CE0044D836 /* Build configuration list for PBXNativeTarget "Brisk iOSTests" */;
+			buildPhases = (
+				177A32EC1F05C6CE0044D836 /* Sources */,
+				177A32ED1F05C6CE0044D836 /* Frameworks */,
+				177A32EE1F05C6CE0044D836 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				177A32F21F05C6CE0044D836 /* PBXTargetDependency */,
+			);
+			name = "Brisk iOSTests";
+			productName = "Brisk iOSTests";
+			productReference = 177A32F01F05C6CE0044D836 /* Brisk iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		177A32D41F05C6CD0044D836 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Florian Burger";
+				TargetAttributes = {
+					177A32DB1F05C6CD0044D836 = {
+						CreatedOnToolsVersion = 9.0;
+					};
+					177A32EF1F05C6CE0044D836 = {
+						CreatedOnToolsVersion = 9.0;
+						TestTargetID = 177A32DB1F05C6CD0044D836;
+					};
+				};
+			};
+			buildConfigurationList = 177A32D71F05C6CD0044D836 /* Build configuration list for PBXProject "Brisk iOS" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 177A32D31F05C6CD0044D836;
+			productRefGroup = 177A32DD1F05C6CD0044D836 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				177A32DB1F05C6CD0044D836 /* Brisk iOS */,
+				177A32EF1F05C6CE0044D836 /* Brisk iOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		177A32DA1F05C6CD0044D836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				177A32EA1F05C6CE0044D836 /* LaunchScreen.storyboard in Resources */,
+				177A32E71F05C6CE0044D836 /* Assets.xcassets in Resources */,
+				177A32E51F05C6CE0044D836 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		177A32EE1F05C6CE0044D836 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		177A32D81F05C6CD0044D836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				177A32E21F05C6CE0044D836 /* ViewController.swift in Sources */,
+				177A32E01F05C6CE0044D836 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		177A32EC1F05C6CE0044D836 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				177A32F51F05C6CE0044D836 /* Brisk_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		177A32F21F05C6CE0044D836 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 177A32DB1F05C6CD0044D836 /* Brisk iOS */;
+			targetProxy = 177A32F11F05C6CE0044D836 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		177A32E31F05C6CE0044D836 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				177A32E41F05C6CE0044D836 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		177A32E81F05C6CE0044D836 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				177A32E91F05C6CE0044D836 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		177A32F71F05C6CE0044D836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		177A32F81F05C6CE0044D836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		177A32FA1F05C6CE0044D836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Brisk iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.florianbuerger.Brisk-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		177A32FB1F05C6CE0044D836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Brisk iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.florianbuerger.Brisk-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		177A32FD1F05C6CE0044D836 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Brisk iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.florianbuerger.Brisk-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brisk iOS.app/Brisk iOS";
+			};
+			name = Debug;
+		};
+		177A32FE1F05C6CE0044D836 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Brisk iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.florianbuerger.Brisk-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brisk iOS.app/Brisk iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		177A32D71F05C6CD0044D836 /* Build configuration list for PBXProject "Brisk iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				177A32F71F05C6CE0044D836 /* Debug */,
+				177A32F81F05C6CE0044D836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		177A32F91F05C6CE0044D836 /* Build configuration list for PBXNativeTarget "Brisk iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				177A32FA1F05C6CE0044D836 /* Debug */,
+				177A32FB1F05C6CE0044D836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		177A32FC1F05C6CE0044D836 /* Build configuration list for PBXNativeTarget "Brisk iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				177A32FD1F05C6CE0044D836 /* Debug */,
+				177A32FE1F05C6CE0044D836 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 177A32D41F05C6CD0044D836 /* Project object */;
+}

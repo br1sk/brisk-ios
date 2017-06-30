@@ -7,12 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1729939C1F06C2160015E94D /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1729939B1F06C2160015E94D /* LoginViewController.storyboard */; };
 		177A32E01F05C6CE0044D836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A32DF1F05C6CE0044D836 /* AppDelegate.swift */; };
-		177A32E21F05C6CE0044D836 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A32E11F05C6CE0044D836 /* ViewController.swift */; };
-		177A32E51F05C6CE0044D836 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177A32E31F05C6CE0044D836 /* Main.storyboard */; };
 		177A32E71F05C6CE0044D836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177A32E61F05C6CE0044D836 /* Assets.xcassets */; };
 		177A32EA1F05C6CE0044D836 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177A32E81F05C6CE0044D836 /* LaunchScreen.storyboard */; };
 		177A32F51F05C6CE0044D836 /* Brisk_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A32F41F05C6CE0044D836 /* Brisk_iOSTests.swift */; };
+		177A33001F05C6FA0044D836 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A32FF1F05C6FA0044D836 /* AppCoordinator.swift */; };
+		177A33021F05C7080044D836 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A33011F05C7080044D836 /* LoginCoordinator.swift */; };
+		177A33041F05C76D0044D836 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A33031F05C76D0044D836 /* MenuViewController.swift */; };
+		177A33061F05C77C0044D836 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A33051F05C77C0044D836 /* MenuView.swift */; };
+		177A330C1F05CCCF0044D836 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A330B1F05CCCF0044D836 /* LoginViewController.swift */; };
+		177A33101F05CDE40044D836 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A330F1F05CDE40044D836 /* Email.swift */; };
+		4F99F8269819ADC732093605 /* Pods_Brisk_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A915B61BA11353854A4BE2B5 /* Pods_Brisk_iOSTests.framework */; };
+		EF10474BFAB5B59C56ACD32C /* Pods_Brisk_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C52D9F97E0E2AAFF61975C9 /* Pods_Brisk_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +33,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C52D9F97E0E2AAFF61975C9 /* Pods_Brisk_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brisk_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1729939B1F06C2160015E94D /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
 		177A32DC1F05C6CD0044D836 /* Brisk iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brisk iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177A32DF1F05C6CE0044D836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		177A32E11F05C6CE0044D836 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		177A32E41F05C6CE0044D836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		177A32E61F05C6CE0044D836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		177A32E91F05C6CE0044D836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		177A32EB1F05C6CE0044D836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		177A32F01F05C6CE0044D836 /* Brisk iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brisk iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177A32F41F05C6CE0044D836 /* Brisk_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brisk_iOSTests.swift; sourceTree = "<group>"; };
 		177A32F61F05C6CE0044D836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		177A32FF1F05C6FA0044D836 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		177A33011F05C7080044D836 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		177A33031F05C76D0044D836 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		177A33051F05C77C0044D836 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		177A330B1F05CCCF0044D836 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		177A330F1F05CDE40044D836 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
+		8F534FD145EF44018C445D92 /* Pods-Brisk iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brisk iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brisk iOS/Pods-Brisk iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		93EBA6EB32449AB7DAF50130 /* Pods-Brisk iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brisk iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brisk iOSTests/Pods-Brisk iOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		A915B61BA11353854A4BE2B5 /* Pods_Brisk_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brisk_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F00EE126AD949625F9371094 /* Pods-Brisk iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brisk iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brisk iOSTests/Pods-Brisk iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F96D4C10C910CFF20F662254 /* Pods-Brisk iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brisk iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Brisk iOS/Pods-Brisk iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF10474BFAB5B59C56ACD32C /* Pods_Brisk_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F99F8269819ADC732093605 /* Pods_Brisk_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +82,8 @@
 				177A32DE1F05C6CD0044D836 /* Brisk iOS */,
 				177A32F31F05C6CE0044D836 /* Brisk iOSTests */,
 				177A32DD1F05C6CD0044D836 /* Products */,
+				9301DCAE9D1964E8C2E5DC92 /* Pods */,
+				A47DEBB8F0DEE411AEA6D588 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +99,10 @@
 		177A32DE1F05C6CD0044D836 /* Brisk iOS */ = {
 			isa = PBXGroup;
 			children = (
-				177A32DF1F05C6CE0044D836 /* AppDelegate.swift */,
-				177A32E11F05C6CE0044D836 /* ViewController.swift */,
-				177A32E31F05C6CE0044D836 /* Main.storyboard */,
-				177A32E61F05C6CE0044D836 /* Assets.xcassets */,
-				177A32E81F05C6CE0044D836 /* LaunchScreen.storyboard */,
-				177A32EB1F05C6CE0044D836 /* Info.plist */,
+				177A330A1F05CB600044D836 /* Resources */,
+				177A33091F05CB5A0044D836 /* App */,
+				177A33081F05CB560044D836 /* Login */,
+				177A33071F05CB4D0044D836 /* Menu */,
 			);
 			path = "Brisk iOS";
 			sourceTree = "<group>";
@@ -96,6 +116,65 @@
 			path = "Brisk iOSTests";
 			sourceTree = "<group>";
 		};
+		177A33071F05CB4D0044D836 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				177A33051F05C77C0044D836 /* MenuView.swift */,
+				177A33031F05C76D0044D836 /* MenuViewController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		177A33081F05CB560044D836 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				177A33011F05C7080044D836 /* LoginCoordinator.swift */,
+				177A330B1F05CCCF0044D836 /* LoginViewController.swift */,
+				1729939B1F06C2160015E94D /* LoginViewController.storyboard */,
+				177A330F1F05CDE40044D836 /* Email.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		177A33091F05CB5A0044D836 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				177A32FF1F05C6FA0044D836 /* AppCoordinator.swift */,
+				177A32DF1F05C6CE0044D836 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		177A330A1F05CB600044D836 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				177A32E81F05C6CE0044D836 /* LaunchScreen.storyboard */,
+				177A32EB1F05C6CE0044D836 /* Info.plist */,
+				177A32E61F05C6CE0044D836 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9301DCAE9D1964E8C2E5DC92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F534FD145EF44018C445D92 /* Pods-Brisk iOS.debug.xcconfig */,
+				F96D4C10C910CFF20F662254 /* Pods-Brisk iOS.release.xcconfig */,
+				F00EE126AD949625F9371094 /* Pods-Brisk iOSTests.debug.xcconfig */,
+				93EBA6EB32449AB7DAF50130 /* Pods-Brisk iOSTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A47DEBB8F0DEE411AEA6D588 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C52D9F97E0E2AAFF61975C9 /* Pods_Brisk_iOS.framework */,
+				A915B61BA11353854A4BE2B5 /* Pods_Brisk_iOSTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,9 +182,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 177A32F91F05C6CE0044D836 /* Build configuration list for PBXNativeTarget "Brisk iOS" */;
 			buildPhases = (
+				98199FAA7C4AB0D631311B1F /* [CP] Check Pods Manifest.lock */,
 				177A32D81F05C6CD0044D836 /* Sources */,
 				177A32D91F05C6CD0044D836 /* Frameworks */,
 				177A32DA1F05C6CD0044D836 /* Resources */,
+				6D39D65C6D7097C8C2F967E1 /* [CP] Embed Pods Frameworks */,
+				6904FF47985C14878ED9682F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -120,9 +202,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 177A32FC1F05C6CE0044D836 /* Build configuration list for PBXNativeTarget "Brisk iOSTests" */;
 			buildPhases = (
+				2404C3C4A378FCD910FA3C26 /* [CP] Check Pods Manifest.lock */,
 				177A32EC1F05C6CE0044D836 /* Sources */,
 				177A32ED1F05C6CE0044D836 /* Frameworks */,
 				177A32EE1F05C6CE0044D836 /* Resources */,
+				B4AE3CBEF4DB51005AB6A2EC /* [CP] Embed Pods Frameworks */,
+				FBD17EE5DFCE2A6491395184 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -177,9 +262,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1729939C1F06C2160015E94D /* LoginViewController.storyboard in Resources */,
 				177A32EA1F05C6CE0044D836 /* LaunchScreen.storyboard in Resources */,
 				177A32E71F05C6CE0044D836 /* Assets.xcassets in Resources */,
-				177A32E51F05C6CE0044D836 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,13 +277,111 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2404C3C4A378FCD910FA3C26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6904FF47985C14878ED9682F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brisk iOS/Pods-Brisk iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D39D65C6D7097C8C2F967E1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brisk iOS/Pods-Brisk iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98199FAA7C4AB0D631311B1F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B4AE3CBEF4DB51005AB6A2EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brisk iOSTests/Pods-Brisk iOSTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBD17EE5DFCE2A6491395184 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Brisk iOSTests/Pods-Brisk iOSTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		177A32D81F05C6CD0044D836 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				177A32E21F05C6CE0044D836 /* ViewController.swift in Sources */,
+				177A330C1F05CCCF0044D836 /* LoginViewController.swift in Sources */,
+				177A33061F05C77C0044D836 /* MenuView.swift in Sources */,
+				177A33021F05C7080044D836 /* LoginCoordinator.swift in Sources */,
+				177A33001F05C6FA0044D836 /* AppCoordinator.swift in Sources */,
 				177A32E01F05C6CE0044D836 /* AppDelegate.swift in Sources */,
+				177A33101F05CDE40044D836 /* Email.swift in Sources */,
+				177A33041F05C76D0044D836 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +404,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		177A32E31F05C6CE0044D836 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				177A32E41F05C6CE0044D836 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		177A32E81F05C6CE0044D836 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -345,11 +520,12 @@
 		};
 		177A32FA1F05C6CE0044D836 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F534FD145EF44018C445D92 /* Pods-Brisk iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "Brisk iOS/Info.plist";
+				INFOPLIST_FILE = "Brisk iOS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.florianbuerger.Brisk-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.florianbuerger.brisk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -358,11 +534,12 @@
 		};
 		177A32FB1F05C6CE0044D836 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F96D4C10C910CFF20F662254 /* Pods-Brisk iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = "Brisk iOS/Info.plist";
+				INFOPLIST_FILE = "Brisk iOS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.florianbuerger.Brisk-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = com.florianbuerger.brisk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -371,6 +548,7 @@
 		};
 		177A32FD1F05C6CE0044D836 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F00EE126AD949625F9371094 /* Pods-Brisk iOSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -386,6 +564,7 @@
 		};
 		177A32FE1F05C6CE0044D836 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93EBA6EB32449AB7DAF50130 /* Pods-Brisk iOSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -418,6 +597,7 @@
 				177A32FB1F05C6CE0044D836 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		177A32FC1F05C6CE0044D836 /* Build configuration list for PBXNativeTarget "Brisk iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +606,7 @@
 				177A32FE1F05C6CE0044D836 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

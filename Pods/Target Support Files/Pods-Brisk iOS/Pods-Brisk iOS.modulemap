@@ -1,0 +1,6 @@
+framework module Pods_Brisk_iOS {
+  umbrella header "Pods-Brisk iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}

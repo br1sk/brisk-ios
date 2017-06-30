@@ -1,0 +1,6 @@
+framework module InterfaceBacked {
+  umbrella header "InterfaceBacked-umbrella.h"
+
+  export *
+  module * { export * }
+}

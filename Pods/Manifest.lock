@@ -1,0 +1,15 @@
+PODS:
+  - InterfaceBacked (1.1.0)
+  - Sonar (3.0.0)
+
+DEPENDENCIES:
+  - InterfaceBacked
+  - Sonar
+
+SPEC CHECKSUMS:
+  InterfaceBacked: 789b5080793497f97bad8d0cd5b385bbcc8c4528
+  Sonar: 72afea99952a2a681d0a843ee6679b4eaf217ad5
+
+PODFILE CHECKSUM: 75fd4541c51b379c16eea47078e9318947968385
+
+COCOAPODS: 1.2.1

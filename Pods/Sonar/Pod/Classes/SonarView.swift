@@ -184,7 +184,7 @@ public class SonarView: UIView {
         return label
     }
 
-    func didSelectItem(sender: UIGestureRecognizer) {
+	@objc func didSelectItem(sender: UIGestureRecognizer) {
         if let itemView = sender.view as? SonarItemView {
             delegate?.sonarView(sonarView: self, didSelectObjectInWave: itemView.position.waveIndex, atIndex: itemView.position.itemIndex)
         }

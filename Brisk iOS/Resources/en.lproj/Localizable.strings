@@ -1,0 +1,36 @@
+
+
+// MARK: - Global
+
+"Global.Error" = "Error";
+"Global.Error.TryAgain" = "Try again";
+"Global.Success" = "Yay. Thanks for reporting!";
+"Global.Failed" = "Oh noh. That did not work.";
+
+
+// MARK: - Login
+
+"LoginError.InvalidEmail" = "The email you entered is not valid.";
+
+
+// MARK: - Radar
+
+"Radar.Product" = "Product";
+"Radar.Area" = "Area";
+"Radar.Version" = "Version";
+"Radar.Classification" = "Classification";
+"Radar.Reproducibility" = "Reproducibility";
+"Radar.Configuration" = "Configuration";
+"Radar.Title" = "Title";
+"Radar.Description" = "Description";
+"Radar.Description.Placeholder" = "Provide a detailed summary of your report";
+"Radar.Steps" = "Steps";
+"Radar.Steps.Placeholder" = "Provide step-by-step  instructions of how  to reproduce the problem (if possible)";
+"Radar.Expected" = "Expected";
+"Radar.Expected.Placeholder" = "Describe what you expected to happen  after completing  the steps above";
+"Radar.Actual" = "Actual";
+"Radar.Actual.Placeholder" = "Describe what actually happened after completing the steps above";
+"Radar.Notes" = "Notes";
+"Radar.Notes.Placeholder" = "Provide any additional information, such as references to related problems or workarounds";
+"Radar.Attachment" = "Attachment";
+"Radar.Attachment.NoAttachments" = "No attachments";

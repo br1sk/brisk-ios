@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -34,8 +35,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
                                         <connections>
+                                            <action selector="textFieldChanged" destination="eea-lb-CVI" eventType="editingChanged" id="YRV-sU-Uqj"/>
                                             <outlet property="delegate" destination="eea-lb-CVI" id="C0Y-fa-SbG"/>
                                         </connections>
                                     </textField>
@@ -45,6 +47,7 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                         <connections>
+                                            <action selector="textFieldChanged" destination="eea-lb-CVI" eventType="editingChanged" id="GLz-9B-3dc"/>
                                             <outlet property="delegate" destination="eea-lb-CVI" id="l5S-eW-LTy"/>
                                         </connections>
                                     </textField>
@@ -54,6 +57,9 @@
                                 <rect key="frame" x="166" y="226.5" width="42" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="submitTapped" destination="eea-lb-CVI" eventType="touchUpInside" id="nKf-ol-TFd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -73,6 +79,7 @@
                     <connections>
                         <outlet property="emailField" destination="DHf-4b-Qfy" id="q3A-5s-FZJ"/>
                         <outlet property="passwordField" destination="OpF-Nd-WtG" id="fbu-ox-JPO"/>
+                        <outlet property="submitButton" destination="DvE-Lh-783" id="mWQ-Ir-Gk5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRQ-p0-uZL" userLabel="First Responder" sceneMemberID="firstResponder"/>

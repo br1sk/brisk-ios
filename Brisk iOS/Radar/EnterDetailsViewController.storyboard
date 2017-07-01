@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="osc-i8-4ue">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Enter Details View Controller-->
+        <scene sceneID="ldD-kd-iGg">
+            <objects>
+                <viewController id="osc-i8-4ue" customClass="EnterDetailsViewController" customModule="Brisk_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rtd-8G-d2F"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lf5-Rp-1NC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iYW-es-lXc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="E8i-Qt-t6w">
+                                <rect key="frame" x="16" y="28" width="343" height="469"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="rect" keyPath="textContainerInset">
+                                        <rect key="value" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textContainer.lineFragmentPadding">
+                                        <integer key="value" value="0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E8i-Qt-t6w" firstAttribute="leading" secondItem="iYW-es-lXc" secondAttribute="leadingMargin" id="1VH-UM-qOY"/>
+                            <constraint firstItem="E8i-Qt-t6w" firstAttribute="top" secondItem="Rtd-8G-d2F" secondAttribute="bottom" constant="8" symbolic="YES" id="57W-t8-IJT"/>
+                            <constraint firstItem="Lf5-Rp-1NC" firstAttribute="top" secondItem="E8i-Qt-t6w" secondAttribute="bottom" constant="170" id="CE9-Nt-f3N"/>
+                            <constraint firstItem="E8i-Qt-t6w" firstAttribute="trailing" secondItem="iYW-es-lXc" secondAttribute="trailingMargin" id="Hlk-9W-EdH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textBottomSpaceConstraint" destination="CE9-Nt-f3N" id="HUc-D3-NnC"/>
+                        <outlet property="textView" destination="E8i-Qt-t6w" id="qmU-Xu-onm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MjV-GY-ACk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="260" y="29.23538230884558"/>
+        </scene>
+    </scenes>
+</document>

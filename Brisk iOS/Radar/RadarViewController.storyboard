@@ -17,15 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QAG-a5-Qhw">
-                            <rect key="frame" x="0.0" y="117.5" width="375" height="44"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="5kA-6K-bRD">
+                            <rect key="frame" x="0.0" y="117.5" width="375" height="64"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                            <state key="normal" title="Submit"/>
-                            <connections>
-                                <action selector="submitTapped" destination="dhr-2w-B0o" eventType="touchUpInside" id="wLW-hl-akQ"/>
-                            </connections>
-                        </button>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPB-DZ-gvZ">
+                                    <rect key="frame" x="162.5" y="8" width="49" height="30"/>
+                                    <state key="normal" title="Submit"/>
+                                    <connections>
+                                        <action selector="submitTapped" destination="dhr-2w-B0o" eventType="touchUpInside" id="grF-r7-M0N"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="HPB-DZ-gvZ" firstAttribute="top" secondItem="5kA-6K-bRD" secondAttribute="top" constant="8" id="5K8-J6-znV"/>
+                                <constraint firstItem="HPB-DZ-gvZ" firstAttribute="centerX" secondItem="5kA-6K-bRD" secondAttribute="centerX" id="APg-Tk-nV7"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="RWi-ii-ghE" detailTextLabel="OW8-rw-5Ow" style="IBUITableViewCellStyleValue1" id="bPq-AW-Agl">
                                 <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
@@ -66,6 +75,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="submitButton" destination="HPB-DZ-gvZ" id="ixA-DA-mOb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQ6-h2-9z2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

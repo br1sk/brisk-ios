@@ -22,9 +22,13 @@
 		177A33101F05CDE40044D836 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A330F1F05CDE40044D836 /* Email.swift */; };
 		17C1A7981F08323F004FD1EC /* StatusViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C1A7971F08323F004FD1EC /* StatusViewController.storyboard */; };
 		17C1A79A1F083248004FD1EC /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A7991F083248004FD1EC /* StatusViewController.swift */; };
+		17C1A79C1F084A12004FD1EC /* SingleChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */; };
+		17C1A79E1F084A22004FD1EC /* SingleChoiceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C1A79D1F084A22004FD1EC /* SingleChoiceViewController.storyboard */; };
+		17C1A7A01F084DEC004FD1EC /* RadarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A79F1F084DEC004FD1EC /* RadarCoordinator.swift */; };
+		17C1A7A21F085159004FD1EC /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A7A11F085159004FD1EC /* Choice.swift */; };
 		17D763291F082C5D00528D8F /* EnterDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D763281F082C5D00528D8F /* EnterDetailsViewController.storyboard */; };
 		17D7632B1F082C6700528D8F /* EnterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D7632A1F082C6700528D8F /* EnterDetailsViewController.swift */; };
-		17FE32281F081CD100410D7A /* String+Emptiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE32271F081CD100410D7A /* String+Emptiness.swift */; };
+		17FE32281F081CD100410D7A /* Emptiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE32271F081CD100410D7A /* Emptiness.swift */; };
 		17FE322A1F081E4F00410D7A /* LoginError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE32291F081E4F00410D7A /* LoginError.swift */; };
 		17FE322C1F081E6700410D7A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE322B1F081E6700410D7A /* User.swift */; };
 		17FE322F1F081EC000410D7A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17FE32311F081EC000410D7A /* Localizable.strings */; };
@@ -70,9 +74,13 @@
 		177A330F1F05CDE40044D836 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		17C1A7971F08323F004FD1EC /* StatusViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusViewController.storyboard; sourceTree = "<group>"; };
 		17C1A7991F083248004FD1EC /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceTableViewController.swift; sourceTree = "<group>"; };
+		17C1A79D1F084A22004FD1EC /* SingleChoiceViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SingleChoiceViewController.storyboard; sourceTree = "<group>"; };
+		17C1A79F1F084DEC004FD1EC /* RadarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarCoordinator.swift; sourceTree = "<group>"; };
+		17C1A7A11F085159004FD1EC /* Choice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
 		17D763281F082C5D00528D8F /* EnterDetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EnterDetailsViewController.storyboard; sourceTree = "<group>"; };
 		17D7632A1F082C6700528D8F /* EnterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDetailsViewController.swift; sourceTree = "<group>"; };
-		17FE32271F081CD100410D7A /* String+Emptiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Emptiness.swift"; sourceTree = "<group>"; };
+		17FE32271F081CD100410D7A /* Emptiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emptiness.swift; sourceTree = "<group>"; };
 		17FE32291F081E4F00410D7A /* LoginError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginError.swift; sourceTree = "<group>"; };
 		17FE322B1F081E6700410D7A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		17FE32301F081EC000410D7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -149,7 +157,7 @@
 				177A33091F05CB5A0044D836 /* App */,
 				177A33081F05CB560044D836 /* Login */,
 				177A33071F05CB4D0044D836 /* Menu */,
-				17FE32271F081CD100410D7A /* String+Emptiness.swift */,
+				17FE32271F081CD100410D7A /* Emptiness.swift */,
 			);
 			path = "Brisk iOS";
 			sourceTree = "<group>";
@@ -213,6 +221,7 @@
 				17FE32351F08221200410D7A /* Radar+OpenRadar.swift */,
 				17FE32381F08223B00410D7A /* Dictionary+Validation.swift */,
 				17FE323A1F08228800410D7A /* OpenRadar.swift */,
+				17C1A7A11F085159004FD1EC /* Choice.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,8 +233,11 @@
 				17D7632A1F082C6700528D8F /* EnterDetailsViewController.swift */,
 				17FE32411F08242200410D7A /* RadarViewController.storyboard */,
 				17FE323F1F0823E700410D7A /* RadarViewController.swift */,
+				17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */,
+				17C1A79D1F084A22004FD1EC /* SingleChoiceViewController.storyboard */,
 				17C1A7971F08323F004FD1EC /* StatusViewController.storyboard */,
 				17C1A7991F083248004FD1EC /* StatusViewController.swift */,
+				17C1A79F1F084DEC004FD1EC /* RadarCoordinator.swift */,
 			);
 			path = Radar;
 			sourceTree = "<group>";
@@ -337,6 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17C1A79E1F084A22004FD1EC /* SingleChoiceViewController.storyboard in Resources */,
 				17C1A7981F08323F004FD1EC /* StatusViewController.storyboard in Resources */,
 				1729939E1F06C4BB0015E94D /* MenuViewController.storyboard in Resources */,
 				17FE32421F08242200410D7A /* RadarViewController.storyboard in Resources */,
@@ -462,16 +475,19 @@
 				17FE323B1F08228800410D7A /* OpenRadar.swift in Sources */,
 				177A33021F05C7080044D836 /* LoginCoordinator.swift in Sources */,
 				177A33001F05C6FA0044D836 /* AppCoordinator.swift in Sources */,
-				17FE32281F081CD100410D7A /* String+Emptiness.swift in Sources */,
+				17FE32281F081CD100410D7A /* Emptiness.swift in Sources */,
 				17FE32361F08221200410D7A /* Radar+OpenRadar.swift in Sources */,
 				17FE32391F08223B00410D7A /* Dictionary+Validation.swift in Sources */,
+				17C1A7A21F085159004FD1EC /* Choice.swift in Sources */,
 				177A32E01F05C6CE0044D836 /* AppDelegate.swift in Sources */,
 				172993A41F06CD510015E94D /* DupeViewController.swift in Sources */,
+				17C1A7A01F084DEC004FD1EC /* RadarCoordinator.swift in Sources */,
 				177A33101F05CDE40044D836 /* Email.swift in Sources */,
 				177A33041F05C76D0044D836 /* MenuViewController.swift in Sources */,
 				17FE322C1F081E6700410D7A /* User.swift in Sources */,
 				17FE32401F0823E700410D7A /* RadarViewController.swift in Sources */,
 				17FE323D1F0822AE00410D7A /* String+Extension.swift in Sources */,
+				17C1A79C1F084A12004FD1EC /* SingleChoiceTableViewController.swift in Sources */,
 				17FE322A1F081E4F00410D7A /* LoginError.swift in Sources */,
 				17C1A79A1F083248004FD1EC /* StatusViewController.swift in Sources */,
 			);

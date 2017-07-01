@@ -6,3 +6,10 @@ extension String {
 		return !isEmpty
 	}
 }
+
+extension Array {
+
+	var isNotEmpty: Bool {
+		return !isEmpty
+	}
+}

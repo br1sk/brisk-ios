@@ -18,6 +18,7 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 	var prefilledContent: String = ""
 	var placeholder: String?
 
+	
 	// MARK: - UIViewController Methods
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -51,6 +52,9 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 		}
 	}
 }
+
+
+// MARK: - UITextViewDelegate Methods
 
 extension EnterDetailsViewController: UITextViewDelegate {
 

@@ -6,6 +6,8 @@
 "Global.Error.TryAgain" = "Try again";
 "Global.Success" = "Yay. Thanks for reporting!";
 "Global.Failed" = "Oh noh. That did not work.";
+"Global.Required" = "Required";
+"Global.Optional" = "Optional";
 
 
 // MARK: - Login

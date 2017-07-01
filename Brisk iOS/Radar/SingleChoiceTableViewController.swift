@@ -1,16 +1,21 @@
 import UIKit
 import InterfaceBacked
+import Sonar
 
 protocol SingleChoiceDelegate: class {
-	func controller(_ controller: SingleChoiceViewController, didSelect choice: Choice)
+	#if swift(>=4.0)
+	Change this to use keypaths instead
+	#endif
+	func controller(_ controller: SingleChoiceViewController, didUpdateRadar: Radar)
 }
 
-final class SingleChoiceViewController: UITableViewController, StoryboardBacked {
+final class SingleChoiceViewController<T: Choice>: UITableViewController, StoryboardBacked {
 
 
 	// MARK: - Properties
-	var selected: Choice?
-	var all: [Choice]?
+	var selected: T?
+	var all: [T]?
+	var radar: Radar?
 	weak var delegate: SingleChoiceDelegate?
 
 
@@ -48,6 +53,11 @@ final class SingleChoiceViewController: UITableViewController, StoryboardBacked 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		guard let all = self.all else { return }
 		let choice = all[indexPath.row]
+
+
+
 		delegate?.controller(self, didSelect: choice)
 	}
+
+
 }

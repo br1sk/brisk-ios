@@ -1,6 +1,10 @@
 import UIKit
 import InterfaceBacked
 
+protocol EnterDetailsDelegate: class {
+	func controller(_ controller: EnterDetailsViewController, didEnter content: String)
+}
+
 final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 
 
@@ -15,22 +19,26 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 
 	@IBOutlet weak var textView: UITextView!
 	@IBOutlet weak var textBottomSpaceConstraint: NSLayoutConstraint!
-	var prefilledContent: String = ""
-	var placeholder: String?
-
+	var prefilledContent = ""
+	var placeholder = ""
+	var keypath = ""
+	weak var delegate: EnterDetailsDelegate?
 	
 	// MARK: - UIViewController Methods
 
 	override func viewWillAppear(_ animated: Bool) {
 		textView.becomeFirstResponder()
 
-		if let placeholder = self.placeholder, placeholder.isNotEmpty {
-			textView.text = placeholder
-			textView.textColor = UIColor.lightGray
+		if placeholder.isNotEmpty {
+			applyStyling(.placeholder)
 		} else {
-			textView.text = prefilledContent
-			textView.textColor = UIColor.darkText
+			applyStyling(.normal)
 		}
+	}
+
+
+	override func viewWillDisappear(_ animated: Bool) {
+		delegate?.controller(self, didEnter: textView.text ?? "")
 	}
 
 

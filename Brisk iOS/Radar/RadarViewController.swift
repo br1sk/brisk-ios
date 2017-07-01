@@ -3,8 +3,21 @@ import InterfaceBacked
 import Sonar
 
 protocol RadarViewDelegate: class {
-	func controller(_ controller: RadarViewController, didSelectChoice choice: Choice, ofAll choices: [Choice], title: String)
-	func controller(_ controller: RadarViewController, didSelectProperty property: String, with value: String, placeholder: String?)
+	func controllerDidSelectProduct(_ controller: RadarViewController)
+	func controllerDidSelectArea(_ controller: RadarViewController)
+	func controllerDidSelectVersion(_ controller: RadarViewController)
+	func controllerDidSelectClassification(_ controller: RadarViewController)
+	func controllerDidSelectReproducibility(_ controller: RadarViewController)
+	func controllerDidSelectConfiguration(_ controller: RadarViewController)
+
+	func controllerDidSelectTitle(_ controller: RadarViewController)
+	func controllerDidSelectDescription(_ controller: RadarViewController)
+	func controllerDidSelectSteps(_ controller: RadarViewController)
+	func controllerDidSelectExpected(_ controller: RadarViewController)
+	func controllerDidSelectActual(_ controller: RadarViewController)
+	func controllerDidSelectNotes(_ controller: RadarViewController)
+	func controllerDidSelectAttachments(_ controller: RadarViewController)
+
 	func controllerDidSubmit(_ controller: RadarViewController)
 }
 
@@ -19,19 +32,11 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 		// TODO: Determine required form fields
 		return true
 	}
-	var product = Product.iOS
-	var area = Area.areas(for: .iOS).first!
-	var version = ""
-	var classification = Classification.Security
-	var reproducibility = Reproducibility.Always
-	var configuration = ""
-	var radarTitle = ""
-	var radarDescription = ""
-	var steps = ""
-	var expected = ""
-	var actual = ""
-	var notes = ""
-	var attachments = [Attachment]()
+	var radar: EditableRadar? {
+		didSet {
+			tableView.reloadData()
+		}
+	}
 
 
 	// MARK: - User Actions
@@ -53,8 +58,7 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 	}
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") else { preconditionFailure() }
-
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell"), let radar = self.radar else { preconditionFailure() }
 		var left = ""
 		var right = ""
 		var rightPlaceholder: String?
@@ -64,22 +68,22 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 			switch indexPath.row {
 			case 0:
 				left = NSLocalizedString("Radar.Product", comment: "")
-				right = product.name
+				right = radar.product.name
 			case 1:
 				left = NSLocalizedString("Radar.Area", comment: "")
-				right = area.name
+				right = radar.area?.name ?? ""
 			case 2:
 				left = NSLocalizedString("Radar.Version", comment: "")
-				right = version
+				right = radar.version
 			case 3:
 				left = NSLocalizedString("Radar.Classification", comment: "")
-				right = classification.name
+				right = radar.classification.name
 			case 4:
 				left = NSLocalizedString("Radar.Reproducibility", comment: "")
-				right = reproducibility.name
+				right = radar.reproducibility.name
 			case 5:
 				left = NSLocalizedString("Radar.Configuration", comment: "")
-				right = configuration
+				right = radar.configuration
 				rightPlaceholder = NSLocalizedString("Global.Optional", comment: "")
 			default: break
 			}
@@ -87,27 +91,27 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 			switch indexPath.row {
 			case 0:
 				left = NSLocalizedString("Radar.Title", comment: "")
-				right = radarTitle
+				right = radar.title
 				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
 			case 1:
 				left = NSLocalizedString("Radar.Description", comment: "")
-				right = radarDescription
+				right = radar.description
 				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
 			case 2:
 				left = NSLocalizedString("Radar.Steps", comment: "")
-				right = steps
+				right = radar.steps
 				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
 			case 3:
 				left = NSLocalizedString("Radar.Expected", comment: "")
-				right = expected
+				right = radar.expected
 				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
 			case 4:
 				left = NSLocalizedString("Radar.Actual", comment: "")
-				right = actual
+				right = radar.actual
 				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
 			case 5:
 				left = NSLocalizedString("Radar.Notes", comment: "")
-				right = notes
+				right = radar.notes
 				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
 			default: break
 			}
@@ -131,32 +135,33 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let cell = tableView.cellForRow(at: indexPath)
-		guard let text = cell?.textLabel?.text else { return }
 		switch indexPath.section {
 		case 0:
 			switch indexPath.row {
-			case 0: delegate?.controller(self, didSelectChoice: product, ofAll: Product.All, title: text)
-			case 1: delegate?.controller(self, didSelectChoice: area, ofAll: Area.areas(for: product), title: text)
-			case 2: delegate?.controller(self, didSelectProperty: text, with: version, placeholder: nil)
-			case 3: delegate?.controller(self, didSelectChoice: classification, ofAll: Classification.All, title: text)
-			case 4: delegate?.controller(self, didSelectChoice: reproducibility, ofAll: Reproducibility.All, title: text)
-			case 5: delegate?.controller(self, didSelectProperty: NSLocalizedString("Radar.Configuration", comment: ""), with: configuration, placeholder: NSLocalizedString("Global.Optiona", comment: ""))
+			case 0: delegate?.controllerDidSelectProduct(self)
+			case 1: delegate?.controllerDidSelectArea(self)
+			case 2: delegate?.controllerDidSelectVersion(self)
+			case 3: delegate?.controllerDidSelectClassification(self)
+			case 4: delegate?.controllerDidSelectReproducibility(self)
+			case 5: delegate?.controllerDidSelectConfiguration(self)
 			default: break
 			}
 		case 1:
 			switch indexPath.row {
-			case 0: delegate?.controller(self, didSelectProperty: text, with: radarTitle, placeholder: nil)
-			case 1: delegate?.controller(self, didSelectProperty: text, with: radarDescription, placeholder: NSLocalizedString("Radar.Description.Placeholder", comment: ""))
-			case 2: delegate?.controller(self, didSelectProperty: text, with: steps, placeholder: NSLocalizedString("Radar.Steps.Placeholder", comment: ""))
-			case 3: delegate?.controller(self, didSelectProperty: text, with: expected, placeholder: NSLocalizedString("Radar.Expected.Placeholder", comment: ""))
-			case 4: delegate?.controller(self, didSelectProperty: text, with: actual, placeholder: NSLocalizedString("Radar.Actual.Placeholder", comment: ""))
-			case 5: delegate?.controller(self, didSelectProperty: text, with: notes, placeholder: NSLocalizedString("Radar.Notes.Placeholder", comment: ""))
+			case 0: delegate?.controllerDidSelectTitle(self)
+			case 1: delegate?.controllerDidSelectDescription(self)
+			case 2: delegate?.controllerDidSelectSteps(self)
+			case 3: delegate?.controllerDidSelectExpected(self)
+			case 4: delegate?.controllerDidSelectActual(self)
+			case 5: delegate?.controllerDidSelectNotes(self)
 			default: break
 			}
+		case 2:
+			delegate?.controllerDidSelectAttachments(self)
 		default:
 			break
 		}
+
 	}
 
 

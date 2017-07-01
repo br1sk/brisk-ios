@@ -1,34 +1,28 @@
 import UIKit
+import InterfaceBacked
 
 protocol MenuViewDelegate: class {
 	func dupeTapped()
 	func fileTapped()
 }
 
-final class MenuViewController: UIViewController {
+final class MenuViewController: UIViewController, StoryboardBacked {
 
 
 	// MARK: - Properties
 
 	weak var delegate: MenuViewDelegate?
 
+
 	// MARK: - UIViewController Methods
-
-	override func loadView() {
-		let view = MenuView()
-		view.dupeButton.addTarget(self, action: #selector(MenuViewController.dupeButtonTapped), for: .primaryActionTriggered)
-		view.fileButton.addTarget(self, action: #selector(MenuViewController.fileButtonTapped), for: .primaryActionTriggered)
-		self.view = view
-	}
-
 
 	// MARK: - User Actions
 
-	@objc func dupeButtonTapped() {
+	@IBAction func dupeButtonTapped() {
 		delegate?.dupeTapped()
 	}
 
-	@objc func fileButtonTapped() {
+	@IBAction func fileButtonTapped() {
 		delegate?.fileTapped()
 	}
 }

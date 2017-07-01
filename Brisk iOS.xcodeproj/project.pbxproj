@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1729939C1F06C2160015E94D /* LoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1729939B1F06C2160015E94D /* LoginViewController.storyboard */; };
+		1729939E1F06C4BB0015E94D /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1729939D1F06C4BB0015E94D /* MenuViewController.storyboard */; };
+		172993A21F06CD450015E94D /* DupeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172993A11F06CD450015E94D /* DupeViewController.storyboard */; };
+		172993A41F06CD510015E94D /* DupeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172993A31F06CD510015E94D /* DupeViewController.swift */; };
 		177A32E01F05C6CE0044D836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A32DF1F05C6CE0044D836 /* AppDelegate.swift */; };
 		177A32E71F05C6CE0044D836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177A32E61F05C6CE0044D836 /* Assets.xcassets */; };
 		177A32EA1F05C6CE0044D836 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177A32E81F05C6CE0044D836 /* LaunchScreen.storyboard */; };
@@ -15,7 +18,6 @@
 		177A33001F05C6FA0044D836 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A32FF1F05C6FA0044D836 /* AppCoordinator.swift */; };
 		177A33021F05C7080044D836 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A33011F05C7080044D836 /* LoginCoordinator.swift */; };
 		177A33041F05C76D0044D836 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A33031F05C76D0044D836 /* MenuViewController.swift */; };
-		177A33061F05C77C0044D836 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A33051F05C77C0044D836 /* MenuView.swift */; };
 		177A330C1F05CCCF0044D836 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A330B1F05CCCF0044D836 /* LoginViewController.swift */; };
 		177A33101F05CDE40044D836 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A330F1F05CDE40044D836 /* Email.swift */; };
 		4F99F8269819ADC732093605 /* Pods_Brisk_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A915B61BA11353854A4BE2B5 /* Pods_Brisk_iOSTests.framework */; };
@@ -35,6 +37,9 @@
 /* Begin PBXFileReference section */
 		0C52D9F97E0E2AAFF61975C9 /* Pods_Brisk_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Brisk_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1729939B1F06C2160015E94D /* LoginViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginViewController.storyboard; sourceTree = "<group>"; };
+		1729939D1F06C4BB0015E94D /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
+		172993A11F06CD450015E94D /* DupeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DupeViewController.storyboard; sourceTree = "<group>"; };
+		172993A31F06CD510015E94D /* DupeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DupeViewController.swift; sourceTree = "<group>"; };
 		177A32DC1F05C6CD0044D836 /* Brisk iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brisk iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177A32DF1F05C6CE0044D836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		177A32E61F05C6CE0044D836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,7 +51,6 @@
 		177A32FF1F05C6FA0044D836 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		177A33011F05C7080044D836 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		177A33031F05C76D0044D836 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		177A33051F05C77C0044D836 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		177A330B1F05CCCF0044D836 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		177A330F1F05CDE40044D836 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
 		8F534FD145EF44018C445D92 /* Pods-Brisk iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Brisk iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Brisk iOS/Pods-Brisk iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		172993A01F06CD3C0015E94D /* Dupe */ = {
+			isa = PBXGroup;
+			children = (
+				172993A11F06CD450015E94D /* DupeViewController.storyboard */,
+				172993A31F06CD510015E94D /* DupeViewController.swift */,
+			);
+			path = Dupe;
+			sourceTree = "<group>";
+		};
 		177A32D31F05C6CD0044D836 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +112,7 @@
 		177A32DE1F05C6CD0044D836 /* Brisk iOS */ = {
 			isa = PBXGroup;
 			children = (
+				172993A01F06CD3C0015E94D /* Dupe */,
 				177A330A1F05CB600044D836 /* Resources */,
 				177A33091F05CB5A0044D836 /* App */,
 				177A33081F05CB560044D836 /* Login */,
@@ -119,7 +133,7 @@
 		177A33071F05CB4D0044D836 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				177A33051F05C77C0044D836 /* MenuView.swift */,
+				1729939D1F06C4BB0015E94D /* MenuViewController.storyboard */,
 				177A33031F05C76D0044D836 /* MenuViewController.swift */,
 			);
 			path = Menu;
@@ -262,8 +276,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1729939E1F06C4BB0015E94D /* MenuViewController.storyboard in Resources */,
 				1729939C1F06C2160015E94D /* LoginViewController.storyboard in Resources */,
 				177A32EA1F05C6CE0044D836 /* LaunchScreen.storyboard in Resources */,
+				172993A21F06CD450015E94D /* DupeViewController.storyboard in Resources */,
 				177A32E71F05C6CE0044D836 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,10 +392,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				177A330C1F05CCCF0044D836 /* LoginViewController.swift in Sources */,
-				177A33061F05C77C0044D836 /* MenuView.swift in Sources */,
 				177A33021F05C7080044D836 /* LoginCoordinator.swift in Sources */,
 				177A33001F05C6FA0044D836 /* AppCoordinator.swift in Sources */,
 				177A32E01F05C6CE0044D836 /* AppDelegate.swift in Sources */,
+				172993A41F06CD510015E94D /* DupeViewController.swift in Sources */,
 				177A33101F05CDE40044D836 /* Email.swift in Sources */,
 				177A33041F05C76D0044D836 /* MenuViewController.swift in Sources */,
 			);
@@ -523,6 +539,7 @@
 			baseConfigurationReference = 8F534FD145EF44018C445D92 /* Pods-Brisk iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U3GJUEG8RJ;
 				INFOPLIST_FILE = "Brisk iOS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.florianbuerger.brisk;
@@ -537,6 +554,7 @@
 			baseConfigurationReference = F96D4C10C910CFF20F662254 /* Pods-Brisk iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U3GJUEG8RJ;
 				INFOPLIST_FILE = "Brisk iOS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.florianbuerger.brisk;

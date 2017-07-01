@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View Controller-->
+        <!--Welcome-->
         <scene sceneID="UcC-nE-sLc">
             <objects>
-                <viewController id="eea-lb-CVI" customClass="LoginViewController" customModule="Brisk_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Welcome" id="eea-lb-CVI" customClass="LoginViewController" customModule="Brisk_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tu3-ck-BeD"/>
                         <viewControllerLayoutGuide type="bottom" id="HsP-Cc-U5Q"/>
@@ -22,30 +22,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login with your AppleID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xer-mJ-NW0">
-                                <rect key="frame" x="16" y="28" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="100" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ITn-Vd-vL6">
-                                <rect key="frame" x="16" y="80.5" width="343" height="58"/>
+                                <rect key="frame" x="16" y="152.5" width="343" height="58"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DHf-4b-Qfy">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DHf-4b-Qfy">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="eea-lb-CVI" id="C0Y-fa-SbG"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OpF-Nd-WtG">
                                         <rect key="frame" x="0.0" y="37" width="343" height="21"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="go" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="eea-lb-CVI" id="l5S-eW-LTy"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DvE-Lh-783">
-                                <rect key="frame" x="166" y="154.5" width="42" height="33"/>
+                                <rect key="frame" x="166" y="226.5" width="42" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Login"/>
                             </button>
@@ -55,7 +61,7 @@
                             <constraint firstItem="ITn-Vd-vL6" firstAttribute="top" secondItem="xer-mJ-NW0" secondAttribute="bottom" constant="32" id="3xb-G0-QyR"/>
                             <constraint firstItem="ITn-Vd-vL6" firstAttribute="trailing" secondItem="M2S-IP-xub" secondAttribute="trailingMargin" id="4Qd-qV-Inv"/>
                             <constraint firstItem="ITn-Vd-vL6" firstAttribute="leading" secondItem="M2S-IP-xub" secondAttribute="leadingMargin" id="GMz-7o-x8o"/>
-                            <constraint firstItem="xer-mJ-NW0" firstAttribute="top" secondItem="Tu3-ck-BeD" secondAttribute="bottom" constant="8" symbolic="YES" id="VSH-5G-3Fa"/>
+                            <constraint firstItem="xer-mJ-NW0" firstAttribute="top" secondItem="Tu3-ck-BeD" secondAttribute="bottom" constant="80" id="VSH-5G-3Fa"/>
                             <constraint firstItem="DvE-Lh-783" firstAttribute="centerX" secondItem="M2S-IP-xub" secondAttribute="centerX" id="axf-Dd-I60"/>
                             <constraint firstItem="ITn-Vd-vL6" firstAttribute="leading" secondItem="M2S-IP-xub" secondAttribute="leadingMargin" id="dsC-fW-dga"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ITn-Vd-vL6" secondAttribute="trailing" id="n7h-qw-2ae"/>
@@ -64,6 +70,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="xer-mJ-NW0" secondAttribute="trailing" id="y7U-Y1-ff8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="DHf-4b-Qfy" id="q3A-5s-FZJ"/>
+                        <outlet property="passwordField" destination="OpF-Nd-WtG" id="fbu-ox-JPO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QRQ-p0-uZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

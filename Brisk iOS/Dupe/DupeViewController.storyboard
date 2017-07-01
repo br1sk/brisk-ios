@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bzv-3H-aA2">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dupe a Radar-->
+        <scene sceneID="AOG-BT-GWi">
+            <objects>
+                <viewController title="Dupe a Radar" id="bzv-3H-aA2" customClass="DupeViewController" customModule="Brisk_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WDi-zx-38q"/>
+                        <viewControllerLayoutGuide type="bottom" id="0ON-c6-U4f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eUo-aV-igx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the original radar number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdj-Nx-fFY">
+                                <rect key="frame" x="16" y="100" width="249" height="20.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. 452145415" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="oCc-DB-0Kv">
+                                <rect key="frame" x="16" y="144" width="343" height="21"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bzv-3H-aA2" id="0mb-zZ-Lb4"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcv-A2-Kdr">
+                                <rect key="frame" x="163" y="189" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitTapped" destination="bzv-3H-aA2" eventType="touchUpInside" id="gTF-KG-frh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Lcv-A2-Kdr" firstAttribute="centerX" secondItem="eUo-aV-igx" secondAttribute="centerX" id="0OV-aU-XbR"/>
+                            <constraint firstItem="oCc-DB-0Kv" firstAttribute="leading" secondItem="eUo-aV-igx" secondAttribute="leadingMargin" id="4Pq-t9-2Vy"/>
+                            <constraint firstItem="oCc-DB-0Kv" firstAttribute="top" secondItem="Cdj-Nx-fFY" secondAttribute="bottom" constant="24" id="X8X-yg-hUe"/>
+                            <constraint firstItem="Lcv-A2-Kdr" firstAttribute="top" secondItem="oCc-DB-0Kv" secondAttribute="bottom" constant="24" id="cH9-u1-qva"/>
+                            <constraint firstItem="Cdj-Nx-fFY" firstAttribute="leading" secondItem="eUo-aV-igx" secondAttribute="leadingMargin" id="fhv-jK-sBz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oCc-DB-0Kv" secondAttribute="trailing" id="hWL-ae-a24"/>
+                            <constraint firstItem="Cdj-Nx-fFY" firstAttribute="top" secondItem="WDi-zx-38q" secondAttribute="bottom" constant="80" id="zSu-51-NiY"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Dupe a Radar" id="rzn-ra-RrF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="253-nt-dr7">
+                            <connections>
+                                <action selector="cancelTapped" destination="bzv-3H-aA2" id="NpN-9v-9fY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="numberField" destination="oCc-DB-0Kv" id="Xp3-ON-2h1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iVi-41-BYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="144.80000000000001" y="95.802098950524751"/>
+        </scene>
+    </scenes>
+</document>

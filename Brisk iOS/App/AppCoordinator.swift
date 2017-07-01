@@ -1,4 +1,5 @@
 import UIKit
+import InterfaceBacked
 
 final class AppCoordinator {
 
@@ -12,7 +13,7 @@ final class AppCoordinator {
 
 	func start() -> UIWindow {
 
-		let menu = MenuViewController()
+		let menu = MenuViewController.newFromStoryboard()
 		menu.delegate = self
 
 		let nav = UINavigationController(rootViewController: menu)
@@ -22,7 +23,7 @@ final class AppCoordinator {
 		window.rootViewController = nav
 		window.makeKeyAndVisible()
 
-		DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
 			self.startLoginIfRequired()
 		}
 
@@ -30,9 +31,24 @@ final class AppCoordinator {
 	}
 
 
+	// MARK: - Navigation
+
+	private func showDupe() {
+		let controller = DupeViewController.newFromStoryboard()
+		controller.delegate = self
+		let container = UINavigationController(rootViewController: controller)
+		root?.present(container, animated: true, completion: nil)
+	}
+
+	private func showFile() {
+
+	}
+
+
 	// MARK: - Private
 
 	private func startLoginIfRequired() {
+		// TODO: If log in required
 		guard let root = self.root else { preconditionFailure() }
 		let coordinator = LoginCoordinator(from: root)
 		coordinator.start()
@@ -46,10 +62,23 @@ final class AppCoordinator {
 extension AppCoordinator: MenuViewDelegate {
 
 	func dupeTapped() {
-		print(#function)
+		showDupe()
 	}
 
 	func fileTapped() {
-		print(#function)
+		showFile()
+	}
+}
+
+// MARK: - DupeViewDelegate Methods
+
+extension AppCoordinator: DupeViewDelegate {
+
+	func controllerDidCancel(_ controller: DupeViewController) {
+		root?.dismiss(animated: true, completion: nil)
+	}
+
+	func controller(_ controller: DupeViewController, didSubmit number: String) {
+		print("Did submit number \(number)")
 	}
 }

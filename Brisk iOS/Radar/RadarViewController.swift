@@ -93,38 +93,39 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 				rightPlaceholder = NSLocalizedString("Global.Optional", comment: "")
 			default: break
 			}
-//		case 1:
-//			switch indexPath.row {
-//			case 0:
-//				left = NSLocalizedString("Radar.Title", comment: "")
-//				right = radar.title
-//				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-//			case 1:
-//				left = NSLocalizedString("Radar.Description", comment: "")
-//				right = radar.description
-//				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-//			case 2:
-//				left = NSLocalizedString("Radar.Steps", comment: "")
-//				right = radar.steps
-//				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-//			case 3:
-//				left = NSLocalizedString("Radar.Expected", comment: "")
-//				right = radar.expected
-//				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-//			case 4:
-//				left = NSLocalizedString("Radar.Actual", comment: "")
-//				right = radar.actual
-//				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-//			case 5:
-//				left = NSLocalizedString("Radar.Notes", comment: "")
-//				right = radar.notes
-//				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-//			default: break
-//			}
-//		case 2:
-//			left = NSLocalizedString("Radar.Attachment", comment: "")
-//			right = "No attachments"
-//
+		case 1:
+			switch indexPath.row {
+			case 0:
+				left = NSLocalizedString("Radar.Title", comment: "")
+				right = radar.title
+				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
+			case 1:
+				left = NSLocalizedString("Radar.Description", comment: "")
+				right = radar.description
+				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
+			case 2:
+				left = NSLocalizedString("Radar.Steps", comment: "")
+				right = radar.steps
+				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
+			case 3:
+				left = NSLocalizedString("Radar.Expected", comment: "")
+				right = radar.expected
+				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
+			case 4:
+				left = NSLocalizedString("Radar.Actual", comment: "")
+				right = radar.actual
+				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
+			case 5:
+				left = NSLocalizedString("Radar.Notes", comment: "")
+				right = radar.notes
+				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
+			default: break
+			}
+		case 2:
+			left = NSLocalizedString("Radar.Attachment", comment: "")
+			right = "No attachments"
+			selectable = false // not implemented yet
+
 		default: break
 		}
 

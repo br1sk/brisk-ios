@@ -68,25 +68,16 @@ final class RadarCoordinator {
 		root.show(singleChoice, sender: self)
 	}
 
-	fileprivate func showEnterDetails(forKeypath keypath: String, content: String, placeholder: String = "", title: String) {
-		editingKeypath = keypath
-		let details = EnterDetailsViewController.newFromStoryboard()
-		details.title = title
-		details.prefilledContent = content
-		details.placeholder = placeholder
-		root.pushViewController(details, animated: true)
+	fileprivate func showEnterDetails(title: String, content: String, placeholder: String, onDisappear: @escaping (String) -> Void) {
+		let enterDetails = EnterDetailsViewController.newFromStoryboard()
+		enterDetails.prefilledContent = content
+		enterDetails.placeholder = placeholder
+		enterDetails.title = title
+		enterDetails.onDisappear = onDisappear
+		root.show(enterDetails, sender: self)
 	}
 }
 
-
-// MARK: - EnterDetailsDelegate Methods
-
-
-extension RadarCoordinator: EnterDetailsDelegate {
-
-	func controller(_ controller: EnterDetailsViewController, didEnter content: String) {
-	}
-}
 
 // MARK: - RadarViewDelegate Methods
 
@@ -108,6 +99,9 @@ extension RadarCoordinator: RadarViewDelegate {
 	}
 
 	func controllerDidSelectVersion(_ controller: RadarViewController) {
+		showEnterDetails(title: NSLocalizedString("Radar.Version", comment: ""), content: radar.version, placeholder: "") { [unowned self] (text) in
+			self.radar.version = text
+		}
 	}
 
 	func controllerDidSelectClassification(_ controller: RadarViewController) {
@@ -123,24 +117,55 @@ extension RadarCoordinator: RadarViewDelegate {
 	}
 
 	func controllerDidSelectConfiguration(_ controller: RadarViewController) {
+		showEnterDetails(title: NSLocalizedString("Radar.Configuration", comment: ""), content: radar.configuration, placeholder: "") { [unowned self] (text) in
+			self.radar.configuration = text
+		}
 	}
 
 	func controllerDidSelectTitle(_ controller: RadarViewController) {
+		showEnterDetails(title: NSLocalizedString("Radar.Title", comment: ""), content: radar.title, placeholder: "") { [unowned self] (text) in
+			self.radar.title = text
+		}
 	}
 
 	func controllerDidSelectDescription(_ controller: RadarViewController) {
+		showEnterDetails(title: NSLocalizedString("Radar.Description", comment: ""),
+		                 content: radar.description,
+		                 placeholder: NSLocalizedString("Radar.Description.Placeholder", comment: "")) { [unowned self] (text) in
+			self.radar.description = text
+		}
 	}
 
 	func controllerDidSelectSteps(_ controller: RadarViewController) {
+		showEnterDetails(title: NSLocalizedString("Radar.Steps", comment: ""),
+		                 content: radar.steps,
+		                 placeholder: NSLocalizedString("Radar.Steps.Placeholder", comment: "")) { [unowned self] (text) in
+							self.radar.steps = text
+		}
 	}
 
 	func controllerDidSelectExpected(_ controller: RadarViewController) {
+		showEnterDetails(title: NSLocalizedString("Radar.Expected", comment: ""),
+		                 content: radar.expected,
+		                 placeholder: NSLocalizedString("Radar.Expected.Placeholder", comment: "")) { [unowned self] (text) in
+							self.radar.expected = text
+		}
 	}
 
 	func controllerDidSelectActual(_ controller: RadarViewController) {
+		showEnterDetails(title: NSLocalizedString("Radar.Actual", comment: ""),
+		                 content: radar.actual,
+		                 placeholder: NSLocalizedString("Radar.Actual.Placeholder", comment: "")) { [unowned self] (text) in
+							self.radar.actual = text
+		}
 	}
 
 	func controllerDidSelectNotes(_ controller: RadarViewController) {
+		showEnterDetails(title: NSLocalizedString("Radar.Notes", comment: ""),
+		                 content: radar.notes,
+		                 placeholder: NSLocalizedString("Radar.Notes.Placeholder", comment: "")) { [unowned self] (text) in
+							self.radar.notes = text
+		}
 	}
 
 	func controllerDidSelectAttachments(_ controller: RadarViewController) {

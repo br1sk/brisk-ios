@@ -229,12 +229,12 @@
 			children = (
 				17D763281F082C5D00528D8F /* EnterDetailsViewController.storyboard */,
 				17D7632A1F082C6700528D8F /* EnterDetailsViewController.swift */,
+				17C1A79F1F084DEC004FD1EC /* RadarCoordinator.swift */,
 				17FE32411F08242200410D7A /* RadarViewController.storyboard */,
 				17FE323F1F0823E700410D7A /* RadarViewController.swift */,
 				17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */,
 				17C1A7971F08323F004FD1EC /* StatusViewController.storyboard */,
 				17C1A7991F083248004FD1EC /* StatusViewController.swift */,
-				17C1A79F1F084DEC004FD1EC /* RadarCoordinator.swift */,
 			);
 			path = Radar;
 			sourceTree = "<group>";

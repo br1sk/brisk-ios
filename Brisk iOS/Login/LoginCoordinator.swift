@@ -1,4 +1,8 @@
 import UIKit
+import SafariServices
+
+private let kAPIKeyURL = URL(string: "https://openradar.appspot.com/apikey")!
+private let kOpenRadarUsername = "openradar"
 
 final class LoginCoordinator {
 
@@ -7,6 +11,7 @@ final class LoginCoordinator {
 
 	let source: UIViewController
 	var loginController: LoginViewController?
+	let root = UINavigationController()
 
 	// MARK: - Init/Deinit
 
@@ -19,11 +24,14 @@ final class LoginCoordinator {
 	func start() {
 		let controller = LoginViewController.newFromStoryboard()
 		controller.delegate = self
-		let nav = UINavigationController(rootViewController: controller)
-		source.present(nav, animated: true, completion: nil)
+		root.viewControllers = [controller]
+		source.present(root, animated: true, completion: nil)
 		loginController = controller
 	}
 
+	func finish() {
+		source.dismiss(animated: true)
+	}
 
 	// MARK: - Private
 
@@ -42,11 +50,39 @@ final class LoginCoordinator {
 
 extension LoginCoordinator: LoginViewDelegate {
 
-	func controller(_ controller: LoginViewController, didSubmit user: User) {
+	func submitTapped(user: User) {
 		guard user.email.isValid else {
 			showError(.invalidEmail)
 			return
 		}
+		// Show loading
+		// Login
+		// Hide loading
+		// Continue to open radar
+		let openradar = OpenRadarViewController.newFromStoryboard()
+		openradar.delegate = self
+		root.show(openradar, sender: self)
+	}
+
+}
+
+
+// MARK: - OpenRadarViewDelegate Method
+
+extension LoginCoordinator: OpenRadarViewDelegate {
+
+	func openSafariTapped() {
+		let safari = SFSafariViewController(url: kAPIKeyURL)
+		root.showDetailViewController(safari, sender: self)
+	}
+
+	func continueTapped() {
+		// Save to keychain
+		finish()
+	}
+
+	func skipTapped() {
+		finish()
 	}
 
 }

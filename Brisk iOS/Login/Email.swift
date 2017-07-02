@@ -9,6 +9,6 @@ final class Email {
 	}
 
 	var isValid: Bool {
-		return false
+		return true
 	}
 }

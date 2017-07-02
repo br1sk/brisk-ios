@@ -83,14 +83,14 @@ final class RadarCoordinator {
 
 extension RadarCoordinator: RadarViewDelegate {
 
-	func controllerDidSelectProduct(_ controller: RadarViewController) {
+	func productTapped() {
 		showSingleChoice(selected: radar.product, all: Product.All) { [unowned self] choice in
 			self.radar.product = choice
 			self.radar.area = Area.areas(for: choice).first
 		}
 	}
 
-	func controllerDidSelectArea(_ controller: RadarViewController) {
+	func areaTapped() {
 		let areas = Area.areas(for: radar.product)
 		guard areas.isNotEmpty, let area = radar.area else { return }
 		showSingleChoice(selected: area, all: areas) { [unowned self] choice in
@@ -98,37 +98,37 @@ extension RadarCoordinator: RadarViewDelegate {
 		}
 	}
 
-	func controllerDidSelectVersion(_ controller: RadarViewController) {
+	func versionTapped() {
 		showEnterDetails(title: NSLocalizedString("Radar.Version", comment: ""), content: radar.version, placeholder: "") { [unowned self] (text) in
 			self.radar.version = text
 		}
 	}
 
-	func controllerDidSelectClassification(_ controller: RadarViewController) {
+	func classificationTapped() {
 		showSingleChoice(selected: radar.classification, all: Classification.All) { [unowned self] choice in
 			self.radar.classification = choice
 		}
 	}
 
-	func controllerDidSelectReproducibility(_ controller: RadarViewController) {
+	func reproducibilityTapped() {
 		showSingleChoice(selected: radar.reproducibility, all: Reproducibility.All) { [unowned self] choice in
 			self.radar.reproducibility = choice
 		}
 	}
 
-	func controllerDidSelectConfiguration(_ controller: RadarViewController) {
+	func configurationTapped() {
 		showEnterDetails(title: NSLocalizedString("Radar.Configuration", comment: ""), content: radar.configuration, placeholder: "") { [unowned self] (text) in
 			self.radar.configuration = text
 		}
 	}
 
-	func controllerDidSelectTitle(_ controller: RadarViewController) {
+	func titleTapped() {
 		showEnterDetails(title: NSLocalizedString("Radar.Title", comment: ""), content: radar.title, placeholder: "") { [unowned self] (text) in
 			self.radar.title = text
 		}
 	}
 
-	func controllerDidSelectDescription(_ controller: RadarViewController) {
+	func descriptionTapped() {
 		showEnterDetails(title: NSLocalizedString("Radar.Description", comment: ""),
 		                 content: radar.description,
 		                 placeholder: NSLocalizedString("Radar.Description.Placeholder", comment: "")) { [unowned self] (text) in
@@ -136,7 +136,7 @@ extension RadarCoordinator: RadarViewDelegate {
 		}
 	}
 
-	func controllerDidSelectSteps(_ controller: RadarViewController) {
+	func stepsTapped() {
 		showEnterDetails(title: NSLocalizedString("Radar.Steps", comment: ""),
 		                 content: radar.steps,
 		                 placeholder: NSLocalizedString("Radar.Steps.Placeholder", comment: "")) { [unowned self] (text) in
@@ -144,7 +144,7 @@ extension RadarCoordinator: RadarViewDelegate {
 		}
 	}
 
-	func controllerDidSelectExpected(_ controller: RadarViewController) {
+	func expectedTapped() {
 		showEnterDetails(title: NSLocalizedString("Radar.Expected", comment: ""),
 		                 content: radar.expected,
 		                 placeholder: NSLocalizedString("Radar.Expected.Placeholder", comment: "")) { [unowned self] (text) in
@@ -152,7 +152,7 @@ extension RadarCoordinator: RadarViewDelegate {
 		}
 	}
 
-	func controllerDidSelectActual(_ controller: RadarViewController) {
+	func actualTapped() {
 		showEnterDetails(title: NSLocalizedString("Radar.Actual", comment: ""),
 		                 content: radar.actual,
 		                 placeholder: NSLocalizedString("Radar.Actual.Placeholder", comment: "")) { [unowned self] (text) in
@@ -160,7 +160,7 @@ extension RadarCoordinator: RadarViewDelegate {
 		}
 	}
 
-	func controllerDidSelectNotes(_ controller: RadarViewController) {
+	func notesTapped() {
 		showEnterDetails(title: NSLocalizedString("Radar.Notes", comment: ""),
 		                 content: radar.notes,
 		                 placeholder: NSLocalizedString("Radar.Notes.Placeholder", comment: "")) { [unowned self] (text) in
@@ -168,10 +168,10 @@ extension RadarCoordinator: RadarViewDelegate {
 		}
 	}
 
-	func controllerDidSelectAttachments(_ controller: RadarViewController) {
+	func attachmentsTapped() {
 	}
 
-	func controllerDidSubmit(_ controller: RadarViewController) {
+	func submitTapped() {
 		// Show loading
 		// Post radar
 		let status = Status.failed

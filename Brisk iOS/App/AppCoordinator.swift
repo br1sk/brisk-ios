@@ -24,9 +24,9 @@ final class AppCoordinator {
 		window.rootViewController = nav
 		window.makeKeyAndVisible()
 
-//		DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-//			self.startLoginIfRequired()
-//		}
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+			self.startLoginIfRequired()
+		}
 
 		return window
 	}
@@ -38,7 +38,7 @@ final class AppCoordinator {
 		let controller = DupeViewController.newFromStoryboard()
 		controller.delegate = self
 		let container = UINavigationController(rootViewController: controller)
-		root?.present(container, animated: true, completion: nil)
+		root?.showDetailViewController(container, sender: self)
 	}
 
 	fileprivate func showFile() {
@@ -56,6 +56,11 @@ final class AppCoordinator {
 		loginCoordinator = coordinator
 	}
 
+	fileprivate func showSettings() {
+		let settings = SettingsViewController.newFromStoryboard()
+		let container = UINavigationController(rootViewController: settings)
+		root?.showDetailViewController(container, sender: self)
+	}
 }
 
 
@@ -69,6 +74,10 @@ extension AppCoordinator: MenuViewDelegate {
 
 	func fileTapped() {
 		showFile()
+	}
+
+	func settingsTapped() {
+		showSettings()
 	}
 }
 

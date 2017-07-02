@@ -1,9 +1,8 @@
 import UIKit
 import InterfaceBacked
 
-
 protocol LoginViewDelegate: class {
-	func controller(_ controller: LoginViewController, didSubmit user: User)
+	func submitTapped(user: User)
 }
 
 
@@ -32,7 +31,7 @@ final class LoginViewController: UIViewController, StoryboardBacked {
 		guard let rawEmail = emailField.text, let password = passwordField.text else { return }
 		let email = Email(with: rawEmail)
 		let user = User(email: email, password: password)
-		delegate?.controller(self, didSubmit: user)
+		delegate?.submitTapped(user: user)
 	}
 
 	@IBAction func textFieldChanged() {

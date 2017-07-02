@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R3s-lR-Sal">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--OpenRadar-->
+        <scene sceneID="U0b-oG-PuO">
+            <objects>
+                <tableViewController title="OpenRadar" id="R3s-lR-Sal" customClass="OpenRadarViewController" customModule="Brisk_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="baP-uH-ldF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="7nm-XG-Dzn">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get OpenRadar API Token" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyB-0f-wcR">
+                                    <rect key="frame" x="15" y="8" width="206" height="21"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optional" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CV8-N0-54a">
+                                    <rect key="frame" x="15" y="29" width="58" height="18"/>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3g-IQ-XPM">
+                                    <rect key="frame" x="15" y="63" width="290" height="88"/>
+                                    <string key="text">Open Safari &amp; log into OpenRadar using your Google account.
+
+After successful login, copy the token and paste it into the textfield below.</string>
+                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="KyB-0f-wcR" firstAttribute="top" secondItem="7nm-XG-Dzn" secondAttribute="top" constant="8" id="8FG-Cz-VtP"/>
+                                <constraint firstItem="CV8-N0-54a" firstAttribute="leading" secondItem="KyB-0f-wcR" secondAttribute="leading" id="B9v-mO-J7A"/>
+                                <constraint firstItem="KyB-0f-wcR" firstAttribute="leading" secondItem="7nm-XG-Dzn" secondAttribute="leading" constant="15" id="HNo-XV-OHh"/>
+                                <constraint firstItem="CV8-N0-54a" firstAttribute="top" secondItem="KyB-0f-wcR" secondAttribute="bottom" id="WBa-ny-b9X"/>
+                                <constraint firstItem="J3g-IQ-XPM" firstAttribute="leading" secondItem="7nm-XG-Dzn" secondAttribute="leading" constant="15" id="hOd-wZ-0a3"/>
+                                <constraint firstAttribute="trailing" secondItem="J3g-IQ-XPM" secondAttribute="trailing" constant="15" id="iUL-5X-Old"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="J3g-IQ-XPM" secondAttribute="bottom" constant="8" id="rAl-W5-CTY"/>
+                                <constraint firstItem="J3g-IQ-XPM" firstAttribute="top" secondItem="CV8-N0-54a" secondAttribute="bottom" constant="16" id="ur7-Uh-PE0"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="7p3-to-LLM">
+                            <rect key="frame" x="0.0" y="333" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx2-DH-jl3">
+                                    <rect key="frame" x="117.5" y="-2" width="85" height="30"/>
+                                    <state key="normal" title="Skip for now"/>
+                                    <connections>
+                                        <action selector="skipTapped" destination="R3s-lR-Sal" eventType="touchUpInside" id="zbu-yE-w37"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="Dx2-DH-jl3" secondAttribute="bottom" constant="16" id="1MG-5K-hsG"/>
+                                <constraint firstItem="Dx2-DH-jl3" firstAttribute="centerX" secondItem="7p3-to-LLM" secondAttribute="centerX" id="cLV-5e-PTO"/>
+                            </constraints>
+                        </view>
+                        <sections>
+                            <tableViewSection id="AGb-3G-aYU">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="S6J-Em-YZX" style="IBUITableViewCellStyleDefault" id="kJL-70-EJ0">
+                                        <rect key="frame" x="0.0" y="160" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kJL-70-EJ0" id="6nY-Al-fT4">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1.) Open Safari" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S6J-Em-YZX">
+                                                    <rect key="frame" x="16" y="0.0" width="269" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="67" id="44n-4h-m3X">
+                                        <rect key="frame" x="0.0" y="204" width="320" height="67"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="44n-4h-m3X" id="Kvo-wp-6iU">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="66.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.) Paste API token" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="snv-ws-Bb4">
+                                                    <rect key="frame" x="15" y="8" width="144.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. 99125b97-5f6d-11e7-bc0e-cfaf62a5e748" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hco-Nr-tZb">
+                                                    <rect key="frame" x="15" y="37" width="282" height="21"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="R3s-lR-Sal" id="YXf-uR-jva"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="snv-ws-Bb4" firstAttribute="leading" secondItem="Kvo-wp-6iU" secondAttribute="leading" constant="15" id="7n3-3n-YuM"/>
+                                                <constraint firstItem="snv-ws-Bb4" firstAttribute="top" secondItem="Kvo-wp-6iU" secondAttribute="topMargin" id="8Zb-Ur-2R0"/>
+                                                <constraint firstItem="Hco-Nr-tZb" firstAttribute="top" secondItem="snv-ws-Bb4" secondAttribute="bottom" constant="8" id="Pbu-cP-QwD"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Hco-Nr-tZb" secondAttribute="trailing" constant="15" id="apk-TZ-J6B"/>
+                                                <constraint firstItem="Hco-Nr-tZb" firstAttribute="leading" secondItem="snv-ws-Bb4" secondAttribute="leading" id="ipf-aL-3VF"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="r9C-Oj-vcK" style="IBUITableViewCellStyleDefault" id="1ut-nH-gDy">
+                                        <rect key="frame" x="0.0" y="271" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1ut-nH-gDy" id="AsR-kx-mHa">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="3.) Finish" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="r9C-Oj-vcK">
+                                                    <rect key="frame" x="16" y="0.0" width="269" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="R3s-lR-Sal" id="2YA-nJ-bAh"/>
+                            <outlet property="delegate" destination="R3s-lR-Sal" id="2H0-6k-oHI"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="tokenField" destination="Hco-Nr-tZb" id="mgj-RK-yWP"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZn-C2-eT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="271.875" y="518.66197183098598"/>
+        </scene>
+    </scenes>
+</document>

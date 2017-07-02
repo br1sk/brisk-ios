@@ -20,6 +20,11 @@
 		177A33041F05C76D0044D836 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A33031F05C76D0044D836 /* MenuViewController.swift */; };
 		177A330C1F05CCCF0044D836 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A330B1F05CCCF0044D836 /* LoginViewController.swift */; };
 		177A33101F05CDE40044D836 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A330F1F05CDE40044D836 /* Email.swift */; };
+		17894A4D1F098A5100E683AF /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17894A4C1F098A5100E683AF /* Keychain.swift */; };
+		17894A4F1F098AE800E683AF /* SettingsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17894A4E1F098AE800E683AF /* SettingsViewController.storyboard */; };
+		17894A521F098B0C00E683AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17894A511F098B0C00E683AF /* SettingsViewController.swift */; };
+		17894A541F099D9700E683AF /* OpenRadarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17894A531F099D9700E683AF /* OpenRadarViewController.storyboard */; };
+		17894A561F099DA500E683AF /* OpenRadarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17894A551F099DA500E683AF /* OpenRadarViewController.swift */; };
 		17C1A7981F08323F004FD1EC /* StatusViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C1A7971F08323F004FD1EC /* StatusViewController.storyboard */; };
 		17C1A79A1F083248004FD1EC /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A7991F083248004FD1EC /* StatusViewController.swift */; };
 		17C1A79C1F084A12004FD1EC /* SingleChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */; };
@@ -71,6 +76,11 @@
 		177A33031F05C76D0044D836 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		177A330B1F05CCCF0044D836 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		177A330F1F05CDE40044D836 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
+		17894A4C1F098A5100E683AF /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		17894A4E1F098AE800E683AF /* SettingsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsViewController.storyboard; sourceTree = "<group>"; };
+		17894A511F098B0C00E683AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		17894A531F099D9700E683AF /* OpenRadarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OpenRadarViewController.storyboard; sourceTree = "<group>"; };
+		17894A551F099DA500E683AF /* OpenRadarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenRadarViewController.swift; sourceTree = "<group>"; };
 		17C1A7971F08323F004FD1EC /* StatusViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusViewController.storyboard; sourceTree = "<group>"; };
 		17C1A7991F083248004FD1EC /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceTableViewController.swift; sourceTree = "<group>"; };
@@ -148,14 +158,16 @@
 		177A32DE1F05C6CD0044D836 /* Brisk iOS */ = {
 			isa = PBXGroup;
 			children = (
-				17FE323E1F0823DB00410D7A /* Radar */,
-				17FE32321F081F7C00410D7A /* Model */,
-				172993A01F06CD3C0015E94D /* Dupe */,
-				177A330A1F05CB600044D836 /* Resources */,
 				177A33091F05CB5A0044D836 /* App */,
+				172993A01F06CD3C0015E94D /* Dupe */,
+				17FE32271F081CD100410D7A /* Emptiness.swift */,
+				17894A4C1F098A5100E683AF /* Keychain.swift */,
 				177A33081F05CB560044D836 /* Login */,
 				177A33071F05CB4D0044D836 /* Menu */,
-				17FE32271F081CD100410D7A /* Emptiness.swift */,
+				17FE32321F081F7C00410D7A /* Model */,
+				17FE323E1F0823DB00410D7A /* Radar */,
+				177A330A1F05CB600044D836 /* Resources */,
+				17894A501F098AF000E683AF /* Settings */,
 			);
 			path = "Brisk iOS";
 			sourceTree = "<group>";
@@ -187,6 +199,8 @@
 				177A330F1F05CDE40044D836 /* Email.swift */,
 				17FE32291F081E4F00410D7A /* LoginError.swift */,
 				17FE322B1F081E6700410D7A /* User.swift */,
+				17894A531F099D9700E683AF /* OpenRadarViewController.storyboard */,
+				17894A551F099DA500E683AF /* OpenRadarViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -209,6 +223,15 @@
 				17FE32311F081EC000410D7A /* Localizable.strings */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		17894A501F098AF000E683AF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				17894A4E1F098AE800E683AF /* SettingsViewController.storyboard */,
+				17894A511F098B0C00E683AF /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		17FE32321F081F7C00410D7A /* Model */ = {
@@ -348,12 +371,14 @@
 			files = (
 				17C1A7981F08323F004FD1EC /* StatusViewController.storyboard in Resources */,
 				1729939E1F06C4BB0015E94D /* MenuViewController.storyboard in Resources */,
+				17894A4F1F098AE800E683AF /* SettingsViewController.storyboard in Resources */,
 				17FE32421F08242200410D7A /* RadarViewController.storyboard in Resources */,
 				17FE322F1F081EC000410D7A /* Localizable.strings in Resources */,
 				17D763291F082C5D00528D8F /* EnterDetailsViewController.storyboard in Resources */,
 				1729939C1F06C2160015E94D /* LoginViewController.storyboard in Resources */,
 				177A32EA1F05C6CE0044D836 /* LaunchScreen.storyboard in Resources */,
 				172993A21F06CD450015E94D /* DupeViewController.storyboard in Resources */,
+				17894A541F099D9700E683AF /* OpenRadarViewController.storyboard in Resources */,
 				177A32E71F05C6CE0044D836 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,8 +493,10 @@
 				17FE32341F081F8400410D7A /* APIController.swift in Sources */,
 				177A330C1F05CCCF0044D836 /* LoginViewController.swift in Sources */,
 				17D7632B1F082C6700528D8F /* EnterDetailsViewController.swift in Sources */,
+				17894A561F099DA500E683AF /* OpenRadarViewController.swift in Sources */,
 				17FE323B1F08228800410D7A /* OpenRadar.swift in Sources */,
 				177A33021F05C7080044D836 /* LoginCoordinator.swift in Sources */,
+				17894A4D1F098A5100E683AF /* Keychain.swift in Sources */,
 				177A33001F05C6FA0044D836 /* AppCoordinator.swift in Sources */,
 				17FE32281F081CD100410D7A /* Emptiness.swift in Sources */,
 				17FE32361F08221200410D7A /* Radar+OpenRadar.swift in Sources */,
@@ -479,6 +506,7 @@
 				172993A41F06CD510015E94D /* DupeViewController.swift in Sources */,
 				17C1A7A01F084DEC004FD1EC /* RadarCoordinator.swift in Sources */,
 				177A33101F05CDE40044D836 /* Email.swift in Sources */,
+				17894A521F098B0C00E683AF /* SettingsViewController.swift in Sources */,
 				177A33041F05C76D0044D836 /* MenuViewController.swift in Sources */,
 				17FE322C1F081E6700410D7A /* User.swift in Sources */,
 				17FE32401F0823E700410D7A /* RadarViewController.swift in Sources */,
@@ -558,6 +586,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -581,6 +610,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -615,6 +645,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -631,6 +662,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

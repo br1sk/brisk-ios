@@ -3,22 +3,22 @@ import InterfaceBacked
 import Sonar
 
 protocol RadarViewDelegate: class {
-	func controllerDidSelectProduct(_ controller: RadarViewController)
-	func controllerDidSelectArea(_ controller: RadarViewController)
-	func controllerDidSelectVersion(_ controller: RadarViewController)
-	func controllerDidSelectClassification(_ controller: RadarViewController)
-	func controllerDidSelectReproducibility(_ controller: RadarViewController)
-	func controllerDidSelectConfiguration(_ controller: RadarViewController)
+	func productTapped()
+	func areaTapped()
+	func versionTapped()
+	func classificationTapped()
+	func reproducibilityTapped()
+	func configurationTapped()
 
-	func controllerDidSelectTitle(_ controller: RadarViewController)
-	func controllerDidSelectDescription(_ controller: RadarViewController)
-	func controllerDidSelectSteps(_ controller: RadarViewController)
-	func controllerDidSelectExpected(_ controller: RadarViewController)
-	func controllerDidSelectActual(_ controller: RadarViewController)
-	func controllerDidSelectNotes(_ controller: RadarViewController)
-	func controllerDidSelectAttachments(_ controller: RadarViewController)
+	func titleTapped()
+	func descriptionTapped()
+	func stepsTapped()
+	func expectedTapped()
+	func actualTapped()
+	func notesTapped()
+	func attachmentsTapped()
 
-	func controllerDidSubmit(_ controller: RadarViewController)
+	func submitTapped()
 }
 
 final class RadarViewController: UITableViewController, StoryboardBacked {
@@ -46,7 +46,7 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 	// MARK: - User Actions
 
 	@IBAction func submitTapped() {
-		delegate?.controllerDidSubmit(self)
+		delegate?.submitTapped()
 	}
 
 
@@ -148,26 +148,26 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 		switch indexPath.section {
 		case 0:
 			switch indexPath.row {
-			case 0: delegate?.controllerDidSelectProduct(self)
-			case 1: delegate?.controllerDidSelectArea(self)
-			case 2: delegate?.controllerDidSelectVersion(self)
-			case 3: delegate?.controllerDidSelectClassification(self)
-			case 4: delegate?.controllerDidSelectReproducibility(self)
-			case 5: delegate?.controllerDidSelectConfiguration(self)
+			case 0: delegate?.productTapped()
+			case 1: delegate?.areaTapped()
+			case 2: delegate?.versionTapped()
+			case 3: delegate?.classificationTapped()
+			case 4: delegate?.reproducibilityTapped()
+			case 5: delegate?.configurationTapped()
 			default: break
 			}
 		case 1:
 			switch indexPath.row {
-			case 0: delegate?.controllerDidSelectTitle(self)
-			case 1: delegate?.controllerDidSelectDescription(self)
-			case 2: delegate?.controllerDidSelectSteps(self)
-			case 3: delegate?.controllerDidSelectExpected(self)
-			case 4: delegate?.controllerDidSelectActual(self)
-			case 5: delegate?.controllerDidSelectNotes(self)
+			case 0: delegate?.titleTapped()
+			case 1: delegate?.descriptionTapped()
+			case 2: delegate?.stepsTapped()
+			case 3: delegate?.expectedTapped()
+			case 4: delegate?.actualTapped()
+			case 5: delegate?.notesTapped()
 			default: break
 			}
 		case 2:
-			delegate?.controllerDidSelectAttachments(self)
+			delegate?.attachmentsTapped()
 		default:
 			break
 		}

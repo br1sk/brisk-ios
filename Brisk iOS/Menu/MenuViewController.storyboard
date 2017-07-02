@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,6 +47,13 @@
                             <constraint firstItem="j8x-JR-J0u" firstAttribute="centerX" secondItem="YWs-cN-QZY" secondAttribute="centerX" id="qrD-tg-cZB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Brisk" id="5li-7q-ZDs">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="ehO-fh-FMJ">
+                            <connections>
+                                <action selector="settingsTapped" destination="X8p-6J-nCn" id="KsU-xq-jB2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wgc-jy-3fQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

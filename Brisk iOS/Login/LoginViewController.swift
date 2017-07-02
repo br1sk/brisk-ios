@@ -20,8 +20,13 @@ final class LoginViewController: UIViewController, StoryboardBacked {
 	// MARK: - UIViewController Methods
 
 	override func viewWillAppear(_ animated: Bool) {
-		validateSubmitButton()
 		emailField.becomeFirstResponder()
+
+		#if DEBUG
+		emailField.text = "foo@bar.baz"
+		passwordField.text = "1234"
+		#endif
+		validateSubmitButton()
 	}
 
 
@@ -29,7 +34,7 @@ final class LoginViewController: UIViewController, StoryboardBacked {
 
 	@IBAction func submitTapped() {
 		guard let rawEmail = emailField.text, let password = passwordField.text else { return }
-		let email = Email(with: rawEmail)
+		let email = Email(rawEmail)
 		let user = User(email: email, password: password)
 		delegate?.submitTapped(user: user)
 	}

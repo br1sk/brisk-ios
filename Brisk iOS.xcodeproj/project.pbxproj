@@ -25,6 +25,9 @@
 		17894A521F098B0C00E683AF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17894A511F098B0C00E683AF /* SettingsViewController.swift */; };
 		17894A541F099D9700E683AF /* OpenRadarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17894A531F099D9700E683AF /* OpenRadarViewController.storyboard */; };
 		17894A561F099DA500E683AF /* OpenRadarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17894A551F099DA500E683AF /* OpenRadarViewController.swift */; };
+		17894A581F09AEC800E683AF /* TokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17894A571F09AEC800E683AF /* TokenTests.swift */; };
+		17894A5A1F09AFE600E683AF /* EmailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17894A591F09AFE600E683AF /* EmailTests.swift */; };
+		17894A5C1F09B04F00E683AF /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17894A5B1F09B04F00E683AF /* Token.swift */; };
 		17C1A7981F08323F004FD1EC /* StatusViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C1A7971F08323F004FD1EC /* StatusViewController.storyboard */; };
 		17C1A79A1F083248004FD1EC /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A7991F083248004FD1EC /* StatusViewController.swift */; };
 		17C1A79C1F084A12004FD1EC /* SingleChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */; };
@@ -81,6 +84,9 @@
 		17894A511F098B0C00E683AF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		17894A531F099D9700E683AF /* OpenRadarViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OpenRadarViewController.storyboard; sourceTree = "<group>"; };
 		17894A551F099DA500E683AF /* OpenRadarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenRadarViewController.swift; sourceTree = "<group>"; };
+		17894A571F09AEC800E683AF /* TokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTests.swift; sourceTree = "<group>"; };
+		17894A591F09AFE600E683AF /* EmailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTests.swift; sourceTree = "<group>"; };
+		17894A5B1F09B04F00E683AF /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		17C1A7971F08323F004FD1EC /* StatusViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusViewController.storyboard; sourceTree = "<group>"; };
 		17C1A7991F083248004FD1EC /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceTableViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +181,8 @@
 		177A32F31F05C6CE0044D836 /* Brisk iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				17894A571F09AEC800E683AF /* TokenTests.swift */,
+				17894A591F09AFE600E683AF /* EmailTests.swift */,
 				177A32F41F05C6CE0044D836 /* Brisk_iOSTests.swift */,
 				177A32F61F05C6CE0044D836 /* Info.plist */,
 			);
@@ -193,14 +201,15 @@
 		177A33081F05CB560044D836 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				177A33011F05C7080044D836 /* LoginCoordinator.swift */,
-				177A330B1F05CCCF0044D836 /* LoginViewController.swift */,
-				1729939B1F06C2160015E94D /* LoginViewController.storyboard */,
 				177A330F1F05CDE40044D836 /* Email.swift */,
+				177A33011F05C7080044D836 /* LoginCoordinator.swift */,
 				17FE32291F081E4F00410D7A /* LoginError.swift */,
-				17FE322B1F081E6700410D7A /* User.swift */,
+				1729939B1F06C2160015E94D /* LoginViewController.storyboard */,
+				177A330B1F05CCCF0044D836 /* LoginViewController.swift */,
 				17894A531F099D9700E683AF /* OpenRadarViewController.storyboard */,
 				17894A551F099DA500E683AF /* OpenRadarViewController.swift */,
+				17894A5B1F09B04F00E683AF /* Token.swift */,
+				17FE322B1F081E6700410D7A /* User.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -491,6 +500,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17FE32341F081F8400410D7A /* APIController.swift in Sources */,
+				17894A5C1F09B04F00E683AF /* Token.swift in Sources */,
 				177A330C1F05CCCF0044D836 /* LoginViewController.swift in Sources */,
 				17D7632B1F082C6700528D8F /* EnterDetailsViewController.swift in Sources */,
 				17894A561F099DA500E683AF /* OpenRadarViewController.swift in Sources */,
@@ -521,7 +531,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17894A581F09AEC800E683AF /* TokenTests.swift in Sources */,
 				177A32F51F05C6CE0044D836 /* Brisk_iOSTests.swift in Sources */,
+				17894A5A1F09AFE600E683AF /* EmailTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

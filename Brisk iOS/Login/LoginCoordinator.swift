@@ -55,9 +55,10 @@ extension LoginCoordinator: LoginViewDelegate {
 			showError(.invalidEmail)
 			return
 		}
-		// Show loading
-		// Login
-		// Hide loading
+		
+		// Save to keychain
+		Keychain.set(username: user.email.value, password: user.password, forKey: .radar)
+
 		// Continue to open radar
 		let openradar = OpenRadarViewController.newFromStoryboard()
 		openradar.delegate = self
@@ -76,8 +77,14 @@ extension LoginCoordinator: OpenRadarViewDelegate {
 		root.showDetailViewController(safari, sender: self)
 	}
 
-	func continueTapped() {
+	func continueTapped(token: String) {
 		// Save to keychain
+		if token.isEmpty {
+			Keychain.delete(.openRadar)
+		} else {
+			Keychain.set(username: kOpenRadarUsername, password: token, forKey: .openRadar)
+		}
+
 		finish()
 	}
 

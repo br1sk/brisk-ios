@@ -1,6 +1,6 @@
 import Foundation
 
-final class Email {
+final class Token {
 
 	let value: String
 
@@ -9,7 +9,7 @@ final class Email {
 	}
 
 	var isValid: Bool {
-		let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+		let pattern = "[\\w]{8}-[\\w]{4}-[\\w]{4}-[\\w]{4}-[\\w]{12}"
 		let match = value.range(of: pattern, options: .regularExpression)
 		return match != nil
 	}

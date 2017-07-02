@@ -19,23 +19,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="7nm-XG-Dzn">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get OpenRadar API Token" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KyB-0f-wcR">
-                                    <rect key="frame" x="15" y="8" width="206" height="21"/>
+                                    <rect key="frame" x="15" y="80" width="206" height="21"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Optional" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CV8-N0-54a">
-                                    <rect key="frame" x="15" y="29" width="58" height="18"/>
+                                    <rect key="frame" x="15" y="101" width="58" height="18"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3g-IQ-XPM">
-                                    <rect key="frame" x="15" y="63" width="290" height="88"/>
+                                    <rect key="frame" x="15" y="135" width="290" height="88"/>
                                     <string key="text">Open Safari &amp; log into OpenRadar using your Google account.
 
 After successful login, copy the token and paste it into the textfield below.</string>
@@ -46,7 +46,7 @@ After successful login, copy the token and paste it into the textfield below.</s
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstItem="KyB-0f-wcR" firstAttribute="top" secondItem="7nm-XG-Dzn" secondAttribute="top" constant="8" id="8FG-Cz-VtP"/>
+                                <constraint firstItem="KyB-0f-wcR" firstAttribute="top" secondItem="7nm-XG-Dzn" secondAttribute="top" constant="80" id="8FG-Cz-VtP"/>
                                 <constraint firstItem="CV8-N0-54a" firstAttribute="leading" secondItem="KyB-0f-wcR" secondAttribute="leading" id="B9v-mO-J7A"/>
                                 <constraint firstItem="KyB-0f-wcR" firstAttribute="leading" secondItem="7nm-XG-Dzn" secondAttribute="leading" constant="15" id="HNo-XV-OHh"/>
                                 <constraint firstItem="CV8-N0-54a" firstAttribute="top" secondItem="KyB-0f-wcR" secondAttribute="bottom" id="WBa-ny-b9X"/>
@@ -57,7 +57,7 @@ After successful login, copy the token and paste it into the textfield below.</s
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="7p3-to-LLM">
-                            <rect key="frame" x="0.0" y="333" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="413" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx2-DH-jl3">
@@ -78,7 +78,7 @@ After successful login, copy the token and paste it into the textfield below.</s
                             <tableViewSection id="AGb-3G-aYU">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="S6J-Em-YZX" style="IBUITableViewCellStyleDefault" id="kJL-70-EJ0">
-                                        <rect key="frame" x="0.0" y="160" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="240" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kJL-70-EJ0" id="6nY-Al-fT4">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>
@@ -95,7 +95,7 @@ After successful login, copy the token and paste it into the textfield below.</s
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="67" id="44n-4h-m3X">
-                                        <rect key="frame" x="0.0" y="204" width="320" height="67"/>
+                                        <rect key="frame" x="0.0" y="284" width="320" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="44n-4h-m3X" id="Kvo-wp-6iU">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="66.5"/>
@@ -110,7 +110,7 @@ After successful login, copy the token and paste it into the textfield below.</s
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="e.g. 99125b97-5f6d-11e7-bc0e-cfaf62a5e748" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hco-Nr-tZb">
                                                     <rect key="frame" x="15" y="37" width="282" height="21"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="R3s-lR-Sal" id="YXf-uR-jva"/>
@@ -127,7 +127,7 @@ After successful login, copy the token and paste it into the textfield below.</s
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="r9C-Oj-vcK" style="IBUITableViewCellStyleDefault" id="1ut-nH-gDy">
-                                        <rect key="frame" x="0.0" y="271" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="351" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1ut-nH-gDy" id="AsR-kx-mHa">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43.5"/>

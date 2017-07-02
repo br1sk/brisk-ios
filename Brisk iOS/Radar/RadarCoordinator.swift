@@ -2,32 +2,39 @@ import Foundation
 import UIKit
 import Sonar
 
-class EditableRadar: NSObject {
-	var classification: Classification = .Security
-	var product: Product = .iOS
-	var reproducibility: Reproducibility = .Always
-	var title = ""
-	var radarDescription = ""
-	var steps = ""
-	var expected = ""
-	var actual = ""
-	var configuration = ""
-	var version = ""
-	var notes = ""
-	var area: Area?
-	var attachments = [Attachment]()
-}
 
 final class RadarCoordinator {
 
+
+	// MARK: - Types
+
+	struct ViewModel {
+		var product: Product = .iOS
+		var area: Area? = Area.areas(for: .iOS).first
+		var classification: Classification = .Security
+		var reproducibility: Reproducibility = .Always
+		var title: String = ""
+		var description: String = ""
+		var steps: String = ""
+		var expected: String = ""
+		var actual: String = ""
+		var configuration: String = ""
+		var version: String = ""
+		var notes: String = ""
+		var attachments: [Attachment] = []
+	}
 
 	// MARK: - Properties
 
 	let source: UIViewController
 	var root = UINavigationController()
 	var radarViewController: RadarViewController?
-	var radar = EditableRadar()
 	var editingKeypath = ""
+	var radar = ViewModel() {
+		didSet {
+			self.radarViewController?.radar = radar
+		}
+	}
 
 	// MARK: - Init/Deinit
 
@@ -50,14 +57,15 @@ final class RadarCoordinator {
 
 	// MARK: - Private Methods
 
-	fileprivate func showSingleChoice(forKeypath keypath: String, selected: Choice, all: [Choice], title: String) {
-		editingKeypath = keypath
-		let controller = SingleChoiceViewController.newFromStoryboard()
-		controller.all = all
-		controller.title = title
-		controller.selected = selected
-		controller.delegate = self
-		root.pushViewController(controller, animated: true)
+	fileprivate func showSingleChoice<T: Choice>(selected: T, all: [T], onSelect: @escaping (T) -> Void) {
+		let singleChoice: SingleChoiceViewController<T> = SingleChoiceViewController()
+		singleChoice.all = all
+		singleChoice.selected = selected
+		singleChoice.onSelect = { [unowned self] choice in
+			onSelect(choice)
+			self.root.popViewController(animated: true)
+		}
+		root.show(singleChoice, sender: self)
 	}
 
 	fileprivate func showEnterDetails(forKeypath keypath: String, content: String, placeholder: String = "", title: String) {
@@ -77,16 +85,6 @@ final class RadarCoordinator {
 extension RadarCoordinator: EnterDetailsDelegate {
 
 	func controller(_ controller: EnterDetailsViewController, didEnter content: String) {
-		radar.setValue(content, forKey: editingKeypath)
-		radarViewController?.radar = radar
-	}
-}
-
-// MARK: - SingleChoiceDelegate Methods
-
-extension RadarCoordinator: SingleChoiceDelegate {
-
-	func controller(_ controller: SingleChoiceViewController, didSelect choice: Choice) {
 	}
 }
 
@@ -95,70 +93,57 @@ extension RadarCoordinator: SingleChoiceDelegate {
 extension RadarCoordinator: RadarViewDelegate {
 
 	func controllerDidSelectProduct(_ controller: RadarViewController) {
-		showSingleChoice(forKeypath: "product", selected: radar.product, all: Product.All, title: NSLocalizedString("Radar.Product", comment: ""))
+		showSingleChoice(selected: radar.product, all: Product.All) { [unowned self] choice in
+			self.radar.product = choice
+			self.radar.area = Area.areas(for: choice).first
+		}
 	}
 
 	func controllerDidSelectArea(_ controller: RadarViewController) {
-		showSingleChoice(forKeypath: "area", selected: radar.area!, all: Area.areas(for: radar.product), title: NSLocalizedString("Radar.Area", comment: ""))
+		let areas = Area.areas(for: radar.product)
+		guard areas.isNotEmpty, let area = radar.area else { return }
+		showSingleChoice(selected: area, all: areas) { [unowned self] choice in
+			self.radar.area = choice
+		}
 	}
 
 	func controllerDidSelectVersion(_ controller: RadarViewController) {
-		showEnterDetails(forKeypath: "version", content: radar.version, title: NSLocalizedString("Radar.Version", comment: ""))
 	}
 
 	func controllerDidSelectClassification(_ controller: RadarViewController) {
-		showSingleChoice(forKeypath: "classification", selected: radar.classification, all: Classification.All, title: NSLocalizedString("Radar.Classification", comment: ""))
+		showSingleChoice(selected: radar.classification, all: Classification.All) { [unowned self] choice in
+			self.radar.classification = choice
+		}
 	}
 
 	func controllerDidSelectReproducibility(_ controller: RadarViewController) {
-		showSingleChoice(forKeypath: "reproducibility", selected: radar.reproducibility, all: Reproducibility.All, title: NSLocalizedString("Radar.Reproducibility", comment: ""))
+		showSingleChoice(selected: radar.reproducibility, all: Reproducibility.All) { [unowned self] choice in
+			self.radar.reproducibility = choice
+		}
 	}
 
 	func controllerDidSelectConfiguration(_ controller: RadarViewController) {
-		showEnterDetails(forKeypath: "configuration", content: radar.configuration, title: NSLocalizedString("Radar.Configuration", comment: ""))
 	}
 
 	func controllerDidSelectTitle(_ controller: RadarViewController) {
-		showEnterDetails(forKeypath: "title", content: radar.title, title: NSLocalizedString("Radar.Title", comment: ""))
 	}
 
 	func controllerDidSelectDescription(_ controller: RadarViewController) {
-		showEnterDetails(forKeypath: "radarDescription",
-		                 content: radar.description,
-		                 placeholder: NSLocalizedString("Radar.Description.Placeholder", comment: ""),
-		                 title: NSLocalizedString("Radar.Description", comment: ""))
 	}
 
 	func controllerDidSelectSteps(_ controller: RadarViewController) {
-		showEnterDetails(forKeypath: "steps",
-		                 content: radar.steps,
-		                 placeholder: NSLocalizedString("Radar.Steps.Placeholder", comment: ""),
-		                 title: NSLocalizedString("Radar.Steps", comment: ""))
 	}
 
 	func controllerDidSelectExpected(_ controller: RadarViewController) {
-		showEnterDetails(forKeypath: "expected",
-		                 content: radar.expected,
-		                 placeholder: NSLocalizedString("Radar.Expected.Placeholder", comment: ""),
-		                 title: NSLocalizedString("Radar.Expected", comment: ""))
 	}
 
 	func controllerDidSelectActual(_ controller: RadarViewController) {
-		showEnterDetails(forKeypath: "actual",
-		                 content: radar.actual,
-		                 placeholder: NSLocalizedString("Radar.Actual.Placeholder", comment: ""),
-		                 title: NSLocalizedString("Radar.Actual", comment: ""))
 	}
 
 	func controllerDidSelectNotes(_ controller: RadarViewController) {
-		showEnterDetails(forKeypath: "notes",
-		                 content: radar.notes,
-		                 placeholder: NSLocalizedString("Radar.Notes.Placeholder", comment: ""),
-		                 title: NSLocalizedString("Radar.Notes", comment: ""))
 	}
 
 	func controllerDidSelectAttachments(_ controller: RadarViewController) {
-
 	}
 
 	func controllerDidSubmit(_ controller: RadarViewController) {
@@ -185,5 +170,41 @@ extension RadarCoordinator: RadarViewDelegate {
 				self.root.popViewController(animated: true)
 			}
 		}
+	}
+}
+
+extension RadarCoordinator.ViewModel {
+
+	init(radar: Radar) {
+		product = radar.product
+		area = radar.area ?? Area.areas(for: product).first!
+		classification = radar.classification
+		reproducibility = radar.reproducibility
+		title = radar.title
+		description = radar.description
+		steps = radar.steps
+		expected = radar.expected
+		actual = radar.actual
+		configuration = radar.configuration
+		version = radar.version
+		notes = radar.notes
+		attachments = radar.attachments
+	}
+
+	func createRadar() -> Radar {
+		return Radar(
+			classification: classification,
+			product: product,
+			reproducibility: reproducibility,
+			title: title,
+			description: description,
+			steps: steps,
+			expected: expected,
+			actual: actual,
+			configuration: configuration,
+			version: version,
+			notes: notes,
+			attachments: attachments
+		)
 	}
 }

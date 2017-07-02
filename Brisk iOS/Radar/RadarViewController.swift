@@ -32,12 +32,16 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 		// TODO: Determine required form fields
 		return true
 	}
-	var radar: EditableRadar? {
+	var radar: RadarCoordinator.ViewModel? {
 		didSet {
 			tableView.reloadData()
 		}
 	}
 
+	var didSelectProduct: (Product) -> Void = { _ in }
+
+	var product: Product = .iOS { didSet { tableView.reloadData() } }
+	var area = Area.areas(for: .iOS).first  { didSet { tableView.reloadData() } }
 
 	// MARK: - User Actions
 
@@ -62,6 +66,7 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 		var left = ""
 		var right = ""
 		var rightPlaceholder: String?
+		var selectable = true
 
 		switch indexPath.section {
 		case 0:
@@ -72,6 +77,7 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 			case 1:
 				left = NSLocalizedString("Radar.Area", comment: "")
 				right = radar.area?.name ?? ""
+				selectable = Area.areas(for: radar.product).isNotEmpty
 			case 2:
 				left = NSLocalizedString("Radar.Version", comment: "")
 				right = radar.version
@@ -87,40 +93,43 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 				rightPlaceholder = NSLocalizedString("Global.Optional", comment: "")
 			default: break
 			}
-		case 1:
-			switch indexPath.row {
-			case 0:
-				left = NSLocalizedString("Radar.Title", comment: "")
-				right = radar.title
-				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-			case 1:
-				left = NSLocalizedString("Radar.Description", comment: "")
-				right = radar.description
-				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-			case 2:
-				left = NSLocalizedString("Radar.Steps", comment: "")
-				right = radar.steps
-				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-			case 3:
-				left = NSLocalizedString("Radar.Expected", comment: "")
-				right = radar.expected
-				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-			case 4:
-				left = NSLocalizedString("Radar.Actual", comment: "")
-				right = radar.actual
-				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-			case 5:
-				left = NSLocalizedString("Radar.Notes", comment: "")
-				right = radar.notes
-				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-			default: break
-			}
-		case 2:
-			left = NSLocalizedString("Radar.Attachment", comment: "")
-			right = "No attachments"
-
+//		case 1:
+//			switch indexPath.row {
+//			case 0:
+//				left = NSLocalizedString("Radar.Title", comment: "")
+//				right = radar.title
+//				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
+//			case 1:
+//				left = NSLocalizedString("Radar.Description", comment: "")
+//				right = radar.description
+//				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
+//			case 2:
+//				left = NSLocalizedString("Radar.Steps", comment: "")
+//				right = radar.steps
+//				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
+//			case 3:
+//				left = NSLocalizedString("Radar.Expected", comment: "")
+//				right = radar.expected
+//				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
+//			case 4:
+//				left = NSLocalizedString("Radar.Actual", comment: "")
+//				right = radar.actual
+//				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
+//			case 5:
+//				left = NSLocalizedString("Radar.Notes", comment: "")
+//				right = radar.notes
+//				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
+//			default: break
+//			}
+//		case 2:
+//			left = NSLocalizedString("Radar.Attachment", comment: "")
+//			right = "No attachments"
+//
 		default: break
 		}
+
+		cell.selectionStyle = (selectable) ? .blue : .none
+		cell.textLabel?.textColor = (selectable) ? UIColor.darkText : UIColor.lightGray
 
 		cell.textLabel?.text = left
 		if right.isNotEmpty {

@@ -23,7 +23,6 @@
 		17C1A7981F08323F004FD1EC /* StatusViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C1A7971F08323F004FD1EC /* StatusViewController.storyboard */; };
 		17C1A79A1F083248004FD1EC /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A7991F083248004FD1EC /* StatusViewController.swift */; };
 		17C1A79C1F084A12004FD1EC /* SingleChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */; };
-		17C1A79E1F084A22004FD1EC /* SingleChoiceViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C1A79D1F084A22004FD1EC /* SingleChoiceViewController.storyboard */; };
 		17C1A7A01F084DEC004FD1EC /* RadarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A79F1F084DEC004FD1EC /* RadarCoordinator.swift */; };
 		17C1A7A21F085159004FD1EC /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A7A11F085159004FD1EC /* Choice.swift */; };
 		17D763291F082C5D00528D8F /* EnterDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D763281F082C5D00528D8F /* EnterDetailsViewController.storyboard */; };
@@ -75,7 +74,6 @@
 		17C1A7971F08323F004FD1EC /* StatusViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusViewController.storyboard; sourceTree = "<group>"; };
 		17C1A7991F083248004FD1EC /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceTableViewController.swift; sourceTree = "<group>"; };
-		17C1A79D1F084A22004FD1EC /* SingleChoiceViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SingleChoiceViewController.storyboard; sourceTree = "<group>"; };
 		17C1A79F1F084DEC004FD1EC /* RadarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarCoordinator.swift; sourceTree = "<group>"; };
 		17C1A7A11F085159004FD1EC /* Choice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
 		17D763281F082C5D00528D8F /* EnterDetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EnterDetailsViewController.storyboard; sourceTree = "<group>"; };
@@ -234,7 +232,6 @@
 				17FE32411F08242200410D7A /* RadarViewController.storyboard */,
 				17FE323F1F0823E700410D7A /* RadarViewController.swift */,
 				17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */,
-				17C1A79D1F084A22004FD1EC /* SingleChoiceViewController.storyboard */,
 				17C1A7971F08323F004FD1EC /* StatusViewController.storyboard */,
 				17C1A7991F083248004FD1EC /* StatusViewController.swift */,
 				17C1A79F1F084DEC004FD1EC /* RadarCoordinator.swift */,
@@ -349,7 +346,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17C1A79E1F084A22004FD1EC /* SingleChoiceViewController.storyboard in Resources */,
 				17C1A7981F08323F004FD1EC /* StatusViewController.storyboard in Resources */,
 				1729939E1F06C4BB0015E94D /* MenuViewController.storyboard in Resources */,
 				17FE32421F08242200410D7A /* RadarViewController.storyboard in Resources */,

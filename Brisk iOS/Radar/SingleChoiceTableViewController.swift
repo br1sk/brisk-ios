@@ -2,30 +2,21 @@ import UIKit
 import InterfaceBacked
 import Sonar
 
-protocol SingleChoiceDelegate: class {
-	#if swift(>=4.0)
-	Change this to use keypaths instead
-	#endif
-	func controller(_ controller: SingleChoiceViewController, didUpdateRadar: Radar)
-}
-
-final class SingleChoiceViewController<T: Choice>: UITableViewController, StoryboardBacked {
+final class SingleChoiceViewController<T: Choice>: UITableViewController {
 
 
 	// MARK: - Properties
 	var selected: T?
 	var all: [T]?
 	var radar: Radar?
-	weak var delegate: SingleChoiceDelegate?
-
+	var onSelect: (T) -> Void = { _ in }
 
 	// MARK: - UIViewController Methods
 
 	override func viewDidLoad() {
 		precondition(all != nil, "All choices must be set before the view controller is presented")
 		precondition(all!.isNotEmpty, "All choices must not be empty")
-
-		selected = all?.first
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 	}
 
 	// MARK: - UITableViewController Methods
@@ -53,10 +44,7 @@ final class SingleChoiceViewController<T: Choice>: UITableViewController, Storyb
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		guard let all = self.all else { return }
 		let choice = all[indexPath.row]
-
-
-
-		delegate?.controller(self, didSelect: choice)
+		onSelect(choice)
 	}
 
 

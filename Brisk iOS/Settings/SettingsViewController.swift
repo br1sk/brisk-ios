@@ -11,8 +11,8 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 	// MARK: - Properties
 
 	let accountSection = 0
-	let appleRow = 1
-	let openradarRow = 2
+	let appleRow = 0
+	let openradarRow = 1
 	let aboutSection = 1
 	let thirdPartyRow = 0
 	let feedbackRow = 1
@@ -36,10 +36,18 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 			case appleRow:
 				if let (username, _) = Keychain.get(.radar) {
 					cell.detailTextLabel?.text = username
+					cell.detailTextLabel?.textColor = view.tintColor
+				} else {
+					cell.detailTextLabel?.text = NSLocalizedString("Settings.AppleRadarPlaceholder", comment: "")
+					cell.detailTextLabel?.textColor = UIColor.lightGray
 				}
 			case openradarRow:
 				if let (_, password) = Keychain.get(.openRadar) {
 					cell.detailTextLabel?.text = password
+					cell.detailTextLabel?.textColor = view.tintColor
+				} else {
+					cell.detailTextLabel?.text = NSLocalizedString("Settings.OpenradarPlaceholder", comment: "")
+					cell.detailTextLabel?.textColor = UIColor.lightGray
 				}
 			default: break
 			}

@@ -36,3 +36,9 @@
 "Radar.Notes.Placeholder" = "Provide any additional information, such as references to related problems or workarounds";
 "Radar.Attachment" = "Attachment";
 "Radar.Attachment.NoAttachments" = "No attachments";
+
+
+// MARK: - Settings
+
+"Settings.OpenradarPlaceholder" = "not set";
+"Settings.AppleRadarPlaceholder" = "not set";

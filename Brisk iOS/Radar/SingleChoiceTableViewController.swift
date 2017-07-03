@@ -17,7 +17,16 @@ final class SingleChoiceViewController<T: Choice>: UITableViewController {
 		precondition(all != nil, "All choices must be set before the view controller is presented")
 		precondition(all!.isNotEmpty, "All choices must not be empty")
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+		tableView.rowHeight = 44
 	}
+
+	override var preferredContentSize: CGSize {
+		get {
+			return CGSize(width: tableView.contentSize.width, height: tableView.rowHeight * CGFloat(tableView.numberOfRows(inSection: 0)))
+		}
+		set { super.preferredContentSize = newValue }
+	}
+
 
 	// MARK: - UITableViewController Methods
 

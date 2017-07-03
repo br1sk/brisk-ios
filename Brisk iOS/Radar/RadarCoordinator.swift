@@ -36,6 +36,7 @@ final class RadarCoordinator {
 		}
 	}
 
+
 	// MARK: - Init/Deinit
 
 	init(from source: UIViewController) {
@@ -50,7 +51,12 @@ final class RadarCoordinator {
 		controller.delegate = self
 		controller.radar = radar
 		root.viewControllers = [controller]
-		source.present(root, animated: true, completion: nil)
+		source.showDetailViewController(root, sender: self)
+		switch UIDevice.current.userInterfaceIdiom {
+		case .pad:
+			controller.navigationItem.leftBarButtonItem = nil
+		default: break
+		}
 		radarViewController = controller
 	}
 
@@ -67,9 +73,31 @@ final class RadarCoordinator {
 		singleChoice.selected = selected
 		singleChoice.onSelect = { [unowned self] choice in
 			onSelect(choice)
-			self.root.popViewController(animated: true)
+			switch UIDevice.current.userInterfaceIdiom {
+			case .pad:
+				singleChoice.dismiss(animated: true)
+			case .phone:
+				self.root.popViewController(animated: true)
+			default:
+				break
+			}
 		}
-		root.show(singleChoice, sender: self)
+
+		switch UIDevice.current.userInterfaceIdiom {
+		case .pad:
+			singleChoice.modalPresentationStyle = .popover
+			root.present(singleChoice, animated: true)
+			if let popover = singleChoice.popoverPresentationController {
+				popover.sourceView = radarViewController?.view
+				if let selected = radarViewController?.tableView.indexPathForSelectedRow, let frame = radarViewController?.tableView.rectForRow(at: selected) {
+					popover.sourceRect = frame
+				}
+			}
+		case .phone:
+			root.show(singleChoice, sender: self)
+		default:
+			break
+		}
 	}
 
 	fileprivate func showEnterDetails(title: String, content: String, placeholder: String, onDisappear: @escaping (String) -> Void) {
@@ -78,7 +106,23 @@ final class RadarCoordinator {
 		enterDetails.placeholder = placeholder
 		enterDetails.title = title
 		enterDetails.onDisappear = onDisappear
-		root.show(enterDetails, sender: self)
+
+		switch UIDevice.current.userInterfaceIdiom {
+		case .pad:
+			let container = UINavigationController(rootViewController: enterDetails)
+			container.modalPresentationStyle = .formSheet
+			root.present(container, animated: true)
+			enterDetails.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(RadarCoordinator.enterDetailsDidFinish))
+		case .phone:
+			root.show(enterDetails, sender: self)
+		default:
+			break
+		}
+
+	}
+
+	@objc fileprivate func enterDetailsDidFinish() {
+		root.presentedViewController?.dismiss(animated: true)
 	}
 }
 

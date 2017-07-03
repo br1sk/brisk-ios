@@ -42,3 +42,9 @@
 
 "Settings.OpenradarPlaceholder" = "not set";
 "Settings.AppleRadarPlaceholder" = "not set";
+"Settings.AppleRadar.Confirm" = "Really?";
+"Settings.AppleRadar.Message" = "Are you sure you want to logout? You have to enter your AppleID again.";
+"Settings.AppleRadar.Logout" = "Yes, log out";
+"Settings.Openradar.Confirm" = "Really?";
+"Settings.Openradar.Message" = "Are you sure you want to clear the OpenRadar API token?";
+"Settings.Openradar.Clear" = "Yes, clear the token";

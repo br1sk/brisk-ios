@@ -3,6 +3,8 @@ import InterfaceBacked
 
 protocol SettingsDelegate: class {
 	func doneTapped()
+	func clearOpenradarTapped()
+	func logoutTapped()
 }
 
 final class SettingsViewController: UITableViewController, StoryboardBacked {
@@ -59,8 +61,20 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 		switch indexPath.section {
 		case accountSection:
 			switch indexPath.row {
-			case appleRow: print("Apple")
-			case openradarRow: print("OpenRadar")
+			case appleRow:
+				showSheet(title: NSLocalizedString("Settings.AppleRadar.Confirm", comment: ""),
+				          message: NSLocalizedString("Settings.AppleRadar.Message", comment: ""),
+				          deleteTitle: NSLocalizedString("Settings.AppleRadar.Logout", comment: ""),
+				          destructiveAction: {
+							self.delegate?.logoutTapped()
+				})
+			case openradarRow:
+				showSheet(title: NSLocalizedString("Settings.Openradar.Confirm", comment: ""),
+				          message: NSLocalizedString("Settings.Openradar.Message", comment: ""),
+				          deleteTitle: NSLocalizedString("Settings.Openradar.Clear", comment: ""),
+				          destructiveAction: {
+							self.delegate?.clearOpenradarTapped()
+				})
 			default: break
 			}
 		case aboutSection:
@@ -71,5 +85,25 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 			}
 		default: break
 		}
+	}
+
+
+	// MARK: - Private
+
+	private func showSheet(title: String, message: String, deleteTitle: String, destructiveAction: @escaping () -> Void) {
+		let sheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+		sheet.addAction(UIAlertAction(title: deleteTitle, style: .destructive, handler: { _ in
+			destructiveAction()
+			if let selected = self.tableView.indexPathForSelectedRow {
+				self.tableView.deselectRow(at: selected, animated: true)
+			}
+		}))
+		sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+			sheet.dismiss(animated: true)
+			if let selected = self.tableView.indexPathForSelectedRow {
+				self.tableView.deselectRow(at: selected, animated: true)
+			}
+		}))
+		showDetailViewController(sheet, sender: self)
 	}
 }

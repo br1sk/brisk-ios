@@ -18,6 +18,7 @@ final class AppCoordinator {
 		menu.delegate = self
 
 		let nav = UINavigationController(rootViewController: menu)
+		nav.setNavigationBarHidden(true, animated: false)
 		self.root = nav
 
 		let window = UIWindow(frame: UIScreen.main.bounds)
@@ -49,8 +50,10 @@ final class AppCoordinator {
 	}
 
 	fileprivate func startLoginIfRequired() {
-		// TODO: If log in required
 		guard let root = self.root else { preconditionFailure() }
+		if let (_, _) = Keychain.get(.radar) {
+			return
+		}
 		let coordinator = LoginCoordinator(from: root)
 		coordinator.start()
 		loginCoordinator = coordinator
@@ -58,11 +61,21 @@ final class AppCoordinator {
 
 	fileprivate func showSettings() {
 		let settings = SettingsViewController.newFromStoryboard()
+		settings.delegate = self
 		let container = UINavigationController(rootViewController: settings)
 		root?.showDetailViewController(container, sender: self)
 	}
 }
 
+
+// MARK: - SettingsDelegate
+
+extension AppCoordinator: SettingsDelegate {
+
+	func doneTapped() {
+		root?.dismiss(animated: true)
+	}
+}
 
 // MARK: - MenuViewDelegate Methods
 

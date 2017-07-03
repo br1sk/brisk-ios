@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X8p-6J-nCn">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -18,46 +18,88 @@
                         <viewControllerLayoutGuide type="bottom" id="kgk-xa-Buo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YWs-cN-QZY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-JR-J0u">
-                                <rect key="frame" x="169" y="291.5" width="37" height="84"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-JR-J0u" userLabel="Menu">
+                                <rect key="frame" x="60" y="324" width="200" height="128"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-ON-UBi">
-                                        <rect key="frame" x="0.0" y="0.0" width="37" height="30"/>
-                                        <state key="normal" title="Dupe"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-ON-UBi">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="64"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <inset key="imageEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Duplicate radar" image="Duplicate"/>
                                         <connections>
                                             <action selector="dupeButtonTapped" destination="X8p-6J-nCn" eventType="touchUpInside" id="raX-6G-OvB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bc9-5N-EOz">
-                                        <rect key="frame" x="0.0" y="54" width="37" height="30"/>
-                                        <state key="normal" title="File"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bc9-5N-EOz">
+                                        <rect key="frame" x="0.0" y="64" width="200" height="64"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <state key="normal" title="Report a new bug" image="Compose"/>
                                         <connections>
                                             <action selector="fileButtonTapped" destination="X8p-6J-nCn" eventType="touchUpInside" id="sBw-aS-Xe0"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="p73-gr-BT6" userLabel="Header">
+                                <rect key="frame" x="62.5" y="40" width="195.5" height="190.5"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="7pw-i5-DDP">
+                                        <rect key="frame" x="34" y="0.0" width="128" height="128"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gEK-zi-FfF">
+                                        <rect key="frame" x="0.0" y="152" width="195.5" height="38.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brisk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIn-OF-eLh">
+                                                <rect key="frame" x="77.5" y="0.0" width="41" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An app for submitting radars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asl-yx-3Ue">
+                                                <rect key="frame" x="0.0" y="20.5" width="195.5" height="18"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBZ-Xd-wcq">
+                                <rect key="frame" x="114" y="516" width="92" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Settings" image="Settings">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="settingsTapped" destination="X8p-6J-nCn" eventType="touchUpInside" id="HVa-pT-BUF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="j8x-JR-J0u" firstAttribute="centerY" secondItem="YWs-cN-QZY" secondAttribute="centerY" id="byp-rL-VBd"/>
+                            <constraint firstItem="p73-gr-BT6" firstAttribute="top" secondItem="1hS-Z7-ddD" secondAttribute="bottom" constant="20" id="PXs-p1-YgJ"/>
+                            <constraint firstItem="NBZ-Xd-wcq" firstAttribute="centerX" secondItem="YWs-cN-QZY" secondAttribute="centerX" id="f9u-8x-h90"/>
+                            <constraint firstItem="kgk-xa-Buo" firstAttribute="top" secondItem="NBZ-Xd-wcq" secondAttribute="bottom" constant="20" id="fMP-Wu-INV"/>
+                            <constraint firstItem="NBZ-Xd-wcq" firstAttribute="top" secondItem="j8x-JR-J0u" secondAttribute="bottom" constant="64" id="m78-mr-6y8"/>
                             <constraint firstItem="j8x-JR-J0u" firstAttribute="centerX" secondItem="YWs-cN-QZY" secondAttribute="centerX" id="qrD-tg-cZB"/>
+                            <constraint firstItem="p73-gr-BT6" firstAttribute="centerX" secondItem="YWs-cN-QZY" secondAttribute="centerX" id="uru-I8-o5A"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Brisk" id="5li-7q-ZDs">
-                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="ehO-fh-FMJ">
-                            <connections>
-                                <action selector="settingsTapped" destination="X8p-6J-nCn" id="KsU-xq-jB2"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wgc-jy-3fQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-12" y="318"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Compose" width="64" height="64"/>
+        <image name="Duplicate" width="64" height="64"/>
+        <image name="Logo" width="128" height="128"/>
+        <image name="Settings" width="32" height="32"/>
+    </resources>
 </document>

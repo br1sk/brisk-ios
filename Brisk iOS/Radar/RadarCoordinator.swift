@@ -54,6 +54,10 @@ final class RadarCoordinator {
 		radarViewController = controller
 	}
 
+	func finish() {
+		source.dismiss(animated: true)
+	}
+
 
 	// MARK: - Private Methods
 
@@ -195,6 +199,10 @@ extension RadarCoordinator: RadarViewDelegate {
 				self.root.popViewController(animated: true)
 			}
 		}
+	}
+
+	func cancelTapped() {
+		finish()
 	}
 }
 

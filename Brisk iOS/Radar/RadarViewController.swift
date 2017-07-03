@@ -19,6 +19,7 @@ protocol RadarViewDelegate: class {
 	func attachmentsTapped()
 
 	func submitTapped()
+	func cancelTapped()
 }
 
 final class RadarViewController: UITableViewController, StoryboardBacked {
@@ -49,7 +50,11 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 		delegate?.submitTapped()
 	}
 
+	@IBAction func cancelTapped() {
+		delegate?.cancelTapped()
+	}
 
+	
 	// MARK: - UITableViewController Methods
 
 	override func numberOfSections(in tableView: UITableView) -> Int {

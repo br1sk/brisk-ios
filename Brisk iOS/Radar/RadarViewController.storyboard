@@ -68,9 +68,14 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Radar" id="pbZ-3f-Qa0">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="vur-E0-TWd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="vur-E0-TWd">
                             <connections>
-                                <action selector="submitTapped" destination="dhr-2w-B0o" id="dEB-mi-i6Z"/>
+                                <action selector="cancelTapped" destination="dhr-2w-B0o" id="IcX-8f-I2q"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="iaW-9o-R42">
+                            <connections>
+                                <action selector="submitTapped" destination="dhr-2w-B0o" id="0vT-VL-fnv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

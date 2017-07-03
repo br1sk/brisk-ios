@@ -131,6 +131,13 @@
                             <outlet property="delegate" destination="hX3-7Y-lP6" id="K1l-cY-9he"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="HgS-cJ-mBQ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="bsy-BJ-crN">
+                            <connections>
+                                <action selector="doneTapped" destination="hX3-7Y-lP6" id="6YI-AO-DGF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4X-RY-Hgb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

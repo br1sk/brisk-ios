@@ -12,7 +12,7 @@
         <!--Brisk-->
         <scene sceneID="LJd-0l-GqH">
             <objects>
-                <viewController title="Brisk" id="X8p-6J-nCn" customClass="MenuViewController" customModule="Brisk_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Brisk" modalPresentationStyle="pageSheet" id="X8p-6J-nCn" customClass="MenuViewController" customModule="Brisk_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1hS-Z7-ddD"/>
                         <viewControllerLayoutGuide type="bottom" id="kgk-xa-Buo"/>

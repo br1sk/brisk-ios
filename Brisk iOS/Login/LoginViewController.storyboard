@@ -13,7 +13,7 @@
         <!--Welcome-->
         <scene sceneID="UcC-nE-sLc">
             <objects>
-                <viewController title="Welcome" id="eea-lb-CVI" customClass="LoginViewController" customModule="Brisk_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Welcome" modalPresentationStyle="formSheet" id="eea-lb-CVI" customClass="LoginViewController" customModule="Brisk_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tu3-ck-BeD"/>
                         <viewControllerLayoutGuide type="bottom" id="HsP-Cc-U5Q"/>

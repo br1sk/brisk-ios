@@ -25,7 +25,8 @@ final class LoginCoordinator {
 		let controller = LoginViewController.newFromStoryboard()
 		controller.delegate = self
 		root.viewControllers = [controller]
-		source.present(root, animated: true, completion: nil)
+		root.modalPresentationStyle = .formSheet
+		source.showDetailViewController(root, sender: self)
 		loginController = controller
 	}
 

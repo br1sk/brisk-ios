@@ -6,7 +6,8 @@ final class AppCoordinator {
 
 	// MARK: - Properties
 
-	var root: UINavigationController?
+	var root = UISplitViewController()
+	var masterRoot = UINavigationController()
 	var loginCoordinator: LoginCoordinator?
 	var radarCoordinator: RadarCoordinator?
 
@@ -17,12 +18,14 @@ final class AppCoordinator {
 		let menu = MenuViewController.newFromStoryboard()
 		menu.delegate = self
 
-		let nav = UINavigationController(rootViewController: menu)
-		nav.setNavigationBarHidden(true, animated: false)
-		self.root = nav
+		masterRoot.viewControllers = [menu]
+		masterRoot.setNavigationBarHidden(true, animated: false)
+
+		root.preferredDisplayMode = .allVisible
+		root.viewControllers = [masterRoot]
 
 		let window = UIWindow(frame: UIScreen.main.bounds)
-		window.rootViewController = nav
+		window.rootViewController = root
 		window.makeKeyAndVisible()
 
 		DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -38,19 +41,22 @@ final class AppCoordinator {
 	fileprivate func showDupe() {
 		let controller = DupeViewController.newFromStoryboard()
 		controller.delegate = self
+		switch UIDevice.current.userInterfaceIdiom {
+		case .pad:
+			controller.navigationItem.leftBarButtonItem = nil
+		default: break
+		}
 		let container = UINavigationController(rootViewController: controller)
-		root?.showDetailViewController(container, sender: self)
+		root.showDetailViewController(container, sender: self)
 	}
 
 	fileprivate func showFile() {
-		guard let root = self.root else { preconditionFailure() }
 		let radarCoordinator = RadarCoordinator(from: root)
 		radarCoordinator.start()
 		self.radarCoordinator = radarCoordinator
 	}
 
 	fileprivate func startLoginIfRequired() {
-		guard let root = self.root else { preconditionFailure() }
 		if let (_, _) = Keychain.get(.radar) {
 			return
 		}
@@ -63,7 +69,8 @@ final class AppCoordinator {
 		let settings = SettingsViewController.newFromStoryboard()
 		settings.delegate = self
 		let container = UINavigationController(rootViewController: settings)
-		root?.showDetailViewController(container, sender: self)
+		container.modalPresentationStyle = .formSheet
+		root.showDetailViewController(container, sender: self)
 	}
 }
 
@@ -71,9 +78,22 @@ final class AppCoordinator {
 // MARK: - SettingsDelegate
 
 extension AppCoordinator: SettingsDelegate {
+	func clearOpenradarTapped() {
+		Keychain.delete(.openRadar)
+		root.dismiss(animated: true) {
+			self.startLoginIfRequired()
+		}
+	}
+
+	func logoutTapped() {
+		Keychain.delete(.radar)
+		root.dismiss(animated: true) {
+			self.startLoginIfRequired()
+		}
+	}
 
 	func doneTapped() {
-		root?.dismiss(animated: true)
+		root.dismiss(animated: true)
 	}
 }
 
@@ -99,7 +119,7 @@ extension AppCoordinator: MenuViewDelegate {
 extension AppCoordinator: DupeViewDelegate {
 
 	func controllerDidCancel(_ controller: DupeViewController) {
-		root?.dismiss(animated: true, completion: nil)
+		root.dismiss(animated: true, completion: nil)
 	}
 
 	func controller(_ controller: DupeViewController, didSubmit number: String) {

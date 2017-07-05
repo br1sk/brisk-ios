@@ -38,9 +38,9 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lcv-A2-Kdr">
-                                <rect key="frame" x="160" y="189" width="55" height="33"/>
+                                <rect key="frame" x="160.5" y="189" width="54" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <state key="normal" title="Submit"/>
+                                <state key="normal" title="Search"/>
                                 <connections>
                                     <action selector="submitTapped" destination="bzv-3H-aA2" eventType="touchUpInside" id="gTF-KG-frh"/>
                                 </connections>
@@ -64,7 +64,7 @@
                                 <action selector="cancelTapped" destination="bzv-3H-aA2" id="NpN-9v-9fY"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="FSV-Ii-NHU">
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="FSV-Ii-NHU">
                             <connections>
                                 <action selector="submitTapped" destination="bzv-3H-aA2" id="rMj-4z-b0E"/>
                             </connections>

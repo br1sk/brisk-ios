@@ -284,6 +284,8 @@ extension RadarCoordinator.ViewModel {
 	}
 }
 
+// MARK: - APIObersver Methods
+
 extension RadarCoordinator: APIObserver {
 	func didStartLoading() {
 		radarViewController?.showLoading()
@@ -300,13 +302,18 @@ extension RadarCoordinator: APIObserver {
 		radarViewController?.hideLoading()
 		let delay = 3.0
 		radarViewController?.showSuccess(message: NSLocalizedString("Radar.Post.Success", comment: ""), autoDismissAfter: delay)
+		finish()
 	}
 
 	func didPostToOpenRadar() {
 		radarViewController?.hideLoading()
 		radarViewController?.showSuccess(message: NSLocalizedString("Radar.Post.Success", comment: ""))
+		finish()
 	}
 }
+
+
+// MARK: - Handle Two Factor
 
 extension RadarCoordinator: TwoFactorAuthenticationHandler {
 	func askForCode(completion: @escaping (String) -> Void) {

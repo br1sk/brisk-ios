@@ -30,7 +30,7 @@ iOS apps have to be signed in order to be installed on a device. To let Xcode ha
 3. Change the `Bundle identifier` to `com.<yourname>.brisk` 
 4. Select the project in Xcode's sidebar, select the `Brisk iOS` target and select your Apple ID in `Signing > Team`
 
-Feel free to [contact me](hi@florianbuerger.com) if you need help or open a new issue.
+Feel free to [contact me](mailto:hi@florianbuerger.com) if you need help or open a new issue.
 
 ## Development
 

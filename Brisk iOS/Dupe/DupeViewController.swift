@@ -12,12 +12,27 @@ final class DupeViewController: UIViewController, StoryboardBacked, Loading {
 	// MARK: - Properties
 
 	@IBOutlet weak var numberField: UITextField!
+	@IBOutlet weak var hintLabel: UILabel!
 	weak var delegate: DupeViewDelegate?
+
+
+	// MARK: - UIViewController Methods
+
+	override func viewWillAppear(_ animated: Bool) {
+		if let content = UIPasteboard.general.string, content.isRadarNumber {
+			numberField.text = content.extractRadarNumber()
+			hintLabel.text = "Found \(content) on your clipboard"
+		} else {
+			hintLabel.text = "You can also post rdar:// or https://openradar.appspot.com/ links"
+		}
+	}
 
 	// MARK: - User Actions
 
 	@IBAction func submitTapped() {
-		guard let number = numberField.text else { return }
+		// TODO: Show error if invalid
+		guard let text = numberField.text, text.isRadarNumber else { return }
+		let number = text.extractRadarNumber() ?? ""
 		delegate?.controller(self, didSubmit: number)
 	}
 

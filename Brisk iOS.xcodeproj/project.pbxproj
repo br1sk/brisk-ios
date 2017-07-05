@@ -13,6 +13,7 @@
 		172993A41F06CD510015E94D /* DupeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172993A31F06CD510015E94D /* DupeViewController.swift */; };
 		172C13F21F0C665F004254B2 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172C13F11F0C665F004254B2 /* Loading.swift */; };
 		174C50F61F0D75C1005FD093 /* Pods-Brisk iOS-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 174C50F51F0D752C005FD093 /* Pods-Brisk iOS-acknowledgements.plist */; };
+		174C50F81F0D8136005FD093 /* RadarNumberEtractionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174C50F71F0D8136005FD093 /* RadarNumberEtractionTests.swift */; };
 		177A32E01F05C6CE0044D836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A32DF1F05C6CE0044D836 /* AppDelegate.swift */; };
 		177A32E71F05C6CE0044D836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177A32E61F05C6CE0044D836 /* Assets.xcassets */; };
 		177A32EA1F05C6CE0044D836 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177A32E81F05C6CE0044D836 /* LaunchScreen.storyboard */; };
@@ -71,6 +72,7 @@
 		172C13F11F0C665F004254B2 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		174C50F41F0D74E1005FD093 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; };
 		174C50F51F0D752C005FD093 /* Pods-Brisk iOS-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "Pods-Brisk iOS-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Brisk iOS/Pods-Brisk iOS-acknowledgements.plist"; sourceTree = "<group>"; };
+		174C50F71F0D8136005FD093 /* RadarNumberEtractionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarNumberEtractionTests.swift; sourceTree = "<group>"; };
 		177A32DC1F05C6CD0044D836 /* Brisk iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brisk iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177A32DF1F05C6CE0044D836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		177A32E61F05C6CE0044D836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				17894A591F09AFE600E683AF /* EmailTests.swift */,
 				177A32F41F05C6CE0044D836 /* Brisk_iOSTests.swift */,
 				177A32F61F05C6CE0044D836 /* Info.plist */,
+				174C50F71F0D8136005FD093 /* RadarNumberEtractionTests.swift */,
 			);
 			path = "Brisk iOSTests";
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17894A581F09AEC800E683AF /* TokenTests.swift in Sources */,
+				174C50F81F0D8136005FD093 /* RadarNumberEtractionTests.swift in Sources */,
 				177A32F51F05C6CE0044D836 /* Brisk_iOSTests.swift in Sources */,
 				17894A5A1F09AFE600E683AF /* EmailTests.swift in Sources */,
 			);

@@ -23,8 +23,6 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 	// MARK: - UIViewController Methods
 
 	override func viewWillAppear(_ animated: Bool) {
-		textView.becomeFirstResponder()
-
 		if placeholder.isNotEmpty && prefilledContent.isEmpty {
 			applyStyling(.placeholder)
 		} else {
@@ -33,13 +31,44 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 		}
 	}
 
+	override func viewDidAppear(_ animated: Bool) {
+		textView.becomeFirstResponder()
+	}
 
-	override func viewWillDisappear(_ animated: Bool) {
-		onDisappear(textView.text ?? "")
+	override func viewDidLoad() {
+		let center = NotificationCenter.default
+		center.addObserver(self, selector: #selector(EnterDetailsViewController.adjustForKeyboard(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+		center.addObserver(self, selector: #selector(EnterDetailsViewController.adjustForKeyboard(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
 	}
 
 
 	// MARK: - Private Methods
+
+	@objc fileprivate func adjustForKeyboard(notification: NSNotification) {
+
+		if notification.name == Notification.Name.UIKeyboardWillHide {
+			textView.contentInset = UIEdgeInsets.zero
+			textView.scrollIndicatorInsets = UIEdgeInsets.zero
+		} else {
+			// Text jumps around a bit, any idea how to avoid that?
+			let info = notification.userInfo!
+			let keyboardScreenEndFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+			let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+
+			let textFrame = view.window!.convert(textView.frame, from: view)
+			let delta = UIScreen.main.bounds.maxY - textFrame.maxY
+			let yInset = abs(delta - keyboardViewEndFrame.height)
+
+			let margin = textView.font!.pointSize
+			let contentInsets = UIEdgeInsetsMake(0.0, 0.0, yInset + margin, 0.0)
+			textView.contentInset = contentInsets
+			textView.scrollIndicatorInsets = UIEdgeInsets.zero
+
+			let selectedRange = textView.selectedRange
+			textView.scrollRangeToVisible(selectedRange)
+		}
+	}
+
 
 	fileprivate func moveCursorToStart() {
 		DispatchQueue.main.async {

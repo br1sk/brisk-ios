@@ -13,6 +13,7 @@ final class LoginCoordinator {
 	var loginController: LoginViewController?
 	let root = UINavigationController()
 
+
 	// MARK: - Init/Deinit
 
 	init(from source: UIViewController) {
@@ -26,7 +27,7 @@ final class LoginCoordinator {
 		controller.delegate = self
 		root.viewControllers = [controller]
 		root.modalPresentationStyle = .formSheet
-		source.showDetailViewController(root, sender: self)
+		source.present(root, animated: true)
 		loginController = controller
 	}
 
@@ -56,6 +57,7 @@ extension LoginCoordinator: LoginViewDelegate {
 			showError(.invalidEmail)
 			return
 		}
+		
 		
 		// Save to keychain
 		Keychain.set(username: user.email.value, password: user.password, forKey: .radar)

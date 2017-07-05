@@ -65,7 +65,7 @@ final class RadarViewController: UITableViewController, StoryboardBacked, Loadin
 	}
 
 	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-		if section == 0 {
+		if section == 0, duplicateOf.isNotEmpty {
 			return "Duplicating Radar #\(duplicateOf)"
 		}
 		return ""

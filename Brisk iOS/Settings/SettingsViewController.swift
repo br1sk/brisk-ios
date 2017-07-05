@@ -21,7 +21,14 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 	let thirdPartyRow = 0
 	let feedbackRow = 1
 	weak var delegate: SettingsDelegate?
-	
+	@IBOutlet weak var versionLabel: UILabel!
+
+
+	// MARK: - UIViewController Methods
+
+	override func viewDidLoad() {
+		configureVersionLabel()
+	}
 
 	// MARK: - User Actions
 
@@ -119,5 +126,10 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 			popover.sourceView = tableView
 			popover.sourceRect = tableView.rectForRow(at: selected)
 		}
+	}
+
+	private func configureVersionLabel() {
+		guard let info = Bundle.main.infoDictionary, let versionString = info["CFBundleShortVersionString"], let buildVersionString = info["CFBundleVersion"] else { return }		
+		versionLabel.text = "Version \(versionString) (\(buildVersionString))"
 	}
 }

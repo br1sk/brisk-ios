@@ -22,7 +22,7 @@ protocol RadarViewDelegate: class {
 	func cancelTapped()
 }
 
-final class RadarViewController: UITableViewController, StoryboardBacked {
+final class RadarViewController: UITableViewController, StoryboardBacked, Loading {
 
 
 	// MARK: - Properties
@@ -38,11 +38,9 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 			tableView.reloadData()
 		}
 	}
+	var duplicateOf = ""
 
 	var didSelectProduct: (Product) -> Void = { _ in }
-
-	var product: Product = .iOS { didSet { tableView.reloadData() } }
-	var area = Area.areas(for: .iOS).first  { didSet { tableView.reloadData() } }
 
 	// MARK: - User Actions
 
@@ -65,6 +63,14 @@ final class RadarViewController: UITableViewController, StoryboardBacked {
 		if section == 2 { return 1 }
 		return 6
 	}
+
+	override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+		if section == 0 {
+			return "Duplicating Radar #\(duplicateOf)"
+		}
+		return ""
+	}
+
 
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell"), let radar = self.radar else { preconditionFailure() }

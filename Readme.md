@@ -1,11 +1,13 @@
 
 # Brisk
 
-![]()
-
 Brisk is an iOS app for filing [Radars](http://radar.apple.com/) and crossposting them to [Open Radar](http://www.openradar.me/).
 
 Brisk is written in Swift 3.2 and uses [Sonar](https://github.com/br1sk/Sonar) to communicate with Apple's Radar web “APIs”.
+
+![](https://github.com/florianbuerger/brisk-ios/blob/master/Resources/Screenshots/01-start.png)
+![](https://github.com/florianbuerger/brisk-ios/blob/master/Resources/Screenshots/02-dupe.png)
+![](https://github.com/florianbuerger/brisk-ios/blob/master/Resources/Screenshots/03-file.png)
 
 ## Missing Features
 

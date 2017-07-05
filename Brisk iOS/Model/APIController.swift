@@ -2,60 +2,120 @@ import Foundation
 import Sonar
 import Alamofire
 
+protocol APIObserver: class {
+	func didStartLoading()
+	func didFail(with error: SonarError)
+	func didPostToAppleRadar()
+	func didPostToOpenRadar()
+}
+
+protocol TwoFactorAuthenticationHandler: class {
+	func askForCode(completion: @escaping (String) -> Void)
+}
+
 final class APIController {
 
 
-	// MARK: - Login
+	// MARK: - Properties
 
+	weak var observer: APIObserver?
+	weak var twoFactorHandler: TwoFactorAuthenticationHandler?
 
-	func login(with user: User) {
+	// MARK: - Init/Deinit
 
+	init(withObserver observer: APIObserver? = nil, twoFactorHandler: TwoFactorAuthenticationHandler? = nil) {
+		self.observer = observer
+		self.twoFactorHandler = twoFactorHandler
 	}
+
 
 	// MARK: - Duping
 
-	func dupe(radarWithId id: String, postToOpenRadar: Bool = false) {
+	func search(forRadarWithId id: String, loading: @escaping (Bool) -> Void, success: @escaping (Radar) -> Void, failure: @escaping (String, String) -> Void) {
+
 		// Fetch existing radar
 		guard let url = URL(string: "https://openradar.appspot.com/api/radar?number=\(id)") else {
 			preconditionFailure()
 		}
+
+		loading(true)
+
 		Alamofire.request(url)
 			.validate()
-			.responseJSON { [weak self] result in
-//				setLoading(false)
+			.responseJSON { result in
+
+				loading(false)
 
 				if let error = result.error {
-//					self?.show(NSAlert(error: error))
+					failure("Error", error.localizedDescription)
 					return
 				}
 
-				guard let json = result.value as? [String: Any],
-					let result = json["result"] as? [String: Any], !result.isEmpty else
-				{
-//					self?.showError(title: "No OpenRadar found",
-//					                message: "Couldn't find an OpenRadar with ID #\(id)")
+				guard let json = result.value as? [String: Any], let result = json["result"] as? [String: Any], !result.isEmpty else {
+					failure("No OpenRadar found", "Couldn't find an OpenRadar with ID #\(id)")
 					return
 				}
 
-				guard let radar = try? Radar(openRadar: json) else
-//					let document = NSDocumentController.shared().makeRadarDocument() else
-				{
-//					self?.showError(title: "Invalid OpenRadar",
-//					                message: "OpenRadar is missing required fields")
+				guard let radar = try? Radar(openRadar: json) else {
+					failure("Invalid OpenRadar", "OpenRadar is missing required fields")
 					return
 				}
 
-//				document.makeWindowControllers(for: radar)
-//				NSDocumentController.shared().addDocument(document)
-//				document.showWindows()
+				success(radar)
 
-//				self?.view.window?.windowController?.close()
+				// Continue to radar view controller
 		}
-		// Amend description
-		// Create new radar
-		// Post to open radar
 	}
 
 
 	// MARK: - Filing
+
+	func file(radar: Radar) {
+		guard let (username, password) = Keychain.get(.radar) else {
+			preconditionFailure("Shouldn't be able to submit a radar without credentials")
+		}
+
+		observer?.didStartLoading()
+
+		// Post to open radar
+
+		// Hide loading
+
+		// Success
+
+		let handleTwoFactorAuth: (@escaping (String?) -> Void) -> () = { [weak self] closure in
+			self?.twoFactorHandler?.askForCode(completion: closure)
+		}
+
+		var radar = radar
+
+		let appleRadar = Sonar(service: .appleRadar(appleID: username, password: password))
+		appleRadar.loginThenCreate(radar: radar, getTwoFactorCode: handleTwoFactorAuth) { [weak self] result in
+			switch result {
+			case .success(let radarID):
+				guard let (_, token) = Keychain.get(.openRadar) else {
+					self?.observer?.didPostToAppleRadar()
+					return
+				}
+
+				radar.ID = radarID
+				let openRadar = Sonar(service: .openRadar(token: token))
+				openRadar.loginThenCreate(
+					radar: radar, getTwoFactorCode: { closure in
+						assertionFailure("Didn't handle Open Radar two factor")
+						closure(nil)
+				}) { [weak self] result in
+					switch result {
+					case .success:
+						self?.observer?.didPostToAppleRadar()
+						self?.observer?.didPostToOpenRadar()
+					case .failure(let error):
+						self?.observer?.didFail(with: error)
+					}
+				}
+			case .failure(let error):
+				self?.observer?.didFail(with: error)
+			}
+		}
+	}
 }

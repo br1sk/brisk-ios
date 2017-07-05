@@ -8,12 +8,16 @@ Brisk is written in Swift 3.2 and uses [Sonar](https://github.com/br1sk/Sonar) t
 ![](https://github.com/florianbuerger/brisk-ios/blob/master/Resources/Screenshots/01-start.png)
 ![](https://github.com/florianbuerger/brisk-ios/blob/master/Resources/Screenshots/03-file.png)
 
-## Missing Features
+## Missing Features & known issues
 
-Current, the iOS version does not support:
+Currently, the iOS version does not support:
 
 - [ ] Attachments
 - [ ] Saving radars as drafts
+
+Posting a radar will fail when you did not enter valid login credentials for Apple's Bug Reporter.
+
+Posting to OpenRadar only works when you entered your API key in settings.
 
 ## Installation
 

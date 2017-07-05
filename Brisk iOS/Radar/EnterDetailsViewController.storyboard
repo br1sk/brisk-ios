@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="E8i-Qt-t6w">
-                                <rect key="frame" x="16" y="28" width="343" height="469"/>
+                                <rect key="frame" x="16" y="28" width="343" height="639"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -44,7 +44,7 @@
                         <constraints>
                             <constraint firstItem="E8i-Qt-t6w" firstAttribute="leading" secondItem="iYW-es-lXc" secondAttribute="leadingMargin" id="1VH-UM-qOY"/>
                             <constraint firstItem="E8i-Qt-t6w" firstAttribute="top" secondItem="Rtd-8G-d2F" secondAttribute="bottom" constant="8" symbolic="YES" id="57W-t8-IJT"/>
-                            <constraint firstItem="Lf5-Rp-1NC" firstAttribute="top" secondItem="E8i-Qt-t6w" secondAttribute="bottom" constant="170" id="CE9-Nt-f3N"/>
+                            <constraint firstItem="Lf5-Rp-1NC" firstAttribute="top" secondItem="E8i-Qt-t6w" secondAttribute="bottom" id="CE9-Nt-f3N"/>
                             <constraint firstItem="E8i-Qt-t6w" firstAttribute="trailing" secondItem="iYW-es-lXc" secondAttribute="trailingMargin" id="Hlk-9W-EdH"/>
                         </constraints>
                     </view>

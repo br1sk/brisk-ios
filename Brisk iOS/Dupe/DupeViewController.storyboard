@@ -58,7 +58,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Dupe a Radar" id="rzn-ra-RrF">
+                    <navigationItem key="navigationItem" title="Duplicate Radar" id="rzn-ra-RrF">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="253-nt-dr7">
                             <connections>
                                 <action selector="cancelTapped" destination="bzv-3H-aA2" id="NpN-9v-9fY"/>

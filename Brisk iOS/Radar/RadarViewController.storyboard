@@ -22,7 +22,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HPB-DZ-gvZ">
-                                    <rect key="frame" x="162.5" y="8" width="49" height="30"/>
+                                    <rect key="frame" x="163" y="8" width="49" height="30"/>
                                     <state key="normal" title="Submit"/>
                                     <connections>
                                         <action selector="submitTapped" destination="dhr-2w-B0o" eventType="touchUpInside" id="grF-r7-M0N"/>

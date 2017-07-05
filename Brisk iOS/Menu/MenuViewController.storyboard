@@ -22,21 +22,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-JR-J0u" userLabel="Menu">
-                                <rect key="frame" x="60" y="324" width="200" height="128"/>
+                                <rect key="frame" x="67" y="324" width="186" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-ON-UBi">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="64"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="186" height="64"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                         <inset key="imageEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Duplicate radar" image="Duplicate"/>
+                                        <state key="normal" title="Duplicate Radar" image="Duplicate"/>
                                         <connections>
                                             <action selector="dupeButtonTapped" destination="X8p-6J-nCn" eventType="touchUpInside" id="raX-6G-OvB"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bc9-5N-EOz">
-                                        <rect key="frame" x="0.0" y="64" width="200" height="64"/>
+                                        <rect key="frame" x="0.0" y="64" width="186" height="64"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <state key="normal" title="Report a new bug" image="Compose"/>
+                                        <state key="normal" title="New Radar" image="Compose"/>
                                         <connections>
                                             <action selector="fileButtonTapped" destination="X8p-6J-nCn" eventType="touchUpInside" id="sBw-aS-Xe0"/>
                                         </connections>
@@ -44,7 +44,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="p73-gr-BT6" userLabel="Header">
-                                <rect key="frame" x="62.5" y="40" width="195.5" height="190.5"/>
+                                <rect key="frame" x="62.5" y="84" width="195.5" height="190.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="7pw-i5-DDP">
                                         <rect key="frame" x="34" y="0.0" width="128" height="128"/>
@@ -80,9 +80,9 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="p73-gr-BT6" firstAttribute="top" secondItem="1hS-Z7-ddD" secondAttribute="bottom" constant="20" id="PXs-p1-YgJ"/>
+                            <constraint firstItem="p73-gr-BT6" firstAttribute="top" secondItem="1hS-Z7-ddD" secondAttribute="bottom" constant="64" id="PXs-p1-YgJ"/>
                             <constraint firstItem="NBZ-Xd-wcq" firstAttribute="centerX" secondItem="YWs-cN-QZY" secondAttribute="centerX" id="f9u-8x-h90"/>
                             <constraint firstItem="kgk-xa-Buo" firstAttribute="top" secondItem="NBZ-Xd-wcq" secondAttribute="bottom" constant="20" id="fMP-Wu-INV"/>
                             <constraint firstItem="NBZ-Xd-wcq" firstAttribute="top" secondItem="j8x-JR-J0u" secondAttribute="bottom" constant="64" id="m78-mr-6y8"/>

@@ -24,6 +24,7 @@ final class RadarCoordinator {
 		var attachments: [Attachment] = []
 	}
 
+
 	// MARK: - Properties
 
 	let source: UIViewController
@@ -35,6 +36,9 @@ final class RadarCoordinator {
 			self.radarViewController?.radar = radar
 		}
 	}
+	lazy var api: APIController = {
+		return APIController(withObserver: self, twoFactorHandler: self)
+	}()
 
 
 	// MARK: - Init/Deinit
@@ -46,10 +50,17 @@ final class RadarCoordinator {
 
 	// MARK: - Public API
 
-	func start() {
+	func start(with radar: Radar? = nil, duplicateOf: String) {
 		let controller = RadarViewController.newFromStoryboard()
 		controller.delegate = self
-		controller.radar = radar
+		if let radar = radar {
+			self.radar = ViewModel(radar)
+			controller.duplicateOf = duplicateOf
+			controller.title = NSLocalizedString("RadarView.Title.Duplicate", comment: "")
+		} else {
+			controller.title = NSLocalizedString("RadarView.Title.New", comment: "")
+		}
+		controller.radar = self.radar
 		root.viewControllers = [controller]
 		source.showDetailViewController(root, sender: self)
 		switch UIDevice.current.userInterfaceIdiom {
@@ -61,6 +72,7 @@ final class RadarCoordinator {
 	}
 
 	func finish() {
+		radar = ViewModel()
 		source.dismiss(animated: true)
 	}
 
@@ -220,29 +232,7 @@ extension RadarCoordinator: RadarViewDelegate {
 	}
 
 	func submitTapped() {
-		// Show loading
-		// Post radar
-		let status = Status.failed
-
-		// Hide loading
-
-		// Show succes/error
-		let controller = StatusViewController.newFromStoryboard()
-		controller.status = status
-		root.pushViewController(controller, animated: true)
-
-		// Auto close after delay on success, pop on failure
-		let delay = 2.0
-		switch status {
-		case .success:
-			DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-				self.source.dismiss(animated: true)
-			}
-		case .failed:
-			DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-				self.root.popViewController(animated: true)
-			}
-		}
+		api.file(radar: radar.createRadar())
 	}
 
 	func cancelTapped() {
@@ -252,7 +242,7 @@ extension RadarCoordinator: RadarViewDelegate {
 
 extension RadarCoordinator.ViewModel {
 
-	init(radar: Radar) {
+	init(_ radar: Radar) {
 		product = radar.product
 		area = radar.area ?? Area.areas(for: product).first!
 		classification = radar.classification
@@ -283,5 +273,51 @@ extension RadarCoordinator.ViewModel {
 			notes: notes,
 			attachments: attachments
 		)
+	}
+}
+
+extension RadarCoordinator: APIObserver {
+	func didStartLoading() {
+		radarViewController?.showLoading()
+	}
+
+	func didFail(with error: SonarError) {
+		radarViewController?.hideLoading()
+		let alert = UIAlertController(title: NSLocalizedString("Global.Error", comment: ""), message: error.localizedDescription, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: NSLocalizedString("Global.Dismiss", comment: ""), style: .cancel))
+		radarViewController?.present(alert, animated: true)
+	}
+
+	func didPostToAppleRadar() {
+		radarViewController?.hideLoading()
+		let delay = 3.0
+		radarViewController?.showSuccess(message: NSLocalizedString("Radar.Post.Success", comment: ""), autoDismissAfter: delay)
+	}
+
+	func didPostToOpenRadar() {
+		radarViewController?.hideLoading()
+		radarViewController?.showSuccess(message: NSLocalizedString("Radar.Post.Success", comment: ""))
+	}
+}
+
+extension RadarCoordinator: TwoFactorAuthenticationHandler {
+	func askForCode(completion: @escaping (String) -> Void) {
+		let alert = UIAlertController(title: NSLocalizedString("Radar.TwoFactorAuth.Title", comment: ""), message: NSLocalizedString("Radar.TwoFactorAuth.Message", comment: ""), preferredStyle: .alert)
+		alert.addTextField { (field) in
+			field.keyboardType = .numberPad
+			let bodyDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
+			field.font = UIFont(descriptor: bodyDescriptor, size: bodyDescriptor.pointSize)
+			field.autocorrectionType = .no
+			field.enablesReturnKeyAutomatically = true
+		}
+		alert.addAction(UIAlertAction(title: NSLocalizedString("Radar.TwoFactorAuth.Submit", comment: ""), style: .default, handler: { (action) in
+			guard let field = alert.textFields?.first else { preconditionFailure() }
+			guard let text = field.text, text.isNotEmpty else {
+				self.askForCode(completion: completion)
+				return
+			}
+			completion(text)
+		}))
+		radarViewController?.present(alert, animated: true)
 	}
 }

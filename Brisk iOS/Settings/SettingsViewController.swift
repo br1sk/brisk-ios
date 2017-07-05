@@ -66,13 +66,6 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 		}
 	}
 
-	override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-		if indexPath.section == aboutSection { return true }
-		let cell = tableView.cellForRow(at: indexPath)
-		guard let text = cell?.detailTextLabel?.text else { return false }
-		return text != NSLocalizedString("Settings.OpenradarPlaceholder", comment: "") || text != NSLocalizedString("Settings.AppleRadarPlaceholder", comment: "")
-	}
-
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		switch indexPath.section {
 		case accountSection:

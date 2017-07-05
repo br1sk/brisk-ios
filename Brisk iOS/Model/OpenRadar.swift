@@ -58,6 +58,7 @@ public extension String {
 			throw OpenRadarParsingError.invalidFormat
 		}
 
+		lastSetter = nil
 		return openRadar
 	}
 }

@@ -1,3 +1,5 @@
+import Foundation
+
 private let sectionToSetter: [String: (inout OpenRadar, String) -> Void] = [
 	"actual results": { $0.actual = appendOrReturn($0.actual, $1) },
 	"area": { $0.areaString = $1 },
@@ -61,5 +63,33 @@ public extension String {
 		lastSetter = nil
 		return openRadar
 	}
-}
 
+	public var isRadarNumber: Bool {
+		if isEmpty { return false }
+		var extracted = self
+		if contains("openradar.appspot.com") || contains("rdar://") {
+			if let e = extractRadarNumber() {
+				extracted = e
+			} else {
+				return false				
+			}
+		}
+		let nonDigits = CharacterSet.decimalDigits.inverted
+		return extracted.rangeOfCharacter(from: nonDigits) == nil
+	}
+
+	public func extractRadarNumber() -> String? {
+		if contains("rdar://") {
+			return components(separatedBy: "/").last ?? nil
+		}
+		if contains("openradar.appspot.com") {
+			let components = URLComponents(string: self)
+			if let path = components?.path {
+				// path return /123455
+				return path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+			}
+			return nil
+		}
+		return self
+	}
+}

@@ -10,6 +10,8 @@ Brisk is written in Swift 3.2 and uses [Sonar](https://github.com/br1sk/Sonar) t
 
 ## Missing Features & known issues
 
+**Works best if you enter you Apple ID and a valid OpenRadar token on first launch**.
+
 Currently, the iOS version does not support:
 
 - [ ] Attachments

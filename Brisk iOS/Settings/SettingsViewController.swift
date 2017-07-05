@@ -5,6 +5,8 @@ protocol SettingsDelegate: class {
 	func doneTapped()
 	func clearOpenradarTapped()
 	func logoutTapped()
+	func frameworksTapped()
+	func feedbackTapped()
 }
 
 final class SettingsViewController: UITableViewController, StoryboardBacked {
@@ -19,9 +21,7 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 	let thirdPartyRow = 0
 	let feedbackRow = 1
 	weak var delegate: SettingsDelegate?
-
-	let feedbackUrl = "https://github.com/florianbuerger/brisk-ios/issues/new"
-
+	
 
 	// MARK: - User Actions
 
@@ -46,15 +46,24 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 			case openradarRow:
 				if let (_, password) = Keychain.get(.openRadar) {
 					cell.detailTextLabel?.text = password
+					cell.textLabel?.textColor = UIColor.darkText
 					cell.detailTextLabel?.textColor = view.tintColor
 				} else {
 					cell.detailTextLabel?.text = NSLocalizedString("Settings.OpenradarPlaceholder", comment: "")
 					cell.detailTextLabel?.textColor = UIColor.lightGray
+					cell.textLabel?.textColor = UIColor.lightGray
 				}
 			default: break
 			}
 		default: break
 		}
+	}
+
+	override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+		if indexPath.section == aboutSection { return true }
+		let cell = tableView.cellForRow(at: indexPath)
+		guard let text = cell?.detailTextLabel?.text else { return false }
+		return text != NSLocalizedString("Settings.OpenradarPlaceholder", comment: "") || text != NSLocalizedString("Settings.AppleRadarPlaceholder", comment: "")
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -79,8 +88,8 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 			}
 		case aboutSection:
 			switch indexPath.row {
-			case thirdPartyRow: print("Frameworks")
-			case feedbackRow: UIApplication.shared.open(URL(string: feedbackUrl)!)
+			case thirdPartyRow: delegate?.frameworksTapped()
+			case feedbackRow: delegate?.feedbackTapped()
 			default: break
 			}
 		default: break
@@ -104,6 +113,11 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 				self.tableView.deselectRow(at: selected, animated: true)
 			}
 		}))
-		showDetailViewController(sheet, sender: self)
+		present(sheet, animated: true, completion: nil)
+
+		if let popover = sheet.popoverPresentationController, let selected = tableView.indexPathForSelectedRow {
+			popover.sourceView = tableView
+			popover.sourceRect = tableView.rectForRow(at: selected)
+		}
 	}
 }

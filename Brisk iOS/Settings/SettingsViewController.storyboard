@@ -22,7 +22,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version 1.2.3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vym-nd-COc">
-                                    <rect key="frame" x="148.5" y="15" width="77" height="16"/>
+                                    <rect key="frame" x="149" y="15" width="77" height="16"/>
                                     <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -37,11 +37,11 @@
                         <sections>
                             <tableViewSection headerTitle="Accounts" id="o56-8S-IfK">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AppleRadar" textLabel="pji-Y4-nxA" detailTextLabel="f8a-ux-dVa" style="IBUITableViewCellStyleValue1" id="ctS-36-3ag">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AppleRadar" textLabel="pji-Y4-nxA" detailTextLabel="f8a-ux-dVa" style="IBUITableViewCellStyleValue1" id="ctS-36-3ag">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ctS-36-3ag" id="Kem-O2-zRb">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Apple Radar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pji-Y4-nxA">
@@ -52,7 +52,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="foo@bar.baz" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f8a-ux-dVa">
-                                                    <rect key="frame" x="243.5" y="12" width="96.5" height="20.5"/>
+                                                    <rect key="frame" x="263.5" y="12" width="96.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
@@ -61,11 +61,11 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OpenRadar" textLabel="Za7-ri-X10" detailTextLabel="Hwm-Td-T41" style="IBUITableViewCellStyleValue1" id="mt2-LD-uZQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OpenRadar" textLabel="Za7-ri-X10" detailTextLabel="Hwm-Td-T41" style="IBUITableViewCellStyleValue1" id="mt2-LD-uZQ">
                                         <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mt2-LD-uZQ" id="itJ-qN-0w4">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="OpenRadar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Za7-ri-X10">
@@ -76,7 +76,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="bar@foo.baz" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hwm-Td-T41">
-                                                    <rect key="frame" x="242.5" y="12" width="97.5" height="20.5"/>
+                                                    <rect key="frame" x="262.5" y="12" width="97.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
@@ -131,7 +131,7 @@
                             <outlet property="delegate" destination="hX3-7Y-lP6" id="K1l-cY-9he"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="HgS-cJ-mBQ">
+                    <navigationItem key="navigationItem" title="Settings" id="HgS-cJ-mBQ">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="bsy-BJ-crN">
                             <connections>
                                 <action selector="doneTapped" destination="hX3-7Y-lP6" id="6YI-AO-DGF"/>

@@ -11,6 +11,7 @@
 		1729939E1F06C4BB0015E94D /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1729939D1F06C4BB0015E94D /* MenuViewController.storyboard */; };
 		172993A21F06CD450015E94D /* DupeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172993A11F06CD450015E94D /* DupeViewController.storyboard */; };
 		172993A41F06CD510015E94D /* DupeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172993A31F06CD510015E94D /* DupeViewController.swift */; };
+		172C13F21F0C665F004254B2 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172C13F11F0C665F004254B2 /* Loading.swift */; };
 		177A32E01F05C6CE0044D836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A32DF1F05C6CE0044D836 /* AppDelegate.swift */; };
 		177A32E71F05C6CE0044D836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177A32E61F05C6CE0044D836 /* Assets.xcassets */; };
 		177A32EA1F05C6CE0044D836 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177A32E81F05C6CE0044D836 /* LaunchScreen.storyboard */; };
@@ -66,6 +67,7 @@
 		1729939D1F06C4BB0015E94D /* MenuViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuViewController.storyboard; sourceTree = "<group>"; };
 		172993A11F06CD450015E94D /* DupeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DupeViewController.storyboard; sourceTree = "<group>"; };
 		172993A31F06CD510015E94D /* DupeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DupeViewController.swift; sourceTree = "<group>"; };
+		172C13F11F0C665F004254B2 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		177A32DC1F05C6CD0044D836 /* Brisk iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brisk iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		177A32DF1F05C6CE0044D836 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		177A32E61F05C6CE0044D836 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 		177A33091F05CB5A0044D836 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				172C13F11F0C665F004254B2 /* Loading.swift */,
 				177A32FF1F05C6FA0044D836 /* AppCoordinator.swift */,
 				177A32DF1F05C6CE0044D836 /* AppDelegate.swift */,
 			);
@@ -501,6 +504,7 @@
 			files = (
 				17FE32341F081F8400410D7A /* APIController.swift in Sources */,
 				17894A5C1F09B04F00E683AF /* Token.swift in Sources */,
+				172C13F21F0C665F004254B2 /* Loading.swift in Sources */,
 				177A330C1F05CCCF0044D836 /* LoginViewController.swift in Sources */,
 				17D7632B1F082C6700528D8F /* EnterDetailsViewController.swift in Sources */,
 				17894A561F099DA500E683AF /* OpenRadarViewController.swift in Sources */,

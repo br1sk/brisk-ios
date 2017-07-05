@@ -8,6 +8,7 @@
 "Global.Failed" = "Oh noh. That did not work.";
 "Global.Required" = "Required";
 "Global.Optional" = "Optional";
+"Global.Dismiss" = "Dismiss";
 
 
 // MARK: - Login
@@ -16,6 +17,9 @@
 
 
 // MARK: - Radar
+
+"RadarView.Title.Duplicate" = "Duplicate";
+"RadarView.Title.New" = "New Radar";
 
 "Radar.Product" = "Product";
 "Radar.Area" = "Area";

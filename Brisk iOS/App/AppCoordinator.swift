@@ -1,5 +1,8 @@
 import UIKit
 import InterfaceBacked
+import Sonar
+import AcknowList
+import SafariServices
 
 final class AppCoordinator {
 
@@ -10,19 +13,20 @@ final class AppCoordinator {
 	var masterRoot = UINavigationController()
 	var loginCoordinator: LoginCoordinator?
 	var radarCoordinator: RadarCoordinator?
+	let api = APIController()
 
 	// MARK: - Public API
 
 	func start() -> UIWindow {
 
 		let menu = MenuViewController.newFromStoryboard()
+		menu.title = "Welcome"
 		menu.delegate = self
 
 		masterRoot.viewControllers = [menu]
-		masterRoot.setNavigationBarHidden(true, animated: false)
 
+		root.viewControllers = [menu]
 		root.preferredDisplayMode = .allVisible
-		root.viewControllers = [masterRoot]
 
 		let window = UIWindow(frame: UIScreen.main.bounds)
 		window.rootViewController = root
@@ -50,9 +54,9 @@ final class AppCoordinator {
 		root.showDetailViewController(container, sender: self)
 	}
 
-	fileprivate func showFile() {
+	fileprivate func showFile(for radar: Radar? = nil, originalNumber: String = "") {
 		let radarCoordinator = RadarCoordinator(from: root)
-		radarCoordinator.start()
+		radarCoordinator.start(with: radar, duplicateOf: originalNumber)
 		self.radarCoordinator = radarCoordinator
 	}
 
@@ -70,7 +74,7 @@ final class AppCoordinator {
 		settings.delegate = self
 		let container = UINavigationController(rootViewController: settings)
 		container.modalPresentationStyle = .formSheet
-		root.showDetailViewController(container, sender: self)
+		root.show(container, sender: self)
 	}
 }
 
@@ -78,6 +82,13 @@ final class AppCoordinator {
 // MARK: - SettingsDelegate
 
 extension AppCoordinator: SettingsDelegate {
+	func feedbackTapped() {
+		let feedbackUrl = "https://github.com/florianbuerger/brisk-ios/issues/new"
+		guard let url = URL(string: feedbackUrl) else { preconditionFailure() }
+		let safari = SFSafariViewController(url: url)
+		root.present(safari, animated: true)
+	}
+
 	func clearOpenradarTapped() {
 		Keychain.delete(.openRadar)
 		root.dismiss(animated: true) {
@@ -94,6 +105,13 @@ extension AppCoordinator: SettingsDelegate {
 
 	func doneTapped() {
 		root.dismiss(animated: true)
+	}
+
+	func frameworksTapped() {
+		let path = Bundle.main.path(forResource: "Pods-Brisk iOS-acknowledgements", ofType: "plist")
+		let controller = AcknowListViewController(acknowledgementsPlistPath: path)
+		guard let navigation = root.viewControllers.last as? UINavigationController else { return }
+		navigation.pushViewController(controller, animated: true)
 	}
 }
 
@@ -123,6 +141,16 @@ extension AppCoordinator: DupeViewDelegate {
 	}
 
 	func controller(_ controller: DupeViewController, didSubmit number: String) {
-		print("Did submit number \(number)")
+		api.search(forRadarWithId: number, loading: { (isLoading) in
+			if isLoading {
+				controller.showLoading()
+			} else {
+				controller.hideLoading()
+			}
+		}, success: { [weak self] (radar) in
+			self?.showFile(for: radar, originalNumber: number)
+		}) { (errorTitle, errorMessage) in
+			print("*** ERROR \(errorTitle)::\(errorMessage)")
+		}
 	}
 }

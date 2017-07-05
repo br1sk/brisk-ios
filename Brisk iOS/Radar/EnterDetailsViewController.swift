@@ -19,7 +19,7 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 	var placeholder = ""
 	var onDisappear: (String) -> Void = { _ in }
 
-	
+
 	// MARK: - UIViewController Methods
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -52,7 +52,8 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 		} else {
 			// Text jumps around a bit, any idea how to avoid that?
 			let info = notification.userInfo!
-			let keyboardScreenEndFrame = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+			guard let value = info[UIKeyboardFrameEndUserInfoKey] as? NSValue else { return }
+			let keyboardScreenEndFrame = value.cgRectValue
 			let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
 
 			let textFrame = view.window!.convert(textView.frame, from: view)
@@ -60,7 +61,7 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 			let yInset = abs(delta - keyboardViewEndFrame.height)
 
 			let margin = textView.font!.pointSize
-			let contentInsets = UIEdgeInsetsMake(0.0, 0.0, yInset + margin, 0.0)
+			let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: yInset + margin, right: 0)
 			textView.contentInset = contentInsets
 			textView.scrollIndicatorInsets = UIEdgeInsets.zero
 
@@ -72,6 +73,7 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 
 	fileprivate func moveCursorToStart() {
 		DispatchQueue.main.async {
+			// swiftlint:disable:next legacy_constructor
 			self.textView.selectedRange = NSMakeRange(0, 0)
 		}
 	}

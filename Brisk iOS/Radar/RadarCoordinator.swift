@@ -325,7 +325,7 @@ extension RadarCoordinator: TwoFactorAuthenticationHandler {
 			field.autocorrectionType = .no
 			field.enablesReturnKeyAutomatically = true
 		}
-		alert.addAction(UIAlertAction(title: NSLocalizedString("Radar.TwoFactorAuth.Submit", comment: ""), style: .default, handler: { (action) in
+		alert.addAction(UIAlertAction(title: NSLocalizedString("Radar.TwoFactorAuth.Submit", comment: ""), style: .default, handler: { _ in
 			guard let field = alert.textFields?.first else { preconditionFailure() }
 			guard let text = field.text, text.isNotEmpty else {
 				self.askForCode(completion: completion)

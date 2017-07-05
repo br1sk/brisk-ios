@@ -61,7 +61,7 @@ final class AppCoordinator {
 	}
 
 	fileprivate func startLoginIfRequired() {
-		if let (_, _) = Keychain.get(.radar) {
+		if Keychain.get(.radar) != nil {
 			return
 		}
 		let coordinator = LoginCoordinator(from: root)
@@ -101,7 +101,7 @@ extension AppCoordinator: SettingsDelegate {
 
 	func logoutTapped() {
 		Keychain.delete(.radar)
-		if (root.presentingViewController != nil) {
+		if root.presentingViewController != nil {
 			root.dismiss(animated: true) {
 				self.startLoginIfRequired()
 			}

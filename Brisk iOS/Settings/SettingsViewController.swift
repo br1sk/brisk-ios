@@ -129,7 +129,7 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 	}
 
 	private func configureVersionLabel() {
-		guard let info = Bundle.main.infoDictionary, let versionString = info["CFBundleShortVersionString"], let buildVersionString = info["CFBundleVersion"] else { return }		
+		guard let info = Bundle.main.infoDictionary, let versionString = info["CFBundleShortVersionString"], let buildVersionString = info["CFBundleVersion"] else { return }
 		versionLabel.text = "Version \(versionString) (\(buildVersionString))"
 	}
 }

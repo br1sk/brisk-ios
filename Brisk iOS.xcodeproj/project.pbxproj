@@ -17,7 +17,6 @@
 		177A32E01F05C6CE0044D836 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A32DF1F05C6CE0044D836 /* AppDelegate.swift */; };
 		177A32E71F05C6CE0044D836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 177A32E61F05C6CE0044D836 /* Assets.xcassets */; };
 		177A32EA1F05C6CE0044D836 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 177A32E81F05C6CE0044D836 /* LaunchScreen.storyboard */; };
-		177A32F51F05C6CE0044D836 /* Brisk_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A32F41F05C6CE0044D836 /* Brisk_iOSTests.swift */; };
 		177A33001F05C6FA0044D836 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A32FF1F05C6FA0044D836 /* AppCoordinator.swift */; };
 		177A33021F05C7080044D836 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A33011F05C7080044D836 /* LoginCoordinator.swift */; };
 		177A33041F05C76D0044D836 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 177A33031F05C76D0044D836 /* MenuViewController.swift */; };
@@ -31,8 +30,6 @@
 		17894A581F09AEC800E683AF /* TokenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17894A571F09AEC800E683AF /* TokenTests.swift */; };
 		17894A5A1F09AFE600E683AF /* EmailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17894A591F09AFE600E683AF /* EmailTests.swift */; };
 		17894A5C1F09B04F00E683AF /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17894A5B1F09B04F00E683AF /* Token.swift */; };
-		17C1A7981F08323F004FD1EC /* StatusViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17C1A7971F08323F004FD1EC /* StatusViewController.storyboard */; };
-		17C1A79A1F083248004FD1EC /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A7991F083248004FD1EC /* StatusViewController.swift */; };
 		17C1A79C1F084A12004FD1EC /* SingleChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */; };
 		17C1A7A01F084DEC004FD1EC /* RadarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A79F1F084DEC004FD1EC /* RadarCoordinator.swift */; };
 		17C1A7A21F085159004FD1EC /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A7A11F085159004FD1EC /* Choice.swift */; };
@@ -70,7 +67,7 @@
 		172993A11F06CD450015E94D /* DupeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DupeViewController.storyboard; sourceTree = "<group>"; };
 		172993A31F06CD510015E94D /* DupeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DupeViewController.swift; sourceTree = "<group>"; };
 		172C13F11F0C665F004254B2 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
-		174C50F41F0D74E1005FD093 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; };
+		174C50F41F0D74E1005FD093 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		174C50F51F0D752C005FD093 /* Pods-Brisk iOS-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "Pods-Brisk iOS-acknowledgements.plist"; path = "Pods/Target Support Files/Pods-Brisk iOS/Pods-Brisk iOS-acknowledgements.plist"; sourceTree = "<group>"; };
 		174C50F71F0D8136005FD093 /* RadarNumberEtractionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarNumberEtractionTests.swift; sourceTree = "<group>"; };
 		177A32DC1F05C6CD0044D836 /* Brisk iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brisk iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +76,6 @@
 		177A32E91F05C6CE0044D836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		177A32EB1F05C6CE0044D836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		177A32F01F05C6CE0044D836 /* Brisk iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Brisk iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		177A32F41F05C6CE0044D836 /* Brisk_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brisk_iOSTests.swift; sourceTree = "<group>"; };
 		177A32F61F05C6CE0044D836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		177A32FF1F05C6FA0044D836 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		177A33011F05C7080044D836 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
@@ -94,8 +90,6 @@
 		17894A571F09AEC800E683AF /* TokenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenTests.swift; sourceTree = "<group>"; };
 		17894A591F09AFE600E683AF /* EmailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTests.swift; sourceTree = "<group>"; };
 		17894A5B1F09B04F00E683AF /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		17C1A7971F08323F004FD1EC /* StatusViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StatusViewController.storyboard; sourceTree = "<group>"; };
-		17C1A7991F083248004FD1EC /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceTableViewController.swift; sourceTree = "<group>"; };
 		17C1A79F1F084DEC004FD1EC /* RadarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarCoordinator.swift; sourceTree = "<group>"; };
 		17C1A7A11F085159004FD1EC /* Choice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
@@ -190,7 +184,6 @@
 			children = (
 				17894A571F09AEC800E683AF /* TokenTests.swift */,
 				17894A591F09AFE600E683AF /* EmailTests.swift */,
-				177A32F41F05C6CE0044D836 /* Brisk_iOSTests.swift */,
 				177A32F61F05C6CE0044D836 /* Info.plist */,
 				174C50F71F0D8136005FD093 /* RadarNumberEtractionTests.swift */,
 			);
@@ -274,8 +267,6 @@
 				17FE32411F08242200410D7A /* RadarViewController.storyboard */,
 				17FE323F1F0823E700410D7A /* RadarViewController.swift */,
 				17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */,
-				17C1A7971F08323F004FD1EC /* StatusViewController.storyboard */,
-				17C1A7991F083248004FD1EC /* StatusViewController.swift */,
 			);
 			path = Radar;
 			sourceTree = "<group>";
@@ -310,6 +301,7 @@
 			buildConfigurationList = 177A32F91F05C6CE0044D836 /* Build configuration list for PBXNativeTarget "Brisk iOS" */;
 			buildPhases = (
 				98199FAA7C4AB0D631311B1F /* [CP] Check Pods Manifest.lock */,
+				1790518D1F0DA072004AE439 /* SwiftLint */,
 				177A32D81F05C6CD0044D836 /* Sources */,
 				177A32D91F05C6CD0044D836 /* Frameworks */,
 				177A32DA1F05C6CD0044D836 /* Resources */,
@@ -390,7 +382,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				174C50F61F0D75C1005FD093 /* Pods-Brisk iOS-acknowledgements.plist in Resources */,
-				17C1A7981F08323F004FD1EC /* StatusViewController.storyboard in Resources */,
 				1729939E1F06C4BB0015E94D /* MenuViewController.storyboard in Resources */,
 				17894A4F1F098AE800E683AF /* SettingsViewController.storyboard in Resources */,
 				17FE32421F08242200410D7A /* RadarViewController.storyboard in Resources */,
@@ -414,6 +405,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1790518D1F0DA072004AE439 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		2404C3C4A378FCD910FA3C26 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -536,7 +541,6 @@
 				17FE323D1F0822AE00410D7A /* String+Extension.swift in Sources */,
 				17C1A79C1F084A12004FD1EC /* SingleChoiceTableViewController.swift in Sources */,
 				17FE322A1F081E4F00410D7A /* LoginError.swift in Sources */,
-				17C1A79A1F083248004FD1EC /* StatusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +550,6 @@
 			files = (
 				17894A581F09AEC800E683AF /* TokenTests.swift in Sources */,
 				174C50F81F0D8136005FD093 /* RadarNumberEtractionTests.swift in Sources */,
-				177A32F51F05C6CE0044D836 /* Brisk_iOSTests.swift in Sources */,
 				17894A5A1F09AFE600E683AF /* EmailTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,12 +633,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -683,10 +687,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -699,11 +704,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U3GJUEG8RJ;
 				INFOPLIST_FILE = "Brisk iOS/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.florianbuerger.brisk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -715,11 +718,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U3GJUEG8RJ;
 				INFOPLIST_FILE = "Brisk iOS/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.florianbuerger.brisk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -730,11 +731,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = U3GJUEG8RJ;
 				INFOPLIST_FILE = "Brisk iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.florianbuerger.Brisk-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brisk iOS.app/Brisk iOS";
 			};
@@ -746,11 +747,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = U3GJUEG8RJ;
 				INFOPLIST_FILE = "Brisk iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.florianbuerger.Brisk-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brisk iOS.app/Brisk iOS";
 			};

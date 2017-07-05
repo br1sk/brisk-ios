@@ -18,7 +18,7 @@ struct Keychain {
 			kSecClass: kSecClassGenericPassword,
 			kSecMatchLimit: kSecMatchLimitOne,
 			kSecReturnAttributes: kCFBooleanTrue,
-			kSecReturnData: kCFBooleanTrue,
+			kSecReturnData: kCFBooleanTrue
 			]
 
 		var result: CFTypeRef?
@@ -52,7 +52,7 @@ struct Keychain {
 			kSecAttrLabel: key.rawValue,
 			kSecAttrService: kService,
 			kSecClass: kSecClassGenericPassword,
-			kSecValueData: passwordData,
+			kSecValueData: passwordData
 			]
 
 		let status = SecItemAdd(attributes as CFDictionary, nil)
@@ -65,7 +65,7 @@ struct Keychain {
 			kSecAttrAccessible: kAccessibilityLevel,
 			kSecAttrLabel: key.rawValue,
 			kSecAttrService: kService,
-			kSecClass: kSecClassGenericPassword,
+			kSecClass: kSecClassGenericPassword
 			]
 
 		let status = SecItemDelete(attributes as CFDictionary)
@@ -88,4 +88,3 @@ private extension OSStatus {
 		return self == noErr
 	}
 }
-

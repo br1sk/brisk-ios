@@ -52,7 +52,7 @@ final class RadarViewController: UITableViewController, StoryboardBacked, Loadin
 		delegate?.cancelTapped()
 	}
 
-	
+
 	// MARK: - UITableViewController Methods
 
 	override func numberOfSections(in tableView: UITableView) -> Int {
@@ -71,7 +71,8 @@ final class RadarViewController: UITableViewController, StoryboardBacked, Loadin
 		return ""
 	}
 
-
+	// swiftlint:disable cyclomatic_complexity
+	// swiftlint:disable:next function_body_length
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell"), let radar = self.radar else { preconditionFailure() }
 		var left = ""

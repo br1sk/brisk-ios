@@ -31,10 +31,10 @@ final class APIController {
 
 	// MARK: - Duping
 
-	func search(forRadarWithId id: String, loading: @escaping (Bool) -> Void, success: @escaping (Radar) -> Void, failure: @escaping (String, String) -> Void) {
+	func search(forRadarWithId radarId: String, loading: @escaping (Bool) -> Void, success: @escaping (Radar) -> Void, failure: @escaping (String, String) -> Void) {
 
 		// Fetch existing radar
-		guard let url = URL(string: "https://openradar.appspot.com/api/radar?number=\(id)") else {
+		guard let url = URL(string: "https://openradar.appspot.com/api/radar?number=\(radarId)") else {
 			preconditionFailure()
 		}
 
@@ -52,7 +52,7 @@ final class APIController {
 				}
 
 				guard let json = result.value as? [String: Any], let result = json["result"] as? [String: Any], !result.isEmpty else {
-					failure("No OpenRadar found", "Couldn't find an OpenRadar with ID #\(id)")
+					failure("No OpenRadar found", "Couldn't find an OpenRadar with ID #\(radarId)")
 					return
 				}
 
@@ -83,7 +83,7 @@ final class APIController {
 
 		// Success
 
-		let handleTwoFactorAuth: (@escaping (String?) -> Void) -> () = { [weak self] closure in
+		let handleTwoFactorAuth: (@escaping (String?) -> Void) -> Void = { [weak self] closure in
 			self?.twoFactorHandler?.askForCode(completion: closure)
 		}
 

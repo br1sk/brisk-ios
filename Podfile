@@ -8,6 +8,7 @@ target 'Brisk iOS' do
   pod 'Sonar', :path => '/Users/florian/Code/Personal/Sonar'
   pod 'SVProgressHUD'
   pod 'AcknowList'
+  pod 'SwiftLint'
  
   target 'Brisk iOSTests' do
     inherit! :search_paths

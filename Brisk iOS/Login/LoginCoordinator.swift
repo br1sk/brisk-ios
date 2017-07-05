@@ -57,8 +57,8 @@ extension LoginCoordinator: LoginViewDelegate {
 			showError(.invalidEmail)
 			return
 		}
-		
-		
+
+
 		// Save to keychain
 		Keychain.set(username: user.email.value, password: user.password, forKey: .radar)
 

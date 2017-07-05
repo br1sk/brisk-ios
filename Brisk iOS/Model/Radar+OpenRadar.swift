@@ -65,4 +65,3 @@ public extension Radar {
 private func summary(for radarID: String?, description: String) -> String {
 	return radarID.map { "This is a duplicate of radar #\($0)\n\n\(description)\n" } ?? description
 }
-

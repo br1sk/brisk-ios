@@ -9,7 +9,7 @@ private let sectionToSetter: [String: (inout OpenRadar, String) -> Void] = [
 	"observed results": { $0.actual = appendOrReturn($0.actual, $1) },
 	"steps to reproduce": { $0.steps = $1 },
 	"summary": { $0.description = $1 },
-	"version": { $0.version = $1 },
+	"version": { $0.version = $1 }
 ]
 
 #if swift(>=4.0)
@@ -36,9 +36,7 @@ public extension String {
 		var lastSetter: ((inout OpenRadar, String) -> Void)?
 
 		for component in components {
-			guard component.characters.last == ":",
-				let setter = sectionToSetter[String(component.characters.dropLast()).lowercased()] else
-			{
+			guard component.characters.last == ":", let setter = sectionToSetter[String(component.characters.dropLast()).lowercased()] else {
 				parts.append(component)
 				continue
 			}
@@ -71,7 +69,7 @@ public extension String {
 			if let e = extractRadarNumber() {
 				extracted = e
 			} else {
-				return false				
+				return false
 			}
 		}
 		let nonDigits = CharacterSet.decimalDigits.inverted

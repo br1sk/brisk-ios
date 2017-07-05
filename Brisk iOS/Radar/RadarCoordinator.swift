@@ -2,8 +2,9 @@ import Foundation
 import UIKit
 import Sonar
 
+// FIXME: This grew fast. Extract stuff...
 
-final class RadarCoordinator {
+final class RadarCoordinator: NSObject {
 
 
 	// MARK: - Types
@@ -88,6 +89,9 @@ final class RadarCoordinator {
 			switch UIDevice.current.userInterfaceIdiom {
 			case .pad:
 				singleChoice.dismiss(animated: true)
+				if let selected = self.radarViewController?.tableView.indexPathForSelectedRow {
+					self.radarViewController?.tableView.deselectRow(at: selected, animated: true)
+				}
 			case .phone:
 				self.root.popViewController(animated: true)
 			default:
@@ -101,6 +105,7 @@ final class RadarCoordinator {
 			root.present(singleChoice, animated: true)
 			if let popover = singleChoice.popoverPresentationController {
 				popover.sourceView = radarViewController?.view
+				popover.delegate = self
 				if let selected = radarViewController?.tableView.indexPathForSelectedRow, let frame = radarViewController?.tableView.rectForRow(at: selected) {
 					popover.sourceRect = frame
 				}
@@ -135,6 +140,9 @@ final class RadarCoordinator {
 
 	@objc fileprivate func enterDetailsDidFinish() {
 		root.presentedViewController?.dismiss(animated: true)
+		if let selected = radarViewController?.tableView.indexPathForSelectedRow {
+			radarViewController?.tableView.deselectRow(at: selected, animated: true)
+		}
 	}
 }
 
@@ -319,5 +327,16 @@ extension RadarCoordinator: TwoFactorAuthenticationHandler {
 			completion(text)
 		}))
 		radarViewController?.present(alert, animated: true)
+	}
+}
+
+// MARK: - UIPopoverPresentationControllerDelegate Methods
+
+extension RadarCoordinator: UIPopoverPresentationControllerDelegate {
+
+	func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+		if let selected = radarViewController?.tableView.indexPathForSelectedRow {
+			radarViewController?.tableView.deselectRow(at: selected, animated: true)
+		}
 	}
 }

@@ -101,7 +101,11 @@ extension AppCoordinator: SettingsDelegate {
 
 	func logoutTapped() {
 		Keychain.delete(.radar)
-		root.dismiss(animated: true) {
+		if (root.presentingViewController != nil) {
+			root.dismiss(animated: true) {
+				self.startLoginIfRequired()
+			}
+		} else {
 			self.startLoginIfRequired()
 		}
 	}

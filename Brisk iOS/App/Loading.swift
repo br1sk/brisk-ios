@@ -15,9 +15,7 @@ extension Loading where Self: UIViewController {
 
 	func showSuccess(message: String, autoDismissAfter delay: TimeInterval = 3.0) {
 		SVProgressHUD.setMinimumDismissTimeInterval(delay)
-		if SVProgressHUD.isVisible() == false {
-			SVProgressHUD.showSuccess(withStatus: message)
-		}
+		SVProgressHUD.showSuccess(withStatus: message)
 	}
 
 	func hideLoading() {

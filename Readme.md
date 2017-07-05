@@ -38,4 +38,4 @@ The app is built with Swift 3.2 and everything should work after you clone the p
 
 ## Credits
 
-Thanks to [keith](https://github.com/keith) for the work on [Sonar](https://github.com/br1sk/Sonar) and the [macOS app](https://github.com/br1sk/brisk.
+Thanks to [keith](https://github.com/keith) for the work on [Sonar](https://github.com/br1sk/Sonar) and the [macOS app](https://github.com/br1sk/brisk).

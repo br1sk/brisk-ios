@@ -19,13 +19,13 @@ final class OpenRadarViewController: UITableViewController, StoryboardBacked {
 	let fieldRow = 1
 	let finishRow = 2
 
+
 	// MARK: - User Actions
 
-	@IBAction func skipTapped() {delegate?.skipTapped() }
+	@IBAction func skipTapped() { delegate?.skipTapped() }
 
 
 	// MARK: - UITableViewController Methods
-
 
 	override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
 		switch indexPath.row {

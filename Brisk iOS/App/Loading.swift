@@ -13,8 +13,11 @@ extension Loading where Self: UIViewController {
 		SVProgressHUD.show()
 	}
 
-	func showSuccess(message: String, autoDismissAfter delay: TimeInterval = 1.0) {
-		SVProgressHUD.showSuccess(withStatus: message)
+	func showSuccess(message: String, autoDismissAfter delay: TimeInterval = 3.0) {
+		SVProgressHUD.setMinimumDismissTimeInterval(delay)
+		if SVProgressHUD.isVisible() == false {
+			SVProgressHUD.showSuccess(withStatus: message)
+		}
 	}
 
 	func hideLoading() {

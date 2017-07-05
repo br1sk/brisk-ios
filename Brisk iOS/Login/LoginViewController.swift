@@ -21,11 +21,6 @@ final class LoginViewController: UIViewController, StoryboardBacked {
 
 	override func viewWillAppear(_ animated: Bool) {
 		emailField.becomeFirstResponder()
-
-		#if DEBUG
-		emailField.text = "foo@bar.baz"
-		passwordField.text = "1234"
-		#endif
 		validateSubmitButton()
 	}
 

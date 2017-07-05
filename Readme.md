@@ -17,7 +17,7 @@ Currently, the iOS version does not support:
 
 Posting a radar will fail when you did not enter valid login credentials for Apple's Bug Reporter.
 
-Posting to OpenRadar only works when you entered your API key in settings.
+Posting to OpenRadar only works when you entered your API key in settings. Re-entering your Apple ID and a new OpenRadar API token only works when you log out. Then you have to re-enter everything.
 
 ## Installation
 

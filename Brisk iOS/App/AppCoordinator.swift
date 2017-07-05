@@ -72,6 +72,9 @@ final class AppCoordinator {
 	fileprivate func showSettings() {
 		let settings = SettingsViewController.newFromStoryboard()
 		settings.delegate = self
+		if UIDevice.current.userInterfaceIdiom == .pad {
+			settings.navigationItem.rightBarButtonItem = nil
+		}
 		let container = UINavigationController(rootViewController: settings)
 		container.modalPresentationStyle = .formSheet
 		root.show(container, sender: self)

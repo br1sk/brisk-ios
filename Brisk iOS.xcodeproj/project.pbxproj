@@ -33,6 +33,7 @@
 		17C1A79C1F084A12004FD1EC /* SingleChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */; };
 		17C1A7A01F084DEC004FD1EC /* RadarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A79F1F084DEC004FD1EC /* RadarCoordinator.swift */; };
 		17C1A7A21F085159004FD1EC /* Choice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C1A7A11F085159004FD1EC /* Choice.swift */; };
+		17C7D8BF1F0E75960036BF1D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C7D8BE1F0E75960036BF1D /* String+Extension.swift */; };
 		17D763291F082C5D00528D8F /* EnterDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17D763281F082C5D00528D8F /* EnterDetailsViewController.storyboard */; };
 		17D7632B1F082C6700528D8F /* EnterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D7632A1F082C6700528D8F /* EnterDetailsViewController.swift */; };
 		17FE32281F081CD100410D7A /* Emptiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE32271F081CD100410D7A /* Emptiness.swift */; };
@@ -43,7 +44,6 @@
 		17FE32361F08221200410D7A /* Radar+OpenRadar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE32351F08221200410D7A /* Radar+OpenRadar.swift */; };
 		17FE32391F08223B00410D7A /* Dictionary+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE32381F08223B00410D7A /* Dictionary+Validation.swift */; };
 		17FE323B1F08228800410D7A /* OpenRadar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE323A1F08228800410D7A /* OpenRadar.swift */; };
-		17FE323D1F0822AE00410D7A /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE323C1F0822AE00410D7A /* String+Extension.swift */; };
 		17FE32401F0823E700410D7A /* RadarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FE323F1F0823E700410D7A /* RadarViewController.swift */; };
 		17FE32421F08242200410D7A /* RadarViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17FE32411F08242200410D7A /* RadarViewController.storyboard */; };
 		4F99F8269819ADC732093605 /* Pods_Brisk_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A915B61BA11353854A4BE2B5 /* Pods_Brisk_iOSTests.framework */; };
@@ -93,6 +93,7 @@
 		17C1A79B1F084A12004FD1EC /* SingleChoiceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChoiceTableViewController.swift; sourceTree = "<group>"; };
 		17C1A79F1F084DEC004FD1EC /* RadarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadarCoordinator.swift; sourceTree = "<group>"; };
 		17C1A7A11F085159004FD1EC /* Choice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Choice.swift; sourceTree = "<group>"; };
+		17C7D8BE1F0E75960036BF1D /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		17D763281F082C5D00528D8F /* EnterDetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EnterDetailsViewController.storyboard; sourceTree = "<group>"; };
 		17D7632A1F082C6700528D8F /* EnterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterDetailsViewController.swift; sourceTree = "<group>"; };
 		17FE32271F081CD100410D7A /* Emptiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emptiness.swift; sourceTree = "<group>"; };
@@ -165,6 +166,7 @@
 		177A32DE1F05C6CD0044D836 /* Brisk iOS */ = {
 			isa = PBXGroup;
 			children = (
+				17C7D8BE1F0E75960036BF1D /* String+Extension.swift */,
 				177A33091F05CB5A0044D836 /* App */,
 				172993A01F06CD3C0015E94D /* Dupe */,
 				17FE32271F081CD100410D7A /* Emptiness.swift */,
@@ -524,6 +526,7 @@
 				17894A561F099DA500E683AF /* OpenRadarViewController.swift in Sources */,
 				17FE323B1F08228800410D7A /* OpenRadar.swift in Sources */,
 				177A33021F05C7080044D836 /* LoginCoordinator.swift in Sources */,
+				17C7D8BF1F0E75960036BF1D /* String+Extension.swift in Sources */,
 				17894A4D1F098A5100E683AF /* Keychain.swift in Sources */,
 				177A33001F05C6FA0044D836 /* AppCoordinator.swift in Sources */,
 				17FE32281F081CD100410D7A /* Emptiness.swift in Sources */,
@@ -538,7 +541,6 @@
 				177A33041F05C76D0044D836 /* MenuViewController.swift in Sources */,
 				17FE322C1F081E6700410D7A /* User.swift in Sources */,
 				17FE32401F0823E700410D7A /* RadarViewController.swift in Sources */,
-				17FE323D1F0822AE00410D7A /* String+Extension.swift in Sources */,
 				17C1A79C1F084A12004FD1EC /* SingleChoiceTableViewController.swift in Sources */,
 				17FE322A1F081E4F00410D7A /* LoginError.swift in Sources */,
 			);

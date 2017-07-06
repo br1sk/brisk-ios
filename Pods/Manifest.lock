@@ -10,13 +10,18 @@ PODS:
 DEPENDENCIES:
   - AcknowList
   - InterfaceBacked
-  - Sonar (from `/Users/florian/Code/Personal/Sonar`)
+  - Sonar (from `https://github.com/florianbuerger/sonar`)
   - SVProgressHUD
   - SwiftLint
 
 EXTERNAL SOURCES:
   Sonar:
-    :path: "/Users/florian/Code/Personal/Sonar"
+    :git: https://github.com/florianbuerger/sonar
+
+CHECKOUT OPTIONS:
+  Sonar:
+    :commit: 5d575840ae2967388309275c8473e1952b086272
+    :git: https://github.com/florianbuerger/sonar
 
 SPEC CHECKSUMS:
   AcknowList: 18ccee4d933a153622416cce2d36e6864ec147ea
@@ -26,6 +31,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   SwiftLint: 3f7543509c931d1291395335f34e245d3919b7f2
 
-PODFILE CHECKSUM: 4b213d04fa5c0009a24c16d84f6fbdffb0e1ddfd
+PODFILE CHECKSUM: '095adb10180d4613e11c5c67b3875feb019a2507'
 
 COCOAPODS: 1.2.1

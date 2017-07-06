@@ -5,7 +5,7 @@ target 'Brisk iOS' do
   use_frameworks!
   
   pod 'InterfaceBacked'
-  pod 'Sonar', :path => '/Users/florian/Code/Personal/Sonar'
+  pod 'Sonar', :git => 'https://github.com/florianbuerger/sonar'
   pod 'SVProgressHUD'
   pod 'AcknowList'
   pod 'SwiftLint'

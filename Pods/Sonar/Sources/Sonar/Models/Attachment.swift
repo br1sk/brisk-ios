@@ -1,8 +1,8 @@
 import Foundation
-#if os(iOS) || os(watchOS) || os(tvOS)
-	import MobileCoreServices
-#elseif os(OSX)
-    import CoreServices
+#if os(OSX)
+import CoreServices
+#else
+import MobileCoreServices
 #endif
 
 public enum AttachmentError: Error {

@@ -5,8 +5,8 @@ Brisk is an iOS universal app for filing [Radars](http://radar.apple.com/) and c
 
 Brisk is written in Swift 3.2 and uses [Sonar](https://github.com/br1sk/Sonar) to communicate with Apple's Radar web “APIs”.
 
-![](https://github.com/florianbuerger/brisk-ios/blob/master/Resources/Screenshots/01-start.png)
-![](https://github.com/florianbuerger/brisk-ios/blob/master/Resources/Screenshots/03-file.png)
+![](Resources/Screenshots/01-start.png)
+![](Resources/Screenshots/03-file.png)
 
 ## Missing Features & known issues
 

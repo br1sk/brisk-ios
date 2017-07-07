@@ -2,7 +2,7 @@ import Foundation
 import Sonar
 import Alamofire
 
-protocol APIObserver: class {
+protocol APIDelegate: class {
 	func didStartLoading()
 	func didFail(with error: SonarError)
 	func didPostToAppleRadar()
@@ -18,18 +18,22 @@ final class APIController {
 
 	// MARK: - Properties
 
-	weak var observer: APIObserver?
+	weak var delegate: APIDelegate?
 	weak var twoFactorHandler: TwoFactorAuthenticationHandler?
+
 
 	// MARK: - Init/Deinit
 
-	init(withObserver observer: APIObserver? = nil, twoFactorHandler: TwoFactorAuthenticationHandler? = nil) {
-		self.observer = observer
+	init(delegate: APIDelegate? = nil, twoFactorHandler: TwoFactorAuthenticationHandler? = nil) {
+		self.delegate = delegate
 		self.twoFactorHandler = twoFactorHandler
 	}
 
 
 	// MARK: - Duping
+
+
+	// TODO: Use delegate
 
 	func search(forRadarWithId radarId: String, loading: @escaping (Bool) -> Void, success: @escaping (Radar) -> Void, failure: @escaping (String, String) -> Void) {
 
@@ -62,8 +66,6 @@ final class APIController {
 				}
 
 				success(radar)
-
-				// Continue to radar view controller
 		}
 	}
 
@@ -75,13 +77,7 @@ final class APIController {
 			preconditionFailure("Shouldn't be able to submit a radar without credentials")
 		}
 
-		observer?.didStartLoading()
-
-		// Post to open radar
-
-		// Hide loading
-
-		// Success
+		delegate?.didStartLoading()
 
 		let handleTwoFactorAuth: (@escaping (String?) -> Void) -> Void = { [weak self] closure in
 			self?.twoFactorHandler?.askForCode(completion: closure)
@@ -89,14 +85,21 @@ final class APIController {
 
 		var radar = radar
 
+		// Post to Apple Radar
+
 		let appleRadar = Sonar(service: .appleRadar(appleID: username, password: password))
 		appleRadar.loginThenCreate(radar: radar, getTwoFactorCode: handleTwoFactorAuth) { [weak self] result in
 			switch result {
 			case .success(let radarID):
+
+				// Don't post to OpenRadar if no token is present.
+				// TODO: Should we show a confirmation/login for OpenRadar?
 				guard let (_, token) = Keychain.get(.openRadar) else {
-					self?.observer?.didPostToAppleRadar()
+					self?.delegate?.didPostToAppleRadar()
 					return
 				}
+
+				// Post to open radar
 
 				radar.ID = radarID
 				let openRadar = Sonar(service: .openRadar(token: token))
@@ -107,14 +110,14 @@ final class APIController {
 				}) { [weak self] result in
 					switch result {
 					case .success:
-						self?.observer?.didPostToAppleRadar()
-						self?.observer?.didPostToOpenRadar()
+						self?.delegate?.didPostToAppleRadar()
+						self?.delegate?.didPostToOpenRadar()
 					case .failure(let error):
-						self?.observer?.didFail(with: error)
+						self?.delegate?.didFail(with: error)
 					}
 				}
 			case .failure(let error):
-				self?.observer?.didFail(with: error)
+				self?.delegate?.didFail(with: error)
 			}
 		}
 	}

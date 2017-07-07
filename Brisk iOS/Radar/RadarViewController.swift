@@ -22,7 +22,7 @@ protocol RadarViewDelegate: class {
 	func cancelTapped()
 }
 
-final class RadarViewController: UITableViewController, StoryboardBacked, Loading {
+final class RadarViewController: UITableViewController, StoryboardBacked, StatusDisplay {
 
 
 	// MARK: - Properties

@@ -6,7 +6,7 @@ protocol DupeViewDelegate: class {
 	func controller(_ controller: DupeViewController, didSubmit number: String)
 }
 
-final class DupeViewController: UIViewController, StoryboardBacked, Loading {
+final class DupeViewController: UIViewController, StoryboardBacked, StatusDisplay {
 
 
 	// MARK: - Properties

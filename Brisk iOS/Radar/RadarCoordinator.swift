@@ -18,8 +18,16 @@ final class RadarCoordinator: NSObject {
 			self.radarViewController?.radar = radar
 		}
 	}
+	lazy var publisher: SubmitRadarDelegate = {
+		guard let radarViewController = self.radarViewController else { preconditionFailure() }
+		return SubmitRadarDelegate(radarViewController)
+	}()
+	lazy var twoFactor: TwoFactorAuthentication = {
+		guard let radarViewController = self.radarViewController else { preconditionFailure() }
+		return TwoFactorAuthentication(viewController: radarViewController)
+	}()
 	lazy var api: APIController = {
-		return APIController(withObserver: self, twoFactorHandler: self)
+		return APIController(delegate: self.publisher, twoFactorHandler: self.twoFactor)
 	}()
 
 
@@ -229,30 +237,6 @@ extension RadarCoordinator: RadarViewDelegate {
 	}
 }
 
-
-// MARK: - Handle Two Factor
-
-extension RadarCoordinator: TwoFactorAuthenticationHandler {
-	func askForCode(completion: @escaping (String) -> Void) {
-		let alert = UIAlertController(title: Localizable.Radar.TwoFactor.title.localized, message: Localizable.Radar.TwoFactor.message.localized, preferredStyle: .alert)
-		alert.addTextField { (field) in
-			field.keyboardType = .numberPad
-			let bodyDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
-			field.font = UIFont(descriptor: bodyDescriptor, size: bodyDescriptor.pointSize)
-			field.autocorrectionType = .no
-			field.enablesReturnKeyAutomatically = true
-		}
-		alert.addAction(UIAlertAction(title: Localizable.Radar.TwoFactor.submit.localized, style: .default, handler: { _ in
-			guard let field = alert.textFields?.first else { preconditionFailure() }
-			guard let text = field.text, text.isNotEmpty else {
-				self.askForCode(completion: completion)
-				return
-			}
-			completion(text)
-		}))
-		radarViewController?.present(alert, animated: true)
-	}
-}
 
 // MARK: - UIPopoverPresentationControllerDelegate Methods
 

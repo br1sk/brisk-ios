@@ -33,7 +33,7 @@ final class RadarViewController: UITableViewController, StoryboardBacked, Loadin
 		// TODO: Determine required form fields
 		return true
 	}
-	var radar: RadarCoordinator.ViewModel? {
+	var radar: RadarViewModel? {
 		didSet {
 			tableView.reloadData()
 		}

@@ -7,32 +7,13 @@ import Sonar
 final class RadarCoordinator: NSObject {
 
 
-	// MARK: - Types
-
-	struct ViewModel {
-		var product: Product = .iOS
-		var area: Area? = Area.areas(for: .iOS).first
-		var classification: Classification = .Security
-		var reproducibility: Reproducibility = .Always
-		var title: String = ""
-		var description: String = ""
-		var steps: String = ""
-		var expected: String = ""
-		var actual: String = ""
-		var configuration: String = ""
-		var version: String = ""
-		var notes: String = ""
-		var attachments: [Attachment] = []
-	}
-
-
 	// MARK: - Properties
 
 	let source: UIViewController
 	var root = UINavigationController()
 	var radarViewController: RadarViewController?
 	var editingKeypath = ""
-	var radar = ViewModel() {
+	var radar = RadarViewModel() {
 		didSet {
 			self.radarViewController?.radar = radar
 		}
@@ -55,7 +36,7 @@ final class RadarCoordinator: NSObject {
 		let controller = RadarViewController.newFromStoryboard()
 		controller.delegate = self
 		if let radar = radar {
-			self.radar = ViewModel(radar)
+			self.radar = RadarViewModel(radar)
 			controller.duplicateOf = duplicateOf
 			controller.title = Localizable.Radar.View.Title.duplicate.localized
 		} else {
@@ -73,7 +54,7 @@ final class RadarCoordinator: NSObject {
 	}
 
 	func finish() {
-		radar = ViewModel()
+		radar = RadarViewModel()
 		source.dismiss(animated: true)
 	}
 
@@ -244,71 +225,6 @@ extension RadarCoordinator: RadarViewDelegate {
 	}
 
 	func cancelTapped() {
-		finish()
-	}
-}
-
-extension RadarCoordinator.ViewModel {
-
-	init(_ radar: Radar) {
-		product = radar.product
-		area = radar.area ?? Area.areas(for: product).first!
-		classification = radar.classification
-		reproducibility = radar.reproducibility
-		title = radar.title
-		description = radar.description
-		steps = radar.steps
-		expected = radar.expected
-		actual = radar.actual
-		configuration = radar.configuration
-		version = radar.version
-		notes = radar.notes
-		attachments = radar.attachments
-	}
-
-	func createRadar() -> Radar {
-		return Radar(
-			classification: classification,
-			product: product,
-			reproducibility: reproducibility,
-			title: title,
-			description: description,
-			steps: steps,
-			expected: expected,
-			actual: actual,
-			configuration: configuration,
-			version: version,
-			notes: notes,
-			attachments: attachments
-		)
-	}
-}
-
-// MARK: - APIObersver Methods
-
-extension RadarCoordinator: APIObserver {
-	func didStartLoading() {
-		radarViewController?.showLoading()
-	}
-
-	func didFail(with error: SonarError) {
-        
-		radarViewController?.hideLoading()
-		let alert = UIAlertController(title: Localizable.Global.error.localized, message: error.localizedDescription, preferredStyle: .alert)
-		alert.addAction(UIAlertAction(title: Localizable.Global.dismiss.localized, style: .cancel))
-		radarViewController?.present(alert, animated: true)
-	}
-
-	func didPostToAppleRadar() {
-		radarViewController?.hideLoading()
-		let delay = 3.0
-		radarViewController?.showSuccess(message: Localizable.Radar.Post.success.localized, autoDismissAfter: delay)
-		finish()
-	}
-
-	func didPostToOpenRadar() {
-		radarViewController?.hideLoading()
-		radarViewController?.showSuccess(message: Localizable.Radar.Post.success.localized)
 		finish()
 	}
 }

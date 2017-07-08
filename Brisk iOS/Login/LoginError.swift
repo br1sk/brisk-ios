@@ -6,7 +6,8 @@ enum LoginError: Error {
 extension LoginError: LocalizedError {
 	var errorDescription: String? {
 		switch self {
-		case .invalidEmail: return NSLocalizedString("LoginError.InvalidEmail", comment: "")
+		case .invalidEmail:
+            return Localizable.Login.Error.invalidEmail.localized
 		}
 	}
 }

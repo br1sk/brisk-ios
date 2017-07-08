@@ -83,59 +83,59 @@ final class RadarViewController: UITableViewController, StoryboardBacked, Loadin
 		switch indexPath.section {
 		case 0:
 			switch indexPath.row {
-			case 0:
-				left = NSLocalizedString("Radar.Product", comment: "")
-				right = radar.product.name
-			case 1:
-				left = NSLocalizedString("Radar.Area", comment: "")
-				right = radar.area?.name ?? ""
-				selectable = Area.areas(for: radar.product).isNotEmpty
-			case 2:
-				left = NSLocalizedString("Radar.Version", comment: "")
-				right = radar.version
-			case 3:
-				left = NSLocalizedString("Radar.Classification", comment: "")
-				right = radar.classification.name
-			case 4:
-				left = NSLocalizedString("Radar.Reproducibility", comment: "")
-				right = radar.reproducibility.name
-			case 5:
-				left = NSLocalizedString("Radar.Configuration", comment: "")
-				right = radar.configuration
-				rightPlaceholder = NSLocalizedString("Global.Optional", comment: "")
+            case 0:
+                left = Localizable.Radar.product.localized
+                right = radar.product.name
+            case 1:
+                left = Localizable.Radar.area.localized
+                right = radar.area?.name ?? ""
+                selectable = Area.areas(for: radar.product).isNotEmpty
+            case 2:
+                left = Localizable.Radar.version.localized
+                right = radar.version
+            case 3:
+                left = Localizable.Radar.classification.localized
+                right = radar.classification.name
+            case 4:
+                left = Localizable.Radar.reproducibility.localized
+                right = radar.reproducibility.name
+            case 5:
+                left = Localizable.Radar.configuration.localized
+                right = radar.configuration
+                rightPlaceholder = Localizable.Global.optional.localized
 			default: break
 			}
 		case 1:
-			switch indexPath.row {
-			case 0:
-				left = NSLocalizedString("Radar.Title", comment: "")
-				right = radar.title
-				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-			case 1:
-				left = NSLocalizedString("Radar.Description", comment: "")
-				right = radar.description
-				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-			case 2:
-				left = NSLocalizedString("Radar.Steps", comment: "")
-				right = radar.steps
-				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-			case 3:
-				left = NSLocalizedString("Radar.Expected", comment: "")
-				right = radar.expected
-				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-			case 4:
-				left = NSLocalizedString("Radar.Actual", comment: "")
-				right = radar.actual
-				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-			case 5:
-				left = NSLocalizedString("Radar.Notes", comment: "")
-				right = radar.notes
-				rightPlaceholder = NSLocalizedString("Global.Required", comment: "")
-			default: break
-			}
+            switch indexPath.row {
+            case 0:
+                left = Localizable.Radar.title.localized
+                right = radar.title
+                rightPlaceholder = Localizable.Global.required.localized
+            case 1:
+                left = Localizable.Radar.description.localized
+                right = radar.description
+                rightPlaceholder = Localizable.Global.required.localized
+            case 2:
+                left = Localizable.Radar.steps.localized
+                right = radar.steps
+                rightPlaceholder = Localizable.Global.required.localized
+            case 3:
+                left = Localizable.Radar.expected.localized
+                right = radar.expected
+                rightPlaceholder = Localizable.Global.required.localized
+            case 4:
+                left = Localizable.Radar.actual.localized
+                right = radar.actual
+                rightPlaceholder = Localizable.Global.required.localized
+            case 5:
+                left = Localizable.Radar.notes.localized
+                right = radar.notes
+                rightPlaceholder = Localizable.Global.required.localized
+            default: break
+            }
 		case 2:
-			left = NSLocalizedString("Radar.Attachment", comment: "")
-			right = "No attachments"
+			left = Localizable.Radar.attachament.localized
+			right = Localizable.Radar.noAttachaments.localized
 			selectable = false // not implemented yet
 
 		default: break

@@ -47,7 +47,7 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 					cell.detailTextLabel?.text = username
 					cell.detailTextLabel?.textColor = view.tintColor
 				} else {
-					cell.detailTextLabel?.text = NSLocalizedString("Settings.AppleRadarPlaceholder", comment: "")
+					cell.detailTextLabel?.text = Localizable.Settings.AppleRadar.placeholder.localized
 					cell.detailTextLabel?.textColor = UIColor.lightGray
 				}
 			case openradarRow:
@@ -56,7 +56,7 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 					cell.textLabel?.textColor = UIColor.darkText
 					cell.detailTextLabel?.textColor = view.tintColor
 				} else {
-					cell.detailTextLabel?.text = NSLocalizedString("Settings.OpenradarPlaceholder", comment: "")
+					cell.detailTextLabel?.text = Localizable.Settings.OpenRadar.placeholder.localized
 					cell.detailTextLabel?.textColor = UIColor.lightGray
 					cell.textLabel?.textColor = UIColor.lightGray
 				}
@@ -71,16 +71,16 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 		case accountSection:
 			switch indexPath.row {
 			case appleRow:
-				showSheet(title: NSLocalizedString("Settings.AppleRadar.Confirm", comment: ""),
-				          message: NSLocalizedString("Settings.AppleRadar.Message", comment: ""),
-				          deleteTitle: NSLocalizedString("Settings.AppleRadar.Logout", comment: ""),
+				showSheet(title: Localizable.Settings.AppleRadar.confirm.localized,
+				          message: Localizable.Settings.AppleRadar.message.localized,
+				          deleteTitle: Localizable.Settings.AppleRadar.logout.localized,
 				          destructiveAction: {
 							self.delegate?.logoutTapped()
 				})
 			case openradarRow:
-				showSheet(title: NSLocalizedString("Settings.Openradar.Confirm", comment: ""),
-				          message: NSLocalizedString("Settings.Openradar.Message", comment: ""),
-				          deleteTitle: NSLocalizedString("Settings.Openradar.Clear", comment: ""),
+				showSheet(title: Localizable.Settings.OpenRadar.confirm.localized,
+				          message: Localizable.Settings.OpenRadar.message.localized,
+				          deleteTitle: Localizable.Settings.OpenRadar.clear.localized,
 				          destructiveAction: {
 							self.delegate?.clearOpenradarTapped()
 				})
@@ -107,7 +107,7 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 				self.tableView.deselectRow(at: selected, animated: true)
 			}
 		}))
-		sheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+		sheet.addAction(UIAlertAction(title: Localizable.Global.cancel.localized, style: .cancel, handler: { _ in
 			sheet.dismiss(animated: true)
 			if let selected = self.tableView.indexPathForSelectedRow {
 				self.tableView.deselectRow(at: selected, animated: true)

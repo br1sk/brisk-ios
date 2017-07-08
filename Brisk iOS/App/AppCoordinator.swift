@@ -42,7 +42,18 @@ final class AppCoordinator {
 
 	// MARK: - Navigation
 
-	fileprivate func showDupe() {
+    open func handleQuick(action: QuickAction.Radar? = nil) {
+        if let action = action {
+            switch action {
+            case .new:
+                showFile()
+            case .duplicate:
+                showDupe()
+            }
+        }
+    }
+
+    fileprivate func showDupe() {
 		let controller = DupeViewController.newFromStoryboard()
 		controller.delegate = self
 		switch UIDevice.current.userInterfaceIdiom {

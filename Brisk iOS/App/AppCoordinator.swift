@@ -101,6 +101,8 @@ extension AppCoordinator: SettingsDelegate {
 
 	func logoutTapped() {
 		Keychain.delete(.radar)
+        UIApplication.shared.shortcutItems = nil
+
 		if root.presentedViewController != nil {
 			root.dismiss(animated: true) {
 				self.startLoginIfRequired()

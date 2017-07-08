@@ -18,4 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		return true
 	}
 
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        if let type = QuickAction.Radar(rawValue: shortcutItem.type) {
+            appCoordinator?.handleQuick(action: type)
+            completionHandler(true)
+        }
+    }
 }

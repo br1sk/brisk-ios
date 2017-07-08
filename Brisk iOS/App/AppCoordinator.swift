@@ -42,7 +42,18 @@ final class AppCoordinator {
 
 	// MARK: - Navigation
 
-	fileprivate func showDupe() {
+    open func handleQuick(action: QuickAction.Radar? = nil) {
+        if let action = action {
+            switch action {
+            case .new:
+                showFile()
+            case .duplicate:
+                showDupe()
+            }
+        }
+    }
+
+    fileprivate func showDupe() {
 		let controller = DupeViewController.newFromStoryboard()
 		controller.delegate = self
 		switch UIDevice.current.userInterfaceIdiom {
@@ -86,7 +97,7 @@ final class AppCoordinator {
 
 extension AppCoordinator: SettingsDelegate {
 	func feedbackTapped() {
-		let feedbackUrl = "https://github.com/florianbuerger/brisk-ios/issues/new"
+		let feedbackUrl = "https://github.com/br1sk/brisk-ios/issues/new"
 		guard let url = URL(string: feedbackUrl) else { preconditionFailure() }
 		let safari = SFSafariViewController(url: url)
 		root.present(safari, animated: true)
@@ -101,6 +112,8 @@ extension AppCoordinator: SettingsDelegate {
 
 	func logoutTapped() {
 		Keychain.delete(.radar)
+        UIApplication.shared.shortcutItems = nil
+
 		if root.presentedViewController != nil {
 			root.dismiss(animated: true) {
 				self.startLoginIfRequired()

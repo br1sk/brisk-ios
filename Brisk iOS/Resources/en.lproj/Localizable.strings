@@ -11,6 +11,11 @@
 "Global.Dismiss" = "Dismiss";
 
 
+// MARK: - Quick Actions
+"QuickAction.NewRadar" = "New Radar";
+"QuickAction.DuplicateRadar" = "Duplicate Radar";
+
+
 // MARK: - Login
 
 "LoginError.InvalidEmail" = "The email you entered is not valid.";

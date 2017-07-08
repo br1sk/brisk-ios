@@ -32,6 +32,9 @@ final class LoginViewController: UIViewController, StoryboardBacked {
 		let email = Email(rawEmail)
 		let user = User(email: email, password: password)
 		delegate?.submitTapped(user: user)
+
+        let shortcuts = QuickAction.Shortcut.self
+        UIApplication.shared.shortcutItems = [shortcuts.new, shortcuts.duplicate]
 	}
 
 	@IBAction func textFieldChanged() {

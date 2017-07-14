@@ -62,7 +62,7 @@ public extension String {
 		return openRadar
 	}
 
-	public var isRadarNumber: Bool {
+	public var isOpenRadar: Bool {
 		if isEmpty { return false }
 		var extracted = self
 		if contains("openradar.appspot.com") || contains("rdar://") {

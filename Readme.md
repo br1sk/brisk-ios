@@ -21,6 +21,12 @@ Posting a radar will fail when you did not enter valid login credentials for App
 
 Posting to OpenRadar only works when you entered your API key in settings. Re-entering your Apple ID and a new OpenRadar API token only works when you log out. Then you have to re-enter everything.
 
+## URL Scheme
+
+Brisk supports an URL scheme `brisk-rdar` to integrate with other apps. 
+
+Pass an OpenRadar number: `brisk-rdar://radar/123456`. Per default, Brisk searches for the number with user interaction. If you don't want that, use `brisk-radar://radar/123456?submit=false`.
+
 ## Installation
 
 iOS apps have to be signed in order to be installed on a device. To let Xcode handle everything for you change the `Bundle Identifier` to something unique, `com.<yourname>.brisk` for example and select your development team in Xcode. 

@@ -14,6 +14,8 @@ final class AppCoordinator {
 	var loginCoordinator: LoginCoordinator?
 	var radarCoordinator: RadarCoordinator?
 	let api = APIController()
+	let urlScheme = "brisk-rdar"
+
 
 	// MARK: - Public API
 
@@ -39,6 +41,27 @@ final class AppCoordinator {
 		return window
 	}
 
+	func handle(url: URL) -> Bool {
+		guard
+			let scheme = url.scheme,
+			scheme == urlScheme,
+			let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+			else  {
+				return false
+		}
+
+		let number = String(components.path.dropFirst())
+		if number.isOpenRadar {
+			var autoSubmit = true
+			if let queryItems = components.queryItems, let submit = queryItems.first(where: { $0.name == "submit" }) {
+				autoSubmit = submit.value == "true"
+			}
+			showDupe(with: number, autoSearch: autoSubmit)
+		}
+
+		return true
+	}
+
 
 	// MARK: - Navigation
 
@@ -53,9 +76,10 @@ final class AppCoordinator {
         }
     }
 
-    fileprivate func showDupe() {
+	fileprivate func showDupe(with number: String = "", autoSearch: Bool = false) {
 		let controller = DupeViewController.newFromStoryboard()
 		controller.delegate = self
+		controller.number = number
 		switch UIDevice.current.userInterfaceIdiom {
 		case .pad:
 			controller.navigationItem.leftBarButtonItem = nil
@@ -63,6 +87,12 @@ final class AppCoordinator {
 		}
 		let container = UINavigationController(rootViewController: controller)
 		root.showDetailViewController(container, sender: self)
+
+		if autoSearch && number.isNotEmpty && number.isOpenRadar {
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+				self.controller(controller, didSubmit: number)
+			}
+		}
 	}
 
 	fileprivate func showFile(for radar: Radar? = nil, originalNumber: String = "") {

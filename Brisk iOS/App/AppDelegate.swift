@@ -24,4 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             completionHandler(true)
         }
     }
+
+	func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+		guard let coordinator = appCoordinator else { return false }
+		return coordinator.handle(url: url)
+	}
 }

@@ -4,13 +4,13 @@ import XCTest
 class RadarNumberEtractionTests: XCTestCase {
 
 	func testValidation() {
-		XCTAssertTrue("1234134513".isRadarNumber)
-		XCTAssertTrue("rdar://475245".isRadarNumber)
-		XCTAssertTrue("https://openradar.appspot.com/2348234823".isRadarNumber)
-		XCTAssertTrue("https://openradar.appspot.com/2348234823#2345".isRadarNumber)
+		XCTAssertTrue("1234134513".isOpenRadar)
+		XCTAssertTrue("rdar://475245".isOpenRadar)
+		XCTAssertTrue("https://openradar.appspot.com/2348234823".isOpenRadar)
+		XCTAssertTrue("https://openradar.appspot.com/2348234823#2345".isOpenRadar)
 
-		XCTAssertFalse("rdar://asd234dasf2".isRadarNumber)
-		XCTAssertFalse("asdf4ewe".isRadarNumber)
+		XCTAssertFalse("rdar://asd234dasf2".isOpenRadar)
+		XCTAssertFalse("asdf4ewe".isOpenRadar)
 	}
 
 	func testExtraction() {

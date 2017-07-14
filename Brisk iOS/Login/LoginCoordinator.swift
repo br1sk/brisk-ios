@@ -38,8 +38,10 @@ final class LoginCoordinator {
 	// MARK: - Private
 
 	fileprivate func showError(_ error: LoginError) {
-		let alert = UIAlertController(title: NSLocalizedString("Global.Error", comment: ""), message: error.localizedDescription, preferredStyle: .alert)
-		let cancel = UIAlertAction(title: NSLocalizedString("Global.Error.TryAgain", comment: ""), style: .cancel) { [weak self] _ in
+        let global = Localizable.Global.self
+
+		let alert = UIAlertController(title: global.error.localized, message: error.localizedDescription, preferredStyle: .alert)
+		let cancel = UIAlertAction(title: global.tryAgain.localized, style: .cancel) { [weak self] _ in
 			self?.loginController?.dismiss(animated: true, completion: nil)
 		}
 		alert.addAction(cancel)

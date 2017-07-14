@@ -57,9 +57,9 @@ final class RadarCoordinator: NSObject {
 		if let radar = radar {
 			self.radar = ViewModel(radar)
 			controller.duplicateOf = duplicateOf
-			controller.title = NSLocalizedString("RadarView.Title.Duplicate", comment: "")
+			controller.title = Localizable.Radar.View.Title.duplicate.localized
 		} else {
-			controller.title = NSLocalizedString("RadarView.Title.New", comment: "")
+			controller.title = Localizable.Radar.View.Title.new.localized
 		}
 		controller.radar = self.radar
 		root.viewControllers = [controller]
@@ -167,7 +167,7 @@ extension RadarCoordinator: RadarViewDelegate {
 	}
 
 	func versionTapped() {
-		showEnterDetails(title: NSLocalizedString("Radar.Version", comment: ""), content: radar.version, placeholder: "") { [unowned self] (text) in
+		showEnterDetails(title: Localizable.Radar.version.localized, content: radar.version, placeholder: "") { [unowned self] (text) in
 			self.radar.version = text
 		}
 	}
@@ -185,53 +185,53 @@ extension RadarCoordinator: RadarViewDelegate {
 	}
 
 	func configurationTapped() {
-		showEnterDetails(title: NSLocalizedString("Radar.Configuration", comment: ""), content: radar.configuration, placeholder: "") { [unowned self] (text) in
+		showEnterDetails(title: Localizable.Radar.configuration.localized, content: radar.configuration, placeholder: "") { [unowned self] (text) in
 			self.radar.configuration = text
 		}
 	}
 
 	func titleTapped() {
-		showEnterDetails(title: NSLocalizedString("Radar.Title", comment: ""), content: radar.title, placeholder: "") { [unowned self] (text) in
+		showEnterDetails(title: Localizable.Radar.title.localized, content: radar.title, placeholder: "") { [unowned self] (text) in
 			self.radar.title = text
 		}
 	}
 
 	func descriptionTapped() {
-		showEnterDetails(title: NSLocalizedString("Radar.Description", comment: ""),
+		showEnterDetails(title: Localizable.Radar.description.localized,
 		                 content: radar.description,
-		                 placeholder: NSLocalizedString("Radar.Description.Placeholder", comment: "")) { [unowned self] (text) in
+		                 placeholder: Localizable.Radar.Placeholder.description.localized) { [unowned self] (text) in
 			self.radar.description = text
 		}
 	}
 
 	func stepsTapped() {
-		showEnterDetails(title: NSLocalizedString("Radar.Steps", comment: ""),
+		showEnterDetails(title: Localizable.Radar.steps.localized,
 		                 content: radar.steps,
-		                 placeholder: NSLocalizedString("Radar.Steps.Placeholder", comment: "")) { [unowned self] (text) in
+		                 placeholder:Localizable.Radar.Placeholder.steps.localized) { [unowned self] (text) in
 							self.radar.steps = text
 		}
 	}
 
 	func expectedTapped() {
-		showEnterDetails(title: NSLocalizedString("Radar.Expected", comment: ""),
+		showEnterDetails(title: Localizable.Radar.expected.localized,
 		                 content: radar.expected,
-		                 placeholder: NSLocalizedString("Radar.Expected.Placeholder", comment: "")) { [unowned self] (text) in
+		                 placeholder: Localizable.Radar.Placeholder.expected.localized) { [unowned self] (text) in
 							self.radar.expected = text
 		}
 	}
 
 	func actualTapped() {
-		showEnterDetails(title: NSLocalizedString("Radar.Actual", comment: ""),
+		showEnterDetails(title: Localizable.Radar.actual.localized,
 		                 content: radar.actual,
-		                 placeholder: NSLocalizedString("Radar.Actual.Placeholder", comment: "")) { [unowned self] (text) in
+		                 placeholder: Localizable.Radar.Placeholder.actual.localized) { [unowned self] (text) in
 							self.radar.actual = text
 		}
 	}
 
 	func notesTapped() {
-		showEnterDetails(title: NSLocalizedString("Radar.Notes", comment: ""),
+		showEnterDetails(title: Localizable.Radar.notes.localized,
 		                 content: radar.notes,
-		                 placeholder: NSLocalizedString("Radar.Notes.Placeholder", comment: "")) { [unowned self] (text) in
+		                 placeholder: Localizable.Radar.Placeholder.notes.localized) { [unowned self] (text) in
 							self.radar.notes = text
 		}
 	}
@@ -292,22 +292,23 @@ extension RadarCoordinator: APIObserver {
 	}
 
 	func didFail(with error: SonarError) {
+        
 		radarViewController?.hideLoading()
-		let alert = UIAlertController(title: NSLocalizedString("Global.Error", comment: ""), message: error.localizedDescription, preferredStyle: .alert)
-		alert.addAction(UIAlertAction(title: NSLocalizedString("Global.Dismiss", comment: ""), style: .cancel))
+		let alert = UIAlertController(title: Localizable.Global.error.localized, message: error.localizedDescription, preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: Localizable.Global.dismiss.localized, style: .cancel))
 		radarViewController?.present(alert, animated: true)
 	}
 
 	func didPostToAppleRadar() {
 		radarViewController?.hideLoading()
 		let delay = 3.0
-		radarViewController?.showSuccess(message: NSLocalizedString("Radar.Post.Success", comment: ""), autoDismissAfter: delay)
+		radarViewController?.showSuccess(message: Localizable.Radar.Post.success.localized, autoDismissAfter: delay)
 		finish()
 	}
 
 	func didPostToOpenRadar() {
 		radarViewController?.hideLoading()
-		radarViewController?.showSuccess(message: NSLocalizedString("Radar.Post.Success", comment: ""))
+		radarViewController?.showSuccess(message: Localizable.Radar.Post.success.localized)
 		finish()
 	}
 }
@@ -317,7 +318,7 @@ extension RadarCoordinator: APIObserver {
 
 extension RadarCoordinator: TwoFactorAuthenticationHandler {
 	func askForCode(completion: @escaping (String) -> Void) {
-		let alert = UIAlertController(title: NSLocalizedString("Radar.TwoFactorAuth.Title", comment: ""), message: NSLocalizedString("Radar.TwoFactorAuth.Message", comment: ""), preferredStyle: .alert)
+		let alert = UIAlertController(title: Localizable.Radar.TwoFactor.title.localized, message: Localizable.Radar.TwoFactor.message.localized, preferredStyle: .alert)
 		alert.addTextField { (field) in
 			field.keyboardType = .numberPad
 			let bodyDescriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .body)
@@ -325,7 +326,7 @@ extension RadarCoordinator: TwoFactorAuthenticationHandler {
 			field.autocorrectionType = .no
 			field.enablesReturnKeyAutomatically = true
 		}
-		alert.addAction(UIAlertAction(title: NSLocalizedString("Radar.TwoFactorAuth.Submit", comment: ""), style: .default, handler: { _ in
+		alert.addAction(UIAlertAction(title: Localizable.Radar.TwoFactor.submit.localized, style: .default, handler: { _ in
 			guard let field = alert.textFields?.first else { preconditionFailure() }
 			guard let text = field.text, text.isNotEmpty else {
 				self.askForCode(completion: completion)

@@ -4,6 +4,7 @@ excluded:
 disabled_rules:
   - line_length
   - todo
+  - nesting
 
 # limit whitespace only lines to 2
 vertical_whitespace:

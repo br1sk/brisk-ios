@@ -11,8 +11,9 @@ final class DupeViewController: UIViewController, StoryboardBacked, StatusDispla
 
 	// MARK: - Properties
 
-	@IBOutlet weak var numberField: UITextField!
-	@IBOutlet weak var hintLabel: UILabel!
+	@IBOutlet private weak var numberField: UITextField!
+	@IBOutlet private weak var hintLabel: UILabel!
+	var number: String = ""
 	weak var delegate: DupeViewDelegate?
 
 
@@ -24,6 +25,10 @@ final class DupeViewController: UIViewController, StoryboardBacked, StatusDispla
 			hintLabel.text = "Found \(content) on your clipboard"
 		} else {
 			hintLabel.text = "You can also post rdar:// or https://openradar.appspot.com/ links"
+		}
+
+		if number.isNotEmpty && number.isOpenRadar {
+			numberField.text = number
 		}
 	}
 

@@ -50,7 +50,11 @@ final class AppCoordinator {
 				return false
 		}
 
+#if swift(>=4.0)
 		let number = String(components.path.dropFirst())
+#else
+		let number = components.path.dropFirst()
+#endif
 		if number.isOpenRadar {
 			var autoSubmit = true
 			if let queryItems = components.queryItems, let submit = queryItems.first(where: { $0.name == "submit" }) {
@@ -204,3 +208,13 @@ extension AppCoordinator: DupeViewDelegate {
 		}
 	}
 }
+
+#if swift(>=4.0)
+#else
+extension String {
+
+	func dropFirst() -> String {
+		return self.substring(from: index(after: startIndex))
+	}
+}
+#endif

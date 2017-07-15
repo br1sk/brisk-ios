@@ -9,6 +9,7 @@
 "Global.Required" = "Required";
 "Global.Optional" = "Optional";
 "Global.Dismiss" = "Dismiss";
+"Global.Cancel" = "Cancel";
 
 
 // MARK: - Quick Actions

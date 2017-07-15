@@ -53,9 +53,9 @@ final class AppCoordinator {
 #if swift(>=4.0)
 		let number = String(components.path.dropFirst())
 #else
-		let number = String(components.path.utf8.dropFirst())
+		let number = String(components.path.characters.dropFirst())
 #endif
-		if let number = number, number.isOpenRadar {
+		if number.isOpenRadar {
 			var autoSubmit = true
 			if let queryItems = components.queryItems, let submit = queryItems.first(where: { $0.name == "submit" }) {
 				autoSubmit = submit.value == "true"

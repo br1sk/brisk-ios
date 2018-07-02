@@ -41,6 +41,12 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 		center.addObserver(self, selector: #selector(EnterDetailsViewController.adjustForKeyboard(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
 	}
 
+    override func viewWillDisappear(_ animated: Bool) {
+        if placeholder.isEmpty ||
+            textView.text != placeholder {
+            onDisappear(textView.text)
+        }
+    }
 
 	// MARK: - Private Methods
 

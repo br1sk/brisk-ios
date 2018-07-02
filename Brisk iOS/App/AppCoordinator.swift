@@ -53,7 +53,7 @@ final class AppCoordinator {
 #if swift(>=4.0)
 		let number = String(components.path.dropFirst())
 #else
-		let number = String(components.path.characters.dropFirst())
+		let number = String(components.path.dropFirst())
 #endif
 		if number.isOpenRadar {
 			var autoSubmit = true

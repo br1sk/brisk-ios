@@ -66,8 +66,8 @@ public extension String {
 		if isEmpty { return false }
 		var extracted = self
 		if contains("openradar.appspot.com") || contains("rdar://") {
-			if let e = extractRadarNumber() {
-				extracted = e
+			if let radarNumber = extractRadarNumber() {
+				extracted = radarNumber
 			} else {
 				return false
 			}

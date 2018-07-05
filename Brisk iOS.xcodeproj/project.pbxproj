@@ -367,11 +367,11 @@
 				TargetAttributes = {
 					177A32DB1F05C6CD0044D836 = {
 						CreatedOnToolsVersion = 9.0;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1000;
 					};
 					177A32EF1F05C6CE0044D836 = {
 						CreatedOnToolsVersion = 9.0;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1000;
 						TestTargetID = 177A32DB1F05C6CD0044D836;
 					};
 				};
@@ -436,7 +436,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    \"${PODS_ROOT}/SwiftLint/swiftlint\"\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		2404C3C4A378FCD910FA3C26 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

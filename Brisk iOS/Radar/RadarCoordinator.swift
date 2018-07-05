@@ -196,7 +196,7 @@ extension RadarCoordinator: RadarViewDelegate {
 	func stepsTapped() {
 		showEnterDetails(title: Localizable.Radar.steps.localized,
 		                 content: radar.steps,
-		                 placeholder:Localizable.Radar.Placeholder.steps.localized) { [unowned self] (text) in
+		                 placeholder: Localizable.Radar.Placeholder.steps.localized) { [unowned self] (text) in
 							self.radar.steps = text
 		}
 	}

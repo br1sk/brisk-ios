@@ -82,29 +82,29 @@ final class RadarViewController: UITableViewController, StoryboardBacked, Status
 
 		switch indexPath.section {
 		case 0:
-			switch indexPath.row {
-            case 0:
-                left = Localizable.Radar.product.localized
-                right = radar.product.name
-            case 1:
-                left = Localizable.Radar.area.localized
-                right = radar.area?.name ?? ""
-                selectable = Area.areas(for: radar.product).isNotEmpty
-            case 2:
-                left = Localizable.Radar.version.localized
-                right = radar.version
-            case 3:
-                left = Localizable.Radar.classification.localized
-                right = radar.classification.name
-            case 4:
-                left = Localizable.Radar.reproducibility.localized
-                right = radar.reproducibility.name
-            case 5:
-                left = Localizable.Radar.configuration.localized
-                right = radar.configuration
-                rightPlaceholder = Localizable.Global.optional.localized
-			default: break
-			}
+        switch indexPath.row {
+        case 0:
+            left = Localizable.Radar.product.localized
+            right = radar.product.name
+        case 1:
+            left = Localizable.Radar.area.localized
+            right = radar.area?.name ?? ""
+            selectable = Area.areas(for: radar.product).isNotEmpty
+        case 2:
+            left = Localizable.Radar.version.localized
+            right = radar.version
+        case 3:
+            left = Localizable.Radar.classification.localized
+            right = radar.classification.name
+        case 4:
+            left = Localizable.Radar.reproducibility.localized
+            right = radar.reproducibility.name
+        case 5:
+            left = Localizable.Radar.configuration.localized
+            right = radar.configuration
+            rightPlaceholder = Localizable.Global.optional.localized
+        default: break
+        }
 		case 1:
             switch indexPath.row {
             case 0:

@@ -69,7 +69,7 @@ final class AppCoordinator {
 
 	// MARK: - Navigation
 
-    open func handleQuick(action: QuickAction.Radar? = nil) {
+    public func handleQuick(action: QuickAction.Radar? = nil) {
         if let action = action {
             switch action {
             case .new:
@@ -195,16 +195,23 @@ extension AppCoordinator: DupeViewDelegate {
 	}
 
 	func controller(_ controller: DupeViewController, didSubmit number: String) {
-		api.search(forRadarWithId: number, loading: { (isLoading) in
-			if isLoading {
-				controller.showLoading()
-			} else {
-				controller.hideLoading()
-			}
-		}, success: { [weak self] (radar) in
-			self?.showFile(for: radar, originalNumber: number)
-		}) { (errorTitle, errorMessage) in
-			print("*** ERROR \(errorTitle)::\(errorMessage)")
-		}
+
+        let loading: (Bool) -> Void = { isLoading in
+            if isLoading {
+                controller.showLoading()
+            } else {
+                controller.hideLoading()
+            }
+        }
+
+        let success: (Radar) -> Void = { [weak self] (radar) in
+            self?.showFile(for: radar, originalNumber: number)
+        }
+
+        let failure: (String, String) -> Void = { (errorTitle, errorMessage) in
+            print("*** ERROR \(errorTitle)::\(errorMessage)")
+        }
+
+		api.search(forRadarWithId: number, loading: loading, success: success, failure: failure)
 	}
 }

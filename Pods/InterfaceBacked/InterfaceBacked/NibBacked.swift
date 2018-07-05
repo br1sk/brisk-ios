@@ -33,14 +33,17 @@ public extension NibBacked {
 }
 
 public protocol NibBackedCell: class {
-    static func cellNib() -> UINib
+    
+    static var cellNib: UINib { get }
+    
     static func cellNib(inBundle bundle: Bundle) -> UINib
-    static func identifier() -> String
+    
+    static var identifier: String { get }
 }
 
 public extension NibBackedCell {
     
-    static func cellNib() -> UINib {
+    static var cellNib: UINib {
         let nib = UINib(nibName: String(describing: self), bundle: Bundle(for: Self.self))
         return nib
     }
@@ -50,7 +53,7 @@ public extension NibBackedCell {
         return nib
     }
 
-    static func identifier() -> String {
+    static var identifier: String {
         return String(describing: self)
     }
 }

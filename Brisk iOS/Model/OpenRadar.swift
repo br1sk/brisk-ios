@@ -13,7 +13,7 @@ private let sectionToSetter: [String: (inout OpenRadar, String) -> Void] = [
 ]
 
 #if swift(>=4.0)
-Change this to use keypaths instead
+// TODO: Change this to use keypaths instead
 #endif
 public struct OpenRadar {
 	public var actual: String?
@@ -36,7 +36,7 @@ public extension String {
 		var lastSetter: ((inout OpenRadar, String) -> Void)?
 
 		for component in components {
-			guard component.characters.last == ":", let setter = sectionToSetter[String(component.characters.dropLast()).lowercased()] else {
+			guard component.last == ":", let setter = sectionToSetter[String(component.dropLast()).lowercased()] else {
 				parts.append(component)
 				continue
 			}
@@ -66,8 +66,8 @@ public extension String {
 		if isEmpty { return false }
 		var extracted = self
 		if contains("openradar.appspot.com") || contains("rdar://") {
-			if let e = extractRadarNumber() {
-				extracted = e
+			if let radarNumber = extractRadarNumber() {
+				extracted = radarNumber
 			} else {
 				return false
 			}

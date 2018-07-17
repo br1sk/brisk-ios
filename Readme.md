@@ -3,7 +3,7 @@
 
 Brisk is an iOS universal app for filing [Radars](http://radar.apple.com/) and crossposting them to [Open Radar](http://www.openradar.me/).
 
-Brisk is written in Swift 3.2 and uses [Sonar](https://github.com/br1sk/Sonar) to communicate with Apple's Radar web “APIs”.
+Brisk is written in Swift 4.0 and uses [Sonar](https://github.com/br1sk/Sonar) to communicate with Apple's Radar web “APIs”.
 
 ![](Resources/Screenshots/01-start.png)
 ![](Resources/Screenshots/03-file.png)
@@ -40,7 +40,7 @@ Feel free to [contact me](mailto:hi@florianbuerger.com) if you need help or open
 
 ## Development
 
-The app is built with Swift 3.2 and everything should work after you clone the project.
+The app is built with Swift 4.0 and everything should work after you clone the project.
 
 ## Credits
 

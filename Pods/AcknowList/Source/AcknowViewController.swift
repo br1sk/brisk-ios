@@ -1,7 +1,7 @@
 //
 // AcknowViewController.swift
 //
-// Copyright (c) 2015-2016 Vincent Tourraine (http://www.vtourraine.net)
+// Copyright (c) 2015-2018 Vincent Tourraine (http://www.vtourraine.net)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -26,14 +26,10 @@ import UIKit
 /// Subclass of `UIViewController` that displays a single acknowledgement.
 open class AcknowViewController: UIViewController {
 
-    /**
-     The main text view.
-     */
+    /// The main text view.
     open var textView: UITextView?
 
-    /**
-     The represented acknowledgement.
-     */
+    /// The represented acknowledgement.
     var acknowledgement: Acknow?
 
     /**
@@ -62,37 +58,54 @@ open class AcknowViewController: UIViewController {
         self.acknowledgement = Acknow(title: "", text: "", license: nil)
     }
 
-
     // MARK: - View lifecycle
 
-    /**
-     Creates the view that the controller manages.
-     */
-    override open func loadView() {
-        let textView = UITextView(frame: CGRect.zero)
+    let TopBottomDefaultMargin: CGFloat = 20
+    let LeftRightDefaultMargin: CGFloat = 10
+
+    /// Called after the controller's view is loaded into memory.
+    open override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let textView = UITextView(frame: view.bounds)
         textView.alwaysBounceVertical = true
-        textView.font                 = UIFont.systemFont(ofSize: 17)
-        textView.isEditable           = false
-        textView.dataDetectorTypes    = UIDataDetectorTypes.link
-        textView.textContainerInset   = UIEdgeInsetsMake(12, 10, 12, 10)
+        textView.font = UIFont.preferredFont(forTextStyle: .body)
+        textView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        #if os(iOS)
+            textView.isEditable = false
+            textView.dataDetectorTypes = .link
+            
+            view.backgroundColor = UIColor.white
+        #endif
+        textView.textContainerInset = UIEdgeInsetsMake(TopBottomDefaultMargin, LeftRightDefaultMargin, TopBottomDefaultMargin, LeftRightDefaultMargin)
+        view.addSubview(textView)
 
-        if let acknowledgement = self.acknowledgement {
-            textView.text = acknowledgement.text
-        }
-
-        self.view = textView
         self.textView = textView
     }
 
-    /**
-     Notifies the view controller that its view is about to be added to a view hierarchy.
+    /// Called to notify the view controller that its view has just laid out its subviews.
+    open override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
 
-     - parameter animated: If `YES`, the view is being added to the window using an animation.
-     */
-    open override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        if let textView = self.textView {
-            textView.contentOffset = CGPoint(x: textView.contentInset.top, y: 0)
+        if let textView = textView {
+            updateTextViewInsets(textView)
         }
+
+        // Need to set the textView text after the layout is completed, so that the content inset and offset properties can be adjusted automatically.
+        if let acknowledgement = self.acknowledgement {
+            textView?.text = acknowledgement.text
+        }
+    }
+
+    @available(iOS 11.0, tvOS 11.0, *) open override func viewLayoutMarginsDidChange() {
+        super.viewLayoutMarginsDidChange()
+
+        if let textView = textView {
+            updateTextViewInsets(textView)
+        }
+    }
+
+    func updateTextViewInsets(_ textView: UITextView) {
+        textView.textContainerInset = UIEdgeInsetsMake(TopBottomDefaultMargin, self.view.layoutMargins.left, TopBottomDefaultMargin, self.view.layoutMargins.right);
     }
 }

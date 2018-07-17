@@ -14,11 +14,11 @@
   "source": {
     "git": "https://github.com/br1sk/Sonar.git"
   },
-  "source_files": "Sources/**/*.swift",
+  "source_files": "Sources/Sonar/**/*.swift",
   "requires_arc": true,
   "dependencies": {
     "Alamofire": [
-      "~> 4.4.0"
+      "~> 4.7.2"
     ]
   }
 }

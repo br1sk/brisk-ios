@@ -107,7 +107,7 @@ extension EnterDetailsViewController: UITextViewDelegate {
 	}
 
 	func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-		let length = textView.text.characters.count + text.characters.count - range.length
+		let length = textView.text.count + text.count - range.length
 		if length > 0 {
 			if textView.text == placeholder {
 				applyStyling(.normal)

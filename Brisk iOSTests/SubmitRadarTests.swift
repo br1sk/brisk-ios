@@ -31,28 +31,28 @@ final class SubmitRadarTests: XCTestCase {
 	}
 
 	func testShowError() {
-		let e = expectation(description: "Wait for finish to be called")
+		let expectation = expectation(description: "Wait for finish to be called")
 		let display = MockDisplay()
 		let sut = SubmitRadarDelegate(display)
 		sut.finishHandler = { _ in
-			e.fulfill()
+			expectation.fulfill()
 		}
 		sut.didFail(with: SonarError.unknownError)
 		XCTAssertTrue(display.didHideLoading)
 		XCTAssertTrue(display.didShowError)
-		wait(for: [e], timeout: 1.0)
+		wait(for: [expectation], timeout: 1.0)
 	}
 
 	func testShowSuccessWhenOpenradarFinished() {
-		let e = expectation(description: "Wait for finish to be called")
+		let expectation = expectation(description: "Wait for finish to be called")
 		let display = MockDisplay()
 		let sut = SubmitRadarDelegate(display)
 		sut.finishHandler = { _ in
-			e.fulfill()
+			expectation.fulfill()
 		}
 		sut.didPostToOpenRadar()
 		XCTAssertTrue(display.didHideLoading)
 		XCTAssertTrue(display.didShowSuccess)
-		wait(for: [e], timeout: 1.0)
+		wait(for: [expectation], timeout: 1.0)
 	}
 }

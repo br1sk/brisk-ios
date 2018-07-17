@@ -103,19 +103,15 @@ final class APIController {
 
 				radar.ID = radarID
 				let openRadar = Sonar(service: .openRadar(token: token))
-				openRadar.loginThenCreate(
-					radar: radar, getTwoFactorCode: { closure in
-						assertionFailure("Didn't handle Open Radar two factor")
-						closure(nil)
-				}) { [weak self] result in
-					switch result {
-					case .success:
-						self?.delegate?.didPostToAppleRadar()
-						self?.delegate?.didPostToOpenRadar()
-					case .failure(let error):
-						self?.delegate?.didFail(with: error)
-					}
-				}
+                openRadar.loginThenCreate(radar: radar, getTwoFactorCode: handleTwoFactorAuth) { [weak self] result in
+                    switch result {
+                    case .success:
+                        self?.delegate?.didPostToAppleRadar()
+                        self?.delegate?.didPostToOpenRadar()
+                    case .failure(let error):
+                        self?.delegate?.didFail(with: error)
+                    }
+                }
 			case .failure(let error):
 				self?.delegate?.didFail(with: error)
 			}

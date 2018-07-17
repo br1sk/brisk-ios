@@ -10,7 +10,7 @@ public struct SonarError: Error {
     static let unknownError = SonarError(message: "Unknown error")
 
     /// Used when the token expires.
-    static let authenticationError = SonarError(message: "Unauthorize")
+    static let authenticationError = SonarError(message: "Unauthorized, perhaps you have the wrong password")
 
     init(message: String) {
         self.message = message
@@ -21,7 +21,7 @@ public struct SonarError: Error {
     /// - parameter response: The HTTP resposne that is known to be failed.
     ///
     /// - returns: The error representing the problem.
-    static func from<T>(_ response: (DataResponse<T>)) -> SonarError {
+    static func from<T>(_ response: DataResponse<T>) -> SonarError {
         if response.response?.statusCode == 401 {
             return .authenticationError
         }
@@ -29,8 +29,6 @@ public struct SonarError: Error {
         switch response.result {
             case .failure(let error as NSError):
                 return SonarError(message: error.localizedDescription)
-            case .failure(let error):
-                return SonarError(message: String(describing: error))
             default:
                 return .unknownError
         }

@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "InterfaceBacked.h"
 
 FOUNDATION_EXPORT double InterfaceBackedVersionNumber;
 FOUNDATION_EXPORT const unsigned char InterfaceBackedVersionString[];

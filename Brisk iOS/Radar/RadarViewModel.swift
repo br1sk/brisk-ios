@@ -22,7 +22,7 @@ extension RadarViewModel {
 
 	init(_ radar: Radar) {
 		product = radar.product
-		area = radar.area ?? Area.areas(for: product).first!
+		area = radar.area
 		classification = radar.classification
 		reproducibility = radar.reproducibility
 		title = radar.title

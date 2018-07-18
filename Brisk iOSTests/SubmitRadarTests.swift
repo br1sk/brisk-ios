@@ -31,7 +31,7 @@ final class SubmitRadarTests: XCTestCase {
 	}
 
 	func testShowError() {
-		let expectation = expectation(description: "Wait for finish to be called")
+		let expectation = XCTestExpectation(description: "Wait for finish to be called")
 		let display = MockDisplay()
 		let sut = SubmitRadarDelegate(display)
 		sut.finishHandler = { _ in
@@ -44,7 +44,7 @@ final class SubmitRadarTests: XCTestCase {
 	}
 
 	func testShowSuccessWhenOpenradarFinished() {
-		let expectation = expectation(description: "Wait for finish to be called")
+		let expectation = XCTestExpectation(description: "Wait for finish to be called")
 		let display = MockDisplay()
 		let sut = SubmitRadarDelegate(display)
 		sut.finishHandler = { _ in

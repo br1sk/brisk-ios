@@ -19,9 +19,9 @@ extension StatusDisplay where Self: UIViewController {
 		SVProgressHUD.showSuccess(withStatus: message)
 	}
 
-	func showError(title: String? = NSLocalizedString("Global.Error", comment: ""),
+	func showError(title: String? = Localizable.Global.error.localized,
 	               message: String,
-	               dismissButtonTitle: String? = NSLocalizedString("Global.Dismiss", comment: ""),
+	               dismissButtonTitle: String? = Localizable.Global.dismiss.localized,
 	               completion: (() -> Void)? = nil) {
 		let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: dismissButtonTitle, style: .cancel, handler: nil))

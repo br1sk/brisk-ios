@@ -46,6 +46,10 @@
 "Radar.Notes.Placeholder" = "Provide any additional information, such as references to related problems or workarounds";
 "Radar.Attachment" = "Attachment";
 "Radar.Attachment.NoAttachments" = "No attachments";
+"Radar.Post.Success" = "Done";
+"Radar.TwoFactorAuth.Title" = "Apple ID Verification Code";
+"Radar.TwoFactorAuth.Message" = "Enter two factor auth code";
+"Radar.TwoFactorAuth.Submit" = "Submit";
 
 
 // MARK: - Settings

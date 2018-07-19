@@ -13,7 +13,7 @@ public extension QuickAction {
             let icon = UIApplicationShortcutIcon(templateImageName: "Compose")
 
             return UIApplicationShortcutItem(type: "new-radar",
-                                             localizedTitle: NSLocalizedString("QuickAction.NewRadar", comment: ""),
+                                             localizedTitle: Localizable.QuickAction.newRadar.localized,
                                              localizedSubtitle: nil,
                                              icon: icon)
         }
@@ -22,7 +22,7 @@ public extension QuickAction {
             let icon = UIApplicationShortcutIcon(templateImageName: "Duplicate")
 
             return UIApplicationShortcutItem(type: "duplicate-radar",
-                                             localizedTitle: NSLocalizedString("QuickAction.DuplicateRadar", comment: ""),
+                                             localizedTitle: Localizable.QuickAction.duplicateRadar.localized,
                                              localizedSubtitle: nil,
                                              icon: icon)
         }

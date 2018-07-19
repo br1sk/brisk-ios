@@ -18,6 +18,11 @@ enum Localizable {
         case cancel     = "Global.Cancel"
     }
 
+    enum QuickAction: Localize, LocalizeRepresentable {
+        case newRadar           = "QuickAction.NewRadar"
+        case duplicateRadar     = "QuickAction.DuplicateRadar"
+    }
+
     enum Login {
         enum Error: Localize, LocalizeRepresentable {
             case invalidEmail   = "LoginError.InvalidEmail"

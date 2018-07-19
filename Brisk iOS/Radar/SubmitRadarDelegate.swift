@@ -32,13 +32,13 @@ final class SubmitRadarDelegate: APIDelegate {
 	func didPostToAppleRadar() {
 		display.hideLoading()
 		let delay = 3.0
-		display.showSuccess(message: NSLocalizedString("Radar.Post.Success", comment: ""), autoDismissAfter: delay)
+		display.showSuccess(message: Localizable.Radar.Post.success.localized, autoDismissAfter: delay)
 		finishHandler(true)
 	}
 
 	func didPostToOpenRadar() {
 		display.hideLoading()
-		display.showSuccess(message: NSLocalizedString("Radar.Post.Success", comment: ""), autoDismissAfter: 3.0)
+		display.showSuccess(message: Localizable.Radar.Post.success.localized, autoDismissAfter: 3.0)
 		finishHandler(false)
 	}
 

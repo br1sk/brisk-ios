@@ -1,0 +1,106 @@
+default_platform(:ios)
+
+project_file = "Brisk iOS.xcodeproj"
+workspace_file = "Brisk iOS.xcworkspace"
+changelog = File.read("../CHANGELOG.md")
+upcoming_release_notes = changelog.split("\n# ").first
+
+before_all do
+  if is_ci?
+    keychain_password = ENV["KEYCHAIN_PASSWORD"]
+    raise "You must specify KEYCHAIN_PASSWORD environment variable." if keychain_password.nil?
+    unlock_keychain(
+      path: "~/Library/Keychains/login.keychain-db",
+      password: keychain_password
+    )
+    ensure_git_status_clean
+  end
+end
+
+after_all do
+  clean_build_artifacts
+end
+
+# ----------------------------------------
+# Code Signing
+# ----------------------------------------
+
+lane :provision_debug do
+  get_certificates(
+    development: true
+  )
+  ENV["PROV_PROFILE"] = get_provisioning_profile(
+    development: true,
+    output_path: "./fastlane/"
+  )
+  update_project_provisioning(
+    xcodeproj: project_file,
+    target_filter: "Brisk",
+    build_configuration: "Debug"
+  )  
+end
+
+lane :provision_release do
+  get_certificates(
+    development: false
+  )
+  ENV["PROV_PROFILE"] = get_provisioning_profile(
+    development: false,
+    output_path: "./fastlane/"
+  )
+  update_project_provisioning(
+    xcodeproj: project_file,
+    target_filter: "Brisk",
+    build_configuration: "Release"
+  )
+end
+
+# ----------------------------------------
+# Builde
+# ----------------------------------------
+
+lane :prepare_build do
+  xcversion(version: '~> 9.4.0')
+  clear_derived_data
+  cocoapods(try_repo_update_on_error: true)
+end
+
+lane :release do  
+  test
+  
+  provision_release
+  
+  latest_build_number = latest_testflight_build_number(
+    version: get_version_number(target: 'Brisk'),
+    initial_build_number: 0
+  )
+  
+  increment_build_number(
+    xcodeproj: project_file, 
+    build_number: latest_build_number + 1
+  )
+
+  build_app(
+    workspace: workspace_file, 
+    scheme: "Brisk iOS",
+    configuration: "Release",
+    export_options: {
+      include_bitcode: false,
+      provisioningProfiles: {
+        "com.florianbuerger.brisk.ios" => ENV["PROV_PROFILE"]
+      }
+    }
+  )
+  
+  upload_to_testflight(
+    changelog: upcoming_release_notes
+  )
+end
+
+# ----------------------------------------
+# Testing
+# ----------------------------------------
+
+lane :test do
+  run_tests(scheme: 'Flighty')
+end

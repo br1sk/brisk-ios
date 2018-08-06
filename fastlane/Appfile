@@ -1,0 +1,8 @@
+app_identifier("com.florianbuerger.brisk.ios") # The bundle identifier of your app
+apple_id("f.buerger@mac.com") # Your Apple email address
+
+itc_team_id("334734") # App Store Connect Team ID
+team_id("HYJ4K64Z63") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile

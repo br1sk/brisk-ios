@@ -368,6 +368,7 @@
 					177A32DB1F05C6CD0044D836 = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 1000;
+						ProvisioningStyle = Manual;
 					};
 					177A32EF1F05C6CE0044D836 = {
 						CreatedOnToolsVersion = 9.0;
@@ -709,11 +710,13 @@
 			baseConfigurationReference = 8F534FD145EF44018C445D92 /* Pods-Brisk iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U3GJUEG8RJ;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Brisk iOS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.florianbuerger.brisk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.florianbuerger.brisk.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -724,11 +727,14 @@
 			baseConfigurationReference = F96D4C10C910CFF20F662254 /* Pods-Brisk iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = U3GJUEG8RJ;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Brisk iOS/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.florianbuerger.brisk;
+				PRODUCT_BUNDLE_IDENTIFIER = com.florianbuerger.brisk.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5f485a7b-239c-48a8-b0e7-1be15a59eb90";
+				PROVISIONING_PROFILE_SPECIFIER = "com.florianbuerger.brisk.ios AppStore";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -762,6 +768,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.florianbuerger.Brisk-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5f485a7b-239c-48a8-b0e7-1be15a59eb90";
+				PROVISIONING_PROFILE_SPECIFIER = "com.florianbuerger.brisk.ios AppStore";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brisk iOS.app/Brisk iOS";

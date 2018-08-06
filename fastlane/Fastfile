@@ -101,7 +101,7 @@ lane :release do
 
   build_app(
     workspace: workspace_file, 
-    scheme: "Brisk iOS",
+    scheme: "Brisk",
     configuration: "Release",
     export_options: {
       include_bitcode: false,
@@ -121,5 +121,5 @@ end
 # ----------------------------------------
 
 lane :test do
-  run_tests(scheme: 'Flighty')
+  run_tests(scheme: "Brisk")
 end

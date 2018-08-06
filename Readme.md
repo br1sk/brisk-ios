@@ -1,6 +1,8 @@
 
 # Brisk
 
+[![Build status](https://badge.buildkite.com/672895d57514714220c79243148e0423061d2f04ca6ff5f6e8.svg)](https://buildkite.com/florianbuerger/brisk)
+
 Brisk is an iOS universal app for filing [Radars](http://radar.apple.com/) and crossposting them to [Open Radar](http://www.openradar.me/).
 
 Brisk is written in Swift 4.0 and uses [Sonar](https://github.com/br1sk/Sonar) to communicate with Apple's Radar web “APIs”.

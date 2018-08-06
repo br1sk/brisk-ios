@@ -25,6 +25,11 @@ fastlane provision_debug
 fastlane provision_release
 ```
 
+### start
+```
+fastlane start
+```
+
 ### prepare_build
 ```
 fastlane prepare_build

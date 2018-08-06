@@ -56,7 +56,26 @@ lane :provision_release do
 end
 
 # ----------------------------------------
-# Builde
+# CI
+# ----------------------------------------
+
+# `master` -> run tests
+# `beta/*` -> release beta
+# `release/*` -> release production
+lane :start do
+  prepare_build
+  branch = git_branch # smart enough to handle BuildKite
+  if branch.include? 'master'
+    test
+  elsif branch.include? 'release'
+    release
+  else
+    puts "I do not know what to do on branch #{branch}"
+  end
+end
+
+# ----------------------------------------
+# Build
 # ----------------------------------------
 
 lane :prepare_build do

@@ -90,7 +90,7 @@ lane :release do
   provision_release
   
   latest_build_number = latest_testflight_build_number(
-    version: get_version_number(target: 'Brisk'),
+    version: get_version_number(target: 'Brisk iOS'),
     initial_build_number: 0
   )
   

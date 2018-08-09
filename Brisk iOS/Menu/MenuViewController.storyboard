@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X8p-6J-nCn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14295.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="X8p-6J-nCn">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14270.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,33 +21,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-JR-J0u" userLabel="Menu">
-                                <rect key="frame" x="114" y="492" width="186" height="128"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="j8x-JR-J0u" userLabel="Menu">
+                                <rect key="frame" x="40" y="544" width="334" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-ON-UBi">
-                                        <rect key="frame" x="0.0" y="0.0" width="186" height="64"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <inset key="imageEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        <state key="normal" title="Duplicate Radar" image="Duplicate"/>
-                                        <connections>
-                                            <action selector="dupeButtonTapped" destination="X8p-6J-nCn" eventType="touchUpInside" id="raX-6G-OvB"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bc9-5N-EOz">
-                                        <rect key="frame" x="0.0" y="64" width="186" height="64"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <state key="normal" title="New Radar" image="Compose"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bc9-5N-EOz">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="44"/>
+                                        <color key="backgroundColor" red="0.19607843137254902" green="0.27058823529411763" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Dlc-MR-2lt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Report a new bug"/>
                                         <connections>
                                             <action selector="fileButtonTapped" destination="X8p-6J-nCn" eventType="touchUpInside" id="sBw-aS-Xe0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oea-ON-UBi">
+                                        <rect key="frame" x="0.0" y="56" width="334" height="44"/>
+                                        <color key="backgroundColor" red="0.92549019607843142" green="0.92941176470588238" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="9O3-lO-2Yb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="tintColor" red="0.19607843137254902" green="0.27058823529411763" blue="0.72549019607843135" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Duplicate rdar://"/>
+                                        <connections>
+                                            <action selector="dupeButtonTapped" destination="X8p-6J-nCn" eventType="touchUpInside" id="raX-6G-OvB"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="p73-gr-BT6" userLabel="Header">
-                                <rect key="frame" x="109.33333333333334" y="84" width="195.66666666666666" height="232.33333333333331"/>
+                                <rect key="frame" x="109.33333333333333" y="84" width="195.66666666666669" height="252"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="7pw-i5-DDP">
-                                        <rect key="frame" x="13" y="0.0" width="170" height="170"/>
+                                        <rect key="frame" x="12.666666666666671" y="0.0" width="170" height="170"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="64" id="Iik-6u-hhD">
                                                 <variation key="heightClass=compact" constant="80"/>
@@ -64,17 +73,17 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gEK-zi-FfF">
-                                        <rect key="frame" x="0.0" y="194" width="195.66666666666669" height="38.333333333333314"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="gEK-zi-FfF">
+                                        <rect key="frame" x="0.0" y="194" width="195.66666666666666" height="58"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brisk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dIn-OF-eLh">
-                                                <rect key="frame" x="77.666666666666671" y="0.0" width="40.666666666666657" height="20.333333333333314"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <rect key="frame" x="65.666666666666671" y="0.0" width="64.000000000000014" height="36"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An app for submitting radars" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="asl-yx-3Ue">
-                                                <rect key="frame" x="0.0" y="20.333333333333314" width="195.66666666666669" height="18"/>
+                                                <rect key="frame" x="0.0" y="40" width="195.66666666666666" height="18"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -83,26 +92,27 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBZ-Xd-wcq">
-                                <rect key="frame" x="161" y="684" width="92" height="32"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Settings" image="Settings">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBZ-Xd-wcq">
+                                <rect key="frame" x="161.66666666666666" y="684" width="91" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="tintColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="8" maxX="16" maxY="8"/>
+                                <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="-8" maxY="0.0"/>
+                                <state key="normal" title="Settings" image="Settings"/>
                                 <connections>
                                     <action selector="settingsTapped" destination="X8p-6J-nCn" eventType="touchUpInside" id="HVa-pT-BUF"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="j8x-JR-J0u" firstAttribute="leading" secondItem="YWs-cN-QZY" secondAttribute="leadingMargin" constant="20" id="5s5-lK-KSI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="j8x-JR-J0u" secondAttribute="trailing" constant="20" id="KLC-XN-Dng"/>
                             <constraint firstItem="p73-gr-BT6" firstAttribute="top" secondItem="1hS-Z7-ddD" secondAttribute="bottom" constant="64" id="PXs-p1-YgJ"/>
                             <constraint firstItem="p73-gr-BT6" firstAttribute="top" secondItem="1hS-Z7-ddD" secondAttribute="bottom" constant="8" symbolic="YES" id="R7f-uD-HME"/>
                             <constraint firstItem="NBZ-Xd-wcq" firstAttribute="centerX" secondItem="YWs-cN-QZY" secondAttribute="centerX" id="f9u-8x-h90"/>
                             <constraint firstItem="kgk-xa-Buo" firstAttribute="top" secondItem="NBZ-Xd-wcq" secondAttribute="bottom" constant="20" id="fMP-Wu-INV"/>
-                            <constraint firstItem="NBZ-Xd-wcq" firstAttribute="top" secondItem="j8x-JR-J0u" secondAttribute="bottom" constant="64" id="m78-mr-6y8"/>
-                            <constraint firstItem="j8x-JR-J0u" firstAttribute="centerX" secondItem="YWs-cN-QZY" secondAttribute="centerX" id="qrD-tg-cZB"/>
+                            <constraint firstItem="NBZ-Xd-wcq" firstAttribute="top" secondItem="j8x-JR-J0u" secondAttribute="bottom" constant="40" id="m78-mr-6y8"/>
                             <constraint firstItem="p73-gr-BT6" firstAttribute="centerX" secondItem="YWs-cN-QZY" secondAttribute="centerX" id="uru-I8-o5A"/>
                         </constraints>
                         <variation key="default">
@@ -122,6 +132,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="duplicateButton" destination="Oea-ON-UBi" id="hig-M8-fku"/>
+                        <outlet property="newButton" destination="bc9-5N-EOz" id="vDB-rF-GvG"/>
+                        <outlet property="settingsButton" destination="NBZ-Xd-wcq" id="cHm-sb-IxJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wgc-jy-3fQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -129,9 +144,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Compose" width="64" height="64"/>
-        <image name="Duplicate" width="64" height="64"/>
         <image name="Logo" width="170" height="170"/>
-        <image name="Settings" width="32" height="32"/>
+        <image name="Settings" width="16" height="16"/>
     </resources>
 </document>

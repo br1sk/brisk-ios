@@ -13,9 +13,20 @@ final class MenuViewController: UIViewController, StoryboardBacked {
 	// MARK: - Properties
 
 	weak var delegate: MenuViewDelegate?
-
+    @IBOutlet var duplicateButton: UIButton!
+    @IBOutlet var newButton: UIButton!
+    @IBOutlet var settingsButton: UIButton!
 
 	// MARK: - UIViewController Methods
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        for button in [duplicateButton, newButton, settingsButton] {
+            button?.layer.cornerRadius = 6
+            button?.layer.masksToBounds = true
+        }
+    }
 
 	// MARK: - User Actions
 

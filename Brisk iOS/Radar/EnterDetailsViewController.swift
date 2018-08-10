@@ -35,12 +35,6 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 		textView.becomeFirstResponder()
 	}
 
-	override func viewDidLoad() {
-		let center = NotificationCenter.default
-		center.addObserver(self, selector: #selector(EnterDetailsViewController.adjustForKeyboard(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
-		center.addObserver(self, selector: #selector(EnterDetailsViewController.adjustForKeyboard(notification:)), name: Notification.Name.UIKeyboardWillChangeFrame, object: nil)
-	}
-
     override func viewWillDisappear(_ animated: Bool) {
         if placeholder.isEmpty ||
             textView.text != placeholder {
@@ -49,33 +43,6 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
     }
 
 	// MARK: - Private Methods
-
-	@objc fileprivate func adjustForKeyboard(notification: NSNotification) {
-
-		if notification.name == Notification.Name.UIKeyboardWillHide {
-			textView.contentInset = UIEdgeInsets.zero
-			textView.scrollIndicatorInsets = UIEdgeInsets.zero
-		} else {
-			// Text jumps around a bit, any idea how to avoid that?
-			let info = notification.userInfo!
-			guard let value = info[UIKeyboardFrameEndUserInfoKey] as? NSValue else { return }
-			let keyboardScreenEndFrame = value.cgRectValue
-			let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
-
-			let textFrame = view.window!.convert(textView.frame, from: view)
-			let delta = UIScreen.main.bounds.maxY - textFrame.maxY
-			let yInset = abs(delta - keyboardViewEndFrame.height)
-
-			let margin = textView.font!.pointSize
-			let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: yInset + margin, right: 0)
-			textView.contentInset = contentInsets
-			textView.scrollIndicatorInsets = UIEdgeInsets.zero
-
-			let selectedRange = textView.selectedRange
-			textView.scrollRangeToVisible(selectedRange)
-		}
-	}
-
 
 	fileprivate func moveCursorToStart() {
 		DispatchQueue.main.async {

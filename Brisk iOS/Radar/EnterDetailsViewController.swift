@@ -1,8 +1,18 @@
 import UIKit
 import InterfaceBacked
 
-final class EnterDetailsViewController: UIViewController, StoryboardBacked {
+final class TextView: UITextView, KeyboardObservable {
+    private var observers: [Any]?
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        observers = keyboardObservers()
+    }
+    deinit {
+        removeObservers(observers ?? [])
+    }
+}
 
+final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 
 	// MARK: - Types
 
@@ -13,7 +23,7 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 
 	// MARK: - Properties
 
-	@IBOutlet weak var textView: UITextView!
+	@IBOutlet weak var textView: TextView!
 	@IBOutlet weak var textBottomSpaceConstraint: NSLayoutConstraint!
 	var prefilledContent = ""
 	var placeholder = ""

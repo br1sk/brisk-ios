@@ -25,6 +25,7 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 	override func viewWillAppear(_ animated: Bool) {
 		if placeholder.isNotEmpty && prefilledContent.isEmpty {
 			applyStyling(.placeholder)
+            textView.text = placeholder
 		} else {
 			applyStyling(.normal)
 			textView.text = prefilledContent
@@ -89,7 +90,6 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 		case .normal:
 			textView.textColor = UIColor.darkText
 		case .placeholder:
-			textView.text = placeholder
 			textView.textColor = UIColor.lightGray
 		}
 	}
@@ -111,13 +111,12 @@ extension EnterDetailsViewController: UITextViewDelegate {
 		if length > 0 {
 			if textView.text == placeholder {
 				applyStyling(.normal)
-				textView.text = ""
+                textView.text = ""
 			}
-			return true
 		} else {
 			applyStyling(.placeholder)
 			moveCursorToStart()
-			return false
 		}
+        return true
 	}
 }

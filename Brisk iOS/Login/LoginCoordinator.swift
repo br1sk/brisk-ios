@@ -1,5 +1,5 @@
-import UIKit
 import SafariServices
+import UIKit
 
 private let kAPIKeyURL = URL(string: "https://openradar.appspot.com/apikey")!
 private let kOpenRadarUsername = "openradar"

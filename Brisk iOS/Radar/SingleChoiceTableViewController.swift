@@ -1,6 +1,6 @@
-import UIKit
 import InterfaceBacked
 import Sonar
+import UIKit
 
 final class SingleChoiceViewController<T: Choice>: UITableViewController {
 
@@ -14,6 +14,7 @@ final class SingleChoiceViewController<T: Choice>: UITableViewController {
 	// MARK: - UIViewController Methods
 
 	override func viewDidLoad() {
+        super.viewDidLoad()
 		precondition(all != nil, "All choices must be set before the view controller is presented")
 		precondition(all!.isNotEmpty, "All choices must not be empty")
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")

@@ -1,6 +1,6 @@
+import Alamofire
 import Foundation
 import Sonar
-import Alamofire
 
 protocol APIDelegate: class {
 	func didStartLoading()

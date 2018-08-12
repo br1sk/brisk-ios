@@ -36,7 +36,7 @@ extension KeyboardObservable where Self: UITextView {
     }
     private var textHeight: CGFloat {
         guard let font = font else {
-            fatalError()
+            fatalError("Can't calculate text height without a font.")
         }
         let size = (text ?? "").size(with: font, constrainedToWidth: frame.width)
         return size.height
@@ -88,18 +88,18 @@ extension KeyboardObservable where Self: UITextView {
             let window = superview.window,
             let font = font,
             let userInfo = notification.userInfo else {
-                fatalError()
+                fatalError("Missing required superview, window, font & userInfo.")
         }
         let keyboardScreenFrame: CGRect
         switch state {
         case .show:
             guard let frame = userInfo[UIKeyboardFrameEndUserInfoKey] as? CGRect else {
-                fatalError()
+                fatalError("No frame in userInfo found for key UIKeyboardFrameEndUserInfoKey")
             }
             keyboardScreenFrame = frame
         case .hide:
             guard let frame = userInfo[UIKeyboardFrameBeginUserInfoKey] as? CGRect else {
-                fatalError()
+                fatalError("No frame in userInfo found for key UIKeyboardFrameBeginUserInfoKey")
             }
             keyboardScreenFrame = frame
         }

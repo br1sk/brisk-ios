@@ -1,6 +1,6 @@
-import XCTest
 @testable import Brisk_iOS
 @testable import Sonar
+import XCTest
 
 final class MockDisplay: StatusDisplay {
 	var didShowLoading = false

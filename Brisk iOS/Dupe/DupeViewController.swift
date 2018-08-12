@@ -1,5 +1,5 @@
-import UIKit
 import InterfaceBacked
+import UIKit
 
 protocol DupeViewDelegate: class {
 	func controllerDidCancel(_ controller: DupeViewController)
@@ -20,6 +20,7 @@ final class DupeViewController: UIViewController, StoryboardBacked, StatusDispla
 	// MARK: - UIViewController Methods
 
 	override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 		if let content = UIPasteboard.general.string, content.isOpenRadar && number.isEmpty {
 			numberField.text = content.extractRadarNumber()
 			hintLabel.text = "Found \(content) on your clipboard"

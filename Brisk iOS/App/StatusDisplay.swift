@@ -1,5 +1,5 @@
-import UIKit
 import SVProgressHUD
+import UIKit
 
 protocol StatusDisplay {
 	func showLoading()

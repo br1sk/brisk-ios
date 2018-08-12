@@ -1,5 +1,5 @@
-import UIKit
 import InterfaceBacked
+import UIKit
 
 protocol MenuViewDelegate: class {
 	func dupeTapped()

@@ -1,5 +1,5 @@
-import UIKit
 import InterfaceBacked
+import UIKit
 
 protocol LoginViewDelegate: class {
 	func submitTapped(user: User)
@@ -20,6 +20,7 @@ final class LoginViewController: UIViewController, StoryboardBacked {
 	// MARK: - UIViewController Methods
 
 	override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 		emailField.becomeFirstResponder()
 		validateSubmitButton()
 	}

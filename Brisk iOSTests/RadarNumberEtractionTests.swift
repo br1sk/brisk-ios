@@ -1,5 +1,5 @@
-import XCTest
 @testable import Brisk_iOS
+import XCTest
 
 class RadarNumberEtractionTests: XCTestCase {
 

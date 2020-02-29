@@ -1,8 +1,8 @@
-import UIKit
-import InterfaceBacked
-import Sonar
 import AcknowList
+import InterfaceBacked
 import SafariServices
+import Sonar
+import UIKit
 
 final class AppCoordinator {
 

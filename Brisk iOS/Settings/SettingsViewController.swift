@@ -1,5 +1,5 @@
-import UIKit
 import InterfaceBacked
+import UIKit
 
 protocol SettingsDelegate: class {
 	func doneTapped()
@@ -27,6 +27,7 @@ final class SettingsViewController: UITableViewController, StoryboardBacked {
 	// MARK: - UIViewController Methods
 
 	override func viewDidLoad() {
+        super.viewDidLoad()
 		configureVersionLabel()
 	}
 

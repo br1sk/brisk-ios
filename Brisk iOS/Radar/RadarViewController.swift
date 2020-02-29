@@ -1,6 +1,6 @@
-import UIKit
 import InterfaceBacked
 import Sonar
+import UIKit
 
 protocol RadarViewDelegate: class {
 	func productTapped()
@@ -72,7 +72,6 @@ final class RadarViewController: UITableViewController, StoryboardBacked, Status
 	}
 
 	// swiftlint:disable cyclomatic_complexity
-	// swiftlint:disable:next function_body_length
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell"), let radar = self.radar else { preconditionFailure() }
 		var left = ""

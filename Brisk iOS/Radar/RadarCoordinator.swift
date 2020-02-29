@@ -1,8 +1,6 @@
 import Foundation
-import UIKit
 import Sonar
-
-// FIXME: This grew fast. Extract stuff...
+import UIKit
 
 final class RadarCoordinator: NSObject {
 
@@ -127,7 +125,8 @@ final class RadarCoordinator: NSObject {
 
 	}
 
-	@objc fileprivate func enterDetailsDidFinish() {
+	@objc
+    fileprivate func enterDetailsDidFinish() {
 		root.presentedViewController?.dismiss(animated: true)
 		if let selected = radarViewController?.tableView.indexPathForSelectedRow {
 			radarViewController?.tableView.deselectRow(at: selected, animated: true)

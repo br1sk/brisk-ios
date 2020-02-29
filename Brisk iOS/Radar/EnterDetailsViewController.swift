@@ -1,5 +1,5 @@
-import UIKit
 import InterfaceBacked
+import UIKit
 
 final class TextView: UITextView, KeyboardObservable {
     private var observers: [Any]?
@@ -33,6 +33,7 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 	// MARK: - UIViewController Methods
 
 	override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 		if placeholder.isNotEmpty && prefilledContent.isEmpty {
 			applyStyling(.placeholder)
             textView.text = placeholder
@@ -43,10 +44,12 @@ final class EnterDetailsViewController: UIViewController, StoryboardBacked {
 	}
 
 	override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 		textView.becomeFirstResponder()
 	}
 
     override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         if placeholder.isEmpty ||
             textView.text != placeholder {
             onDisappear(textView.text)
